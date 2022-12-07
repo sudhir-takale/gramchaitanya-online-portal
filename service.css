@@ -1,0 +1,63 @@
+body {
+    background-image: linear-gradient(to right, red, orange, indigo, violet);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.maintext {
+    margin-top: 23px;
+   margin-left: 35%;
+   text-align: center;
+   margin-right: 35%;
+    font-weight: bold;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    border: 4px solid navy;
+    
+    letter-spacing: 4px;
+}
+
+
+
+.container {
+    
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 50px;
+    row-gap: 36px;
+    margin: 99px 34px 0px 34px;
+}
+
+.grid-item {
+  background-color: brown;
+  color: white;
+    padding: 10px;
+    font-size: 21px;
+    border: 3px solid navy;
+    text-align: center;
+}
+.grid-item a {
+    text-decoration: none;
+    cursor: pointer;
+    color: white;
+}
+
+
+.search {
+    position: absolute;
+    top: 88px;
+    margin-top: 23px;
+    /* font-size: 23px; */
+    right: 40px;
+    font-size: 22px;
+}
+
+.searchbutton {
+    background: navy;
+    color: white;
+    cursor: pointer;
+    /* display: block; */
+}
+
+.inputbutton {
+    /* display: block; */
+    border: 2px solid navy;
+}

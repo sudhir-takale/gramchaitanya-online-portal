@@ -1,0 +1,63 @@
+.maintext {
+
+    font-size: 35px;
+    font-weight: bold;
+    word-spacing: 9px;
+    text-align: center;
+    background: navy;
+    color: white;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 10px 20px 20px 20px;
+}
+
+.container {
+    margin-top: 100px;
+    margin-left: 44px;
+    margin-right: 44px;
+    margin-left: 20%;
+    margin-right: 20%;
+    align-items: center;
+}
+
+.container li {
+    display: flex;
+    background-color: antiquewhite;
+    margin-top: 45px;
+
+
+}
+
+.info {
+    margin-left: 45px;
+    margin-top: 11px;
+
+
+}
+
+img {
+    border: 3px solid green;
+
+}
+
+
+
+
+
+.search {
+    position: absolute;
+    top: 88px;
+    margin-top: 23px;
+
+    font-size: 23px;
+    right: 40px;
+    font-size: 18px;
+}
+
+.searchbutton {
+    background: navy;
+    color: white;
+}
+
+.inputbutton {
+    border: 2px solid navy;
+}

@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,40 +15,40 @@
 
 
 
-        <form>
-        
+        <form action="process.php" method="post">
+
             <div class="container">
                 <h1>Register</h1>
                 <p>Fill the Below Form</p>
                 <label for="adhar number"><b>Adhar Number</b></label>
-                <input type="text" placeholder="Enter Adhar Number" name="username" id="username" required />
+                <input type="text" placeholder="Enter Adhar Number" name="adharno" id="username" required />
 
                 <label for="email"><b>First Name </b></label>
-                <input type="text" placeholder="Enter First Name" name="First Name" id="email" required />
+                <input type="text" placeholder="Enter First Name" name="firstname" id="email" required />
 
                 <label for="pwd"><b>Middle Name</b></label>
-                <input type="text" placeholder="Enter Middle Name" name="pwd" id="pwd" required />
+                <input type="text" placeholder="Enter Middle Name" name="middlename" id="pwd" required />
 
-                <label for="pwd-repeat"><b>Ward No.</b></label>
-                <input type="password" placeholder="Enter ward Number" name="pwd-repeat" id="pwd-repeat" required />
+                <label for="lastname"><b>Middle Name No.</b></label>
+                <input type="text" placeholder="Enter last name " name="lastname" id="pwd-repeat" required />
 
                 <label for="pwd"><b>Date of Birth</b></label>
-                <input type="date" placeholder="Enter Date" name="pwd" id="pwd" required />
+                <input type="date" placeholder="Enter Date" name="dateofbirth" id="pwd" required />
 
                 <label for="pwd"><b>Password</b></label>
-                <input type="password" placeholder="Enter Password" name="pwd" id="pwd" required />
+                <input type="password" placeholder="Enter Password" name="password" id="pwd" required />
 
                 <label for="pwd"><b> Confirm Password</b></label>
-                <input type="password" placeholder="Enter Password" name="pwd" id="pwd" required />
+                <input type="password" placeholder="Enter Password" name="conpassword" id="pwd" required />
 
 
 
-                <button type="submit"><a href="Navbar.html"></a>Register</button>
+                <button type="submit" name="save"><a href="Navbar.html"></a>Register</button>
             </div>
 
             <div>
                 <p>Already have an account? <a href="Login.html">Log in</a>.</p>
-            </div> 
+            </div>
         </form>
 </body>
 
