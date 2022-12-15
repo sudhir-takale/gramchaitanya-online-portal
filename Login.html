@@ -1,3 +1,24 @@
+<!-- <?php
+include('process.php');
+extract($_POST);
+if (isset($save)) {
+    $adhar = $_POST['adhar'];
+    $password = $_POST['password'];
+
+
+    $result = mysqli_query($link, "select *from users where adharno = '$adhar' and password = '$password'");
+    $row = mysqli_fetch_array($result);
+        $count = mysqli_num_rows($result);
+
+        if ($count != 1) {
+            echo "<script>validate();</script>";
+        }
+
+    
+}
+?>
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,22 +27,32 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="LoginStyle.css">
-    <title>Document</title>
+    <title>login please</title>
 </head>
 
 <body>
-    <form>
+    <form action="" method="post">
 
         <div class="container">
             <h1>Login</h1>
             <label for="adhar number"><b>Adhar Number</b></label>
-            <input type="text" placeholder="Enter Adhar Number" name="username" id="username" required />
+            <input type="text" placeholder="Enter Adhar Number" name="adhar" id="username" required />
 
             <label for="password"><b>Password </b></label>
-            <input type="password" placeholder="Enter your Password" name="First Name" id="email" required />
-            <button type="submit"onClick="location.href='Navbar.html'">Login</button>
+            <input type="password" placeholder="Enter your Password" name="password" id="email" required />
+            <button type="submit" name= "save" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Login</button>
+            <div>
+                <p style="text-decoration: none;  font-size: 16px;">Not have an account? <a href="SignUp.html" style="color: blue; text-align: right;">Sign up</a></p>
+            </div>
         </div>
     </form>
 </body>
+
+<!-- <script>
+    function validate() {
+        let no = document.getElementById('incorrect').innerHTML = "check adhar no or password";
+    }
+</script> -->
+
 
 </html>

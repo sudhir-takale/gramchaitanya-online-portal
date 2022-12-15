@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans&family=Roboto:ital,wght@0,300;0,400;1,300&display=swap');
+
 body {
-    font-family: Nerko One sans-serif;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #ccccff;
 }
 
 
@@ -12,15 +14,15 @@ form {
 }
 
 .container {
-    
+
     display: flex;
     flex-direction: column;
     width: 25vw;
     border: 2px solid black;
-     padding: 20px;
-     box-shadow: 2px 8px 18px;
-     font-size: 20px;
-       
+    padding: 20px;
+    box-shadow: 2px 8px 18px;
+    font-size: 20px;
+    background-color: white;
 }
 
 h1,
@@ -28,26 +30,21 @@ p {
     text-align: center;
 }
 
-
-input {
-    margin: 0.25em 0em 1em 0em;
-}
-
 input {
     margin: 0.25em 0em 1em 0em;
     outline: none;
     padding: 0.5em;
-    border: none;
-    background-color: rgb(225, 225, 225);
+    border: #ccccff;
+    background-color: rgb(218, 228, 228);
     border-radius: 0.25em;
-    color: black;
+    color: rgb(50, 205, 205);
 }
 
 button {
     padding: 0.75em;
     border: none;
     outline: none;
-    background-color: rgb(68, 18, 232);
+    background-color: rgb(247, 48, 164);
     color: white;
     border-radius: 0.25em;
 }
@@ -55,5 +52,5 @@ button {
 /* hover functionality for button */
 button:hover {
     cursor: pointer;
-    background-color: rgb(41, 4, 164);
+    background-color: rgb(161, 16, 84);
 }

@@ -1,8 +1,19 @@
+body {
+    background-color: #ccccff;
+
+}
+
+body::-webkit-scrollbar {
+    display: none;
+}
+
 .navbar {
-    background-color: #000080;
+
+    background-color: #0099cc;
     border-radius: 4px;
     font-size: 19px;
     height: 60px;
+
 }
 
 .navbar li {
@@ -10,6 +21,7 @@
     list-style: none;
     margin: 9px 12px 12px 12px;
     text-align: center;
+
     justify-content: space-around;
 }
 
@@ -19,8 +31,11 @@
 }
 
 .navbar li a {
+    margin-left: 10px;
     text-decoration: none;
     color: white;
+    font-weight: 500;
+
 }
 
 .navbar li a:hover {
@@ -47,22 +62,22 @@
 .slider img {
     width: 255px;
     height: auto;
- margin-left: 9px;
- margin-right: 9px;
+    margin-left: 9px;
+    margin-right: 9px;
 }
 
 .maintext {
     font-size: 45px;
-    
-    
+
+
     font-weight: bold;
     text-shadow: 24px;
-    font-family: ;
+
 }
 
 .bodysection {
     display: flex;
-  
+
     justify-content: space-between;
 
 }
@@ -78,18 +93,24 @@
 .noticesection {
     font-size: 16px;
     width: 40%;
-
+    border-radius: 8px;
     margin-right: 23px;
 
 
 
 }
+
 .aboutbody {
     margin-left: 23px;
 }
+
 .noticetext {
-    padding: 5px;
-    background-color: #000080;
+    border-radius: 8px;
+    border-radius: 8px;
+    padding: 15px;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: #ff6666;
     color: white;
     text-align: center;
     font-weight: bold;
@@ -98,29 +119,31 @@
 }
 
 .abouttext {
-    padding: 5px;
-    background-color: #000080;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #ff6666;
     color: white;
     text-align: center;
     margin-top: 18px;
+    margin-right: 0;
+    margin-left: 0;
     font-size: 21px;
     font-weight: bold;
 }
 
 .noticebody {
     font-size: 19px;
+    border-radius: 8px;
 }
 
-.ulist {
-    background: red;
-}
+
 .noticebody li {
     margin-left: 45px;
-    /* background: rebeccapurple; */
+    border-radius: 8px;
     padding: 5px;
     list-style: decimal;
-    
-    
+
+
 }
 
 .googlemaps {
@@ -132,8 +155,30 @@
 }
 
 .googlemaps img {
-    width: 230px;
+    margin-top: 45px;
+    width: 290px;
     height: auto;
+    transition: .5s ease;
+    border: 2px solid black;
+    box-shadow: 4px 3px 10px black;
+}
+
+.googlemaps img :hover {
+    border: 30px solid green;
+    padding: 4px;
+    opacity: 0.3;
+    border-radius: 6px;
+
+
+
+}
+
+.googlemaps p:hover {
+    border: 30px solid green;
+    padding: 4px;
+    border-radius: 6px;
+
+
 
 }
 
@@ -146,21 +191,94 @@
 
 .search {
     position: absolute;
-   
+
     margin-top: 23px;
-   margin-bottom: 23px;
+    margin-bottom: 23px;
     right: 40px;
     font-size: 22px;
 }
 
 .searchbutton {
-    background: rgb(66, 128, 0);
+    background: rgb(255, 0, 221);
     color: white;
     cursor: pointer;
-   
+    border-radius: 8px;
+
 }
 
 .inputbutton {
-   
+
     border: 2px solid navy;
+    border-radius: 8px;
+}
+
+.foot {
+    margin-left: 156px;
+    display: flex;
+    height: 222px;
+    letter-spacing: 1px;
+}
+
+.address {
+    margin-left: 223px;
+    font-size: 15px;
+    color: white;
+    margin-top: 12px;
+    font-weight: 500;
+}
+
+.service {
+    margin-top: 12px;
+    margin-left: 203px;
+    font-size: 15px;
+    color: white;
+    /* font-weight: bol; */
+    font-weight: 500;
+}
+
+.service li {
+    list-style: none;
+    color: white;
+    margin-left: 23px;
+}
+
+.service li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    color: white;
+    margin-left: 23px;
+}
+
+.useful {
+    margin-top: 12px;
+    margin-left: 103px;
+    font-size: 15px;
+    color: white;
+    font-weight: 500;
+}
+
+.useful li {
+    list-style: none;
+    color: white;
+
+}
+
+.useful li a {
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+    color: white;
+}
+
+.column p {
+    margin-left: 45px;
+    margin-top: 6px;
+    font-weight: 500;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.column {
+    /* margin-top: 10px; */
+    margin-bottom: 10px;
 }

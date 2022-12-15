@@ -1,51 +1,62 @@
-/* changed code on line 17 all line */
-
 body {
-    font-family: Arial, Helvetica, sans-serif;
+
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+    background-color: #cccfff;
 }
 
 form {
     display: flex;
     flex-direction: column;
     align-items: center;
+
 }
 
 .container {
     display: flex;
     flex-direction: column;
-    width: 50vw;
-    margin-top: 180px; 
+    width: auto;
+    margin-top: 20px;
+    border: 2px solid black;
+    padding: 20px;
+    box-shadow: 2px 8px 18px;
+    background-color: white;
+
 }
 
-h1,
-p {
+h1,p {
     text-align: center;
+    color: rebeccapurple;
 }
 
 
-input {
-    margin: 0.25em 0em 1em 0em;
-}
+
 input {
     margin: 0.25em 0em 1em 0em;
     outline: none;
     padding: 0.5em;
+
+    border: #ccccff;
     border: none;
-    background-color: rgb(225, 225, 225);
+    background-color: rgb(218, 228, 228);
     border-radius: 0.25em;
     color: black;
 }
+
 button {
+
+
     padding: 0.75em;
     border: none;
     outline: none;
-    background-color: rgb(68, 18, 232);
+    background-color: rgb(247, 48, 164);
     color: white;
     border-radius: 0.25em;
 }
 
-/* hover functionality for button */
 button:hover {
     cursor: pointer;
-    background-color: rgb(41, 4, 164);
+    
+    background-color: rgb(167, 12, 102);
+
 }
