@@ -1,24 +1,31 @@
-<!-- <?php
-include('process.php');
+ <?php
 extract($_POST);
-if (isset($save)) {
+include('process.php');
+
+if (isset($_POST['save'])) {
     $adhar = $_POST['adhar'];
     $password = $_POST['password'];
 
 
     $result = mysqli_query($link, "select *from users where adharno = '$adhar' and password = '$password'");
-    $row = mysqli_fetch_array($result);
-        $count = mysqli_num_rows($result);
-
-        if ($count != 1) {
-            echo "<script>validate();</script>";
-        }
-
-    
-}
+   
+      $row = mysqli_fetch_array($result,MYSQLI_ASSOC);
+      
+      
+      $count = mysqli_num_rows($result);
+      
+      // If result matched $myusername and $mypassword, table row must be 1 row
+		
+      if($count == 1) {
+         session_register("myusername");
+         $_SESSION['login_user'] = $myusername;
+         
+         header("location: welcome.php");
+      }else {
+         $error = "Your Login Name or Password is invalid";
+      }
+   }
 ?>
- -->
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,7 +38,9 @@ if (isset($save)) {
 </head>
 
 <body>
-    <form action="" method="post">
+    
+
+    <form action="login.php" method="post">
 
         <div class="container">
             <h1>Login</h1>
@@ -40,19 +49,14 @@ if (isset($save)) {
 
             <label for="password"><b>Password </b></label>
             <input type="password" placeholder="Enter your Password" name="password" id="email" required />
-            <button type="submit" name= "save" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Login</button>
+            <button type="submit" name= "save" style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;"><a href="Navbar.php"></a>Login</button>
             <div>
-                <p style="text-decoration: none;  font-size: 16px;">Not have an account? <a href="SignUp.html" style="color: blue; text-align: right;">Sign up</a></p>
+                <p style="text-decoration: none;  font-size: 16px;">Not have an account? <a href="SignUp.php" style="color: blue; text-align: right;">Sign up</a></p>
             </div>
         </div>
     </form>
 </body>
 
-<!-- <script>
-    function validate() {
-        let no = document.getElementById('incorrect').innerHTML = "check adhar no or password";
-    }
-</script> -->
 
 
 </html>
