@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>signup please</title>
+    <link rel="stylesheet" href="SignupStyle.css">
+</head>
+
+<body>
+
+    <div>
+
+        <?php
+
+        if ($_SERVER['REQUEST_METHOD'] == "POST") {
+            session_start();
+
+            $fi = $_POST['firstname'];
+            $mi = $_POST['middlename'];
+            $lastname = $_POST['lastname'];
+            $adharno = $_POST['adharno'];
+            $dateofbirth = $_POST['dateofbirth'];
+            $password = $_POST['password'];
+            $conpassword = $_POST['conpassword'];
+
+
+            $check = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "gram"), "insert into USERS (USERNAME,FNAME,MNAME,LNAME,DOB,PASSWORD,CONPASSWORD) values ('$adharno','$fi','$mi','$lastname','$dateofbirth','$password','$conpassword')");
+            if ($check) {
+                header("Location:Navbar.php");
+
+                die;
+            }
+
+        }
+        ?>
+
+
+
+
+    </div>
+
+
+
+
+
+    <div class="signupform">
+
+
+
+        <form method="POST" autocomplete="off" action="SignUp.php">
+
+            <div class="container">
+                <h1>Register</h1>
+                <p>Fill the Below Form</p>
+                <label for="adhar number"><b> Enter Adhar Number</b></label>
+                <input type="text" placeholder="Enter Adhar Number" name="adharno" required />
+
+                <label for="email"><b> Enter First Name </b></label>
+                <input type="text" placeholder="Enter First Name" name="firstname" required />
+
+                <label for="pwd"><b> Enter Middle Name</b></label>
+                <input type="text" placeholder="Enter Middle Name" name="middlename" />
+
+                <label for="lastname"><b> Enter Last Name</b></label>
+                <input type="text" placeholder="Enter last name " name="lastname" />
+
+                <label for="pwd"><b> Enter your Date of Birth</b></label>
+                <input type="date" placeholder="Enter Date" name="dateofbirth" />
+
+                <label for="pwd"><b> Enter Password</b></label>
+                <input type="password" placeholder="Enter Password" name="password" required />
+
+                <label for="pwd"><b> Confirm Password</b></label>
+                <input type="password" placeholder="Confirm Password" name="conpassword" />
+
+
+
+                <button type="submit" name="register">Register</button>
+
+                <div>
+                    <p style=" margin-left: 422px; font-size: 16px;">Already have an account? <a href="Login.php"
+                            style="color: blue;">Log in</a></p>
+                </div>
+            </div>
+
+
+        </form>
+</body>
+
+</html>

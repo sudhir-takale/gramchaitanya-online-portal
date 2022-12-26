@@ -1,11 +1,18 @@
 <!-- <?php
-// session_start();
-// if(!isset($_SESSION['loggedin']) || $_SESSION['loggedin']!=true) {
-//     header("location: login.php");
-//     exit;
-// }
+session_start();
+include("process.php");
+// include("function.php");
+// $_SESSION['USERNAME'] = $USERNAME;
 
 ?> -->
+
+<?php
+session_start();
+if (!isset($_SESSION["USERNAME"])) {
+    header("Location: Login.php");
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -60,15 +67,25 @@
                 <li><a href="service.html">Services</a></li>
                 <li><a href="SignUp.php">Register</a></li>
                 <li><a href="Login.php">Login</a></li>
+                <li><a href="logout.php">Log Out</a></li>
                 <!-- <li><a href="help.html">Help</a></li> -->
             </ul>
-        </nav>
+            <div>
+                <img style="width: 64px;" src="Project Images/digital india.webp" alt="">
+            </div>
 
+        </nav>
+        <div>
+
+
+
+
+        </div>
 
     </header>
 
 
-    <!-- This is for body section-->
+    
 
     <marquee direction="left" width="100%" scrollamount="25" behavior="side">
         <div class="slider">
@@ -144,6 +161,7 @@ color: white;font-size: 17px; ">
                     </div>
             </div>
 
+
             <div class="row mx-auto" style="width: 600px;">
                 <div class="column" style="border-radius:8px; color: white;background-image: linear-gradient(to right, black, rgb(255, 0, 157), rgb(175, 175, 192));
 font-size: 17px;font-weight: 500;font-family: Verdana, Geneva, Tahoma, sans-serif;">
@@ -200,15 +218,6 @@ box-shadow: 4px 3px 10px black; height: 73%; margin-left: 59%; margin-top: 35px 
         </div>
     </div>
     <!-- This is a Grampanchayat cartoon image -->
-
-
-
-
-
-
-
-
-
     <footer>
         <hr>
         <div class="foot"
