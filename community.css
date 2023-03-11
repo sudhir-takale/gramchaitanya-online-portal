@@ -1,21 +1,16 @@
-body {
+body{
+
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background-color: #ccccff;
 }
-
-
-
 
 .maintext {
 
-    font-size: 35px;
+    font-size: 29px;
     font-weight: bold;
-    word-spacing: 9px;
+
     text-align: center;
-    background: rgb(255, 80, 109);
-    color: white;
-    
-    margin: 10px 20px 20px 20px;
+
+
 }
 
 .container {
@@ -25,11 +20,14 @@ body {
     margin-left: 20%;
     margin-right: 20%;
     align-items: center;
+
 }
 
 .container li {
     display: flex;
-    background-color: antiquewhite;
+    border-style: groove;
+
+    box-shadow: 1px 2px 9px black;
     margin-top: 45px;
 
 
@@ -38,16 +36,10 @@ body {
 .info {
     margin-left: 45px;
     margin-top: 11px;
-
-
-}
-
-img {
-    border: 3px solid rgb(61, 19, 27);
+    letter-spacing: 0.2mm;
+    font-size: 17px;
 
 }
-
-
 
 
 
@@ -59,13 +51,24 @@ img {
     font-size: 23px;
     right: 40px;
     font-size: 18px;
+    background-color: #000080;
 }
 
 .searchbutton {
-    background: rgb(253, 90, 141);
-    color: rgb(250, 247, 247);
+    background-color: #000080;
+    color: white;
+    font-weight: 900;
+    font-size: 14px;
+    border-radius: 5px;
 }
 
 .inputbutton {
-    border: 2px solid rgb(246, 25, 22);
+    
+    height: 26px;
+    border-radius: 3px;
+}
+
+.search:hover {
+
+    box-shadow: 2px 2px 8px black;
 }

@@ -1,0 +1,372 @@
+body {
+  /* background-image: url("images/backimage.jpg"); */
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.maintext {
+  text-align: center;
+  padding: 15px;
+  font-size: 45px;
+  margin: 0%;
+  width: auto;
+  color: red;
+  font-weight: bold;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  background-color: black;
+}
+
+nav {
+  background-color: #151313;
+  border-radius: 4px;
+  font-size: 21px;
+  height: 55px;
+  position: sticky;
+  top: 0%;
+}
+
+nav li {
+  float: left;
+  list-style: none;
+  padding: 7px;
+  margin-right: 23px;
+}
+
+nav ul {
+  overflow: auto;
+  text-align: center;
+}
+
+nav li a {
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+nav li a:hover {
+  color: red;
+  font-weight: bold;
+    /* padding: 5px;
+    border-radius: 6px; */
+
+}
+
+.slider {
+  display: flex;
+  margin-top: 18px;
+  position: relative;
+  -webkit-transition: left 1s;
+  -moz-transition: left 1s;
+  -o-transition: left 1s;
+  transition: left 1s;
+}
+
+.slider img {
+  width: 200px;
+  height: auto;
+}
+
+nav a.active {
+  background-color: #04aa6d;
+  color: white;
+}
+
+#dot {
+  height: 47px;
+  width: 47px;
+  background-color: #fdfdfd;
+  border-radius: 50%;
+  display: inline-block;
+}
+.headline {
+  font-size: 31px;
+  font-weight: 700;
+  text-align: center;
+  background-color: black;
+  color:red;
+  height:61px;
+  
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+table,
+th,
+tr td {
+  border: 2px solid rgb(20, 10, 10);
+
+  padding: 7px;
+}
+
+
+
+table td {
+  text-align: center;
+  padding: 17px;
+  width: 234px;
+  font-weight: bold;
+}
+
+
+table.scrolldown {
+
+
+  /* border-collapse: collapse; */
+  border-spacing: 0;
+  border: 2px solid black;
+}
+
+/* To display the block as level element */
+table.scrolldown tbody,
+table.scrolldown thead {
+  display: block;
+}
+
+thead tr th {
+  height: 40px;
+  line-height: 40px;
+}
+
+table.scrolldown tbody {
+
+  /* Set the height of table body */
+  height: 290px;
+
+  /* Set vertical scroll */
+  overflow-y: auto;
+
+  /* Hide the horizontal scroll */
+  overflow-x: hidden;
+}
+
+tbody {
+  border-top: 2px solid black;
+}
+
+
+
+td {
+  text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.bodysection {
+  display: flex;
+
+  justify-content: space-between;
+}
+
+.aboutsection {
+  width: 60%;
+  font-size: 19px;
+}
+
+.noticesection {
+  font-size: 16px;
+  /* width: 40%; */
+  border-radius: 8px;
+  /* margin-right: 23px; */
+}
+
+.aboutbody {
+  /* margin-left: 23px; */
+  font-size: 19px;
+  font-weight: 600;
+  /* background-image: url("Project\ Images/laxmi\ temple.jfif"); */
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+}
+
+.noticetext {
+  border-radius: 8px;
+  border-radius: 8px;
+  padding: 15px;
+
+  background: #0a0a0b;
+  color: white;
+  text-align: center;
+  font-weight: bold;
+  font-size: 21px;
+  margin-top: 15px;
+}
+
+.abouttext {
+  border-radius: 8px;
+  padding: 15px;
+  background-color: #030304;
+  color: white;
+  text-align: center;
+  margin-top: 15px;
+  /* margin-right: 0; */
+  /* margin-left: 0; */
+  font-size: 23px;
+  font-weight: bold;
+}
+
+.noticebody {
+  font-size: 19px;
+  border-radius: 8px;
+}
+
+.listview {
+  background-color: white;
+  color: black;
+
+  border: 2px solid rgb(220, 203, 203);
+}
+
+.listview p {
+  font-weight: bold;
+  font-size: 19px;
+
+  font-weight: 900;
+  font-style: italic;
+  text-align: center;
+}
+
+.googlemaps {
+  /* margin-left: 45px; */
+  margin-top: 25px;
+  display: inline;
+}
+
+.googlemaps img {
+  margin-top: 45px;
+  width: 230px;
+  height: auto;
+  display: block;
+  transition: 0.5s ease;
+  box-shadow: 4px 3px 10px black;
+}
+
+.googlemaps img:hover {
+  width: 231px;
+  display: block;
+  height: auto;
+}
+
+.googlemaps p:hover {
+  font-weight: 900;
+  text-decoration: underline;
+  color: red;
+}
+
+.googlemaps p {
+  font-size: 19px;
+  font-family: cursive;
+  /* margin-left: 23px; */
+  margin-top: 11px;
+  display: block;
+}
+
+.foot {
+  /* margin-left: 156px; */
+  display: flex;
+  height: 222px;
+  letter-spacing: 1px;
+}
+
+.address {
+  /* margin-left: 223px; */
+  font-size: 15px;
+  color: white;
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+.service {
+  margin-top: 12px;
+  /* margin-left: 203px; */
+  font-size: 15px;
+  color: white;
+  /* font-weight: bol; */
+  font-weight: 500;
+}
+
+.service li {
+  list-style: none;
+  color: white;
+  /* margin-left: 23px; */
+}
+
+.service li a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  color: white;
+  /* margin-left: 23px; */
+}
+
+.useful {
+  margin-top: 12px;
+
+  font-size: 15px;
+  color: white;
+  font-weight: 500;
+}
+
+.useful li {
+  list-style: none;
+  color: white;
+}
+
+.useful li a {
+  text-decoration: none;
+  color: black;
+  cursor: pointer;
+  color: white;
+}
+
+.useful li a:hover {
+  color: red;
+  text-decoration: underline;
+}
+
+.service li a:hover {
+  color: red;
+  text-decoration: underline;
+}

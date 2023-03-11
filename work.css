@@ -1,11 +1,30 @@
 
-body{
-    background-color: #ccccff;
+body {
+   
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
+
+
+.header {
+    text-align: center;
+    font-size: 28px;
+
+
+}
+
 .images img {
 
-    width: 160px;
-    height: 90px;
+    width: 100px;
+    height: 100px;
     margin-top: 9px;
     margin-left: 33px;
+}
+
+.decription {
+    font-size: 17px;
+    line-height: 1.5;
+    letter-spacing: 1;
+}
+.maintext {
+    color: darkseagreen;
 }

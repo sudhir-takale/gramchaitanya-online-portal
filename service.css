@@ -1,5 +1,5 @@
 body {
-    background-color: #ccccff;
+    /* background-color: #ccccff; */
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
@@ -10,8 +10,11 @@ body {
     margin-right: 35%;
     font-weight: bold;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    background: rgb(255, 80, 109);
-    color: white;
+    /* background: rgb(255, 80, 109); */
+    /* border: 2px solid black; */
+    border-radius: 18px;
+    
+    /* color: white; */
 
     letter-spacing: 4px;
 }
@@ -25,14 +28,17 @@ body {
     column-gap: 50px;
     row-gap: 36px;
     margin: 99px 34px 0px 34px;
+    
 }
 
 .grid-item {
 
-    background-color: #FF00FF;
-    color: white;
+ 
+    color: black
+    ;
     padding: 10px;
     font-size: 21px;
+    border-radius: 9px;
     border: 2px solid black;
     text-align: center;
 }
@@ -40,7 +46,7 @@ body {
 .grid-item a {
     text-decoration: none;
     cursor: pointer;
-    color: white;
+    /* color: white; */
 }
 
 
@@ -54,13 +60,20 @@ body {
 }
 
 .searchbutton {
-    background: navy;
+    background: rgb(168, 101, 149);
     color: white;
     cursor: pointer;
-    /* display: block; */
+   
 }
 
 .inputbutton {
-    /* display: block; */
-    border: 2px solid navy;
+    
+    border: 2px solid black;
 }
+
+/* .grid-item:hover{
+    box-shadow: 3px 6px 10px black;
+        background-color: #ce12ce;
+        transition: 0.9ms;
+     
+} */
