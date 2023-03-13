@@ -6,14 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>signup please</title>
-    <link rel="stylesheet" href="SignupStyle.css">
+    <link rel="stylesheet" href="register.css">
 </head>
 
 <body>
 
-    <div>
+    <!-- <div>
 
-        <?php
+        <!-- <?php
 
         if ($_SERVER['REQUEST_METHOD'] == "POST") {
             session_start();
@@ -27,30 +27,21 @@
             $conpassword = $_POST['conpassword'];
 
 
-            $check = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "gram"), "insert into USERS (USERNAME,FNAME,MNAME,LNAME,DOB,PASSWORD,CONPASSWORD) values ('$adharno','$fi','$mi','$lastname','$dateofbirth','$password','$conpassword')");
-            if ($check) {
+            $check = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "gram"), "insert into USERS (USERNAME,FNAME,MNAME,LNAME,DOB,PASSWORD,CONPASSWORD) values ('$adharno','$fi','$mi','$lastname','$dateofbirth','$password','$conpassword')"); -->
+            <!-- if ($check) {
                 header("Location:Navbar.php");
 
                 die;
             }
 
         }
-        ?>
 
-
-
-
-    </div>
-
-
-
-
-
+    </div> -->
     <div class="signupform">
 
 
 
-        <form method="POST" autocomplete="off" action="SignUp.php">
+        <form>
 
             <div class="container">
                 <h1>Register</h1>
@@ -81,7 +72,7 @@
                 <button type="submit" name="register">Register</button>
 
                 <div>
-                    <p style=" margin-left: 422px; font-size: 16px;">Already have an account? <a href="Login.php"
+                    <p style=" margin-left: 422px; font-size: 16px;">Already have an account? <a href="login.html"
                             style="color: blue;">Log in</a></p>
                 </div>
             </div>

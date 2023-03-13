@@ -1,13 +1,12 @@
 body {
   /* background-image: url("images/backimage.jpg"); */
   font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
-  background-repeat: no-repeat;
-  background-size: cover;
+  
 }
 
 .maintext {
   text-align: center;
-  padding: 15px;
+  /* padding: 4px; */
   font-size: 45px;
   margin: 0%;
   width: auto;
@@ -47,7 +46,7 @@ nav li a {
 nav li a:hover {
   color: red;
   font-weight: bold;
-    /* padding: 5px;
+  /* padding: 5px;
     border-radius: 6px; */
 
 }
@@ -79,14 +78,15 @@ nav a.active {
   border-radius: 50%;
   display: inline-block;
 }
+
 .headline {
   font-size: 31px;
   font-weight: 700;
   text-align: center;
   background-color: black;
-  color:red;
-  height:61px;
-  
+  color: red;
+  height: 61px;
+
 }
 
 
@@ -145,13 +145,15 @@ thead tr th {
 table.scrolldown tbody {
 
   /* Set the height of table body */
-  height: 290px;
+  height: 350px;
 
   /* Set vertical scroll */
   overflow-y: auto;
 
   /* Hide the horizontal scroll */
   overflow-x: hidden;
+
+  right: 0%;
 }
 
 tbody {
@@ -173,9 +175,56 @@ td {
 
 
 
+.outercontainer {
+  display: flex;
+
+  flex: 1;
+}
+
+.innercontainer {
+  display: flex;
+
+  margin-left: 7%;
+}
+
+.innercontainer img {
+  border: 2px solid red;
+  flex-direction: row;
+  margin: 0 0 4% 0;
+  width: 197px;
+  height: auto;
+}
+
+.infomation {
+  margin: 0 0 9% 9%;
+}
+
+
+.postinfo {
+  margin-top: 11%;
+  font-weight: 650;
+  font-size: 16px;
+}
 
 
 
+.graminfo {
+  display: flex;
+  margin-top: 1%;
+  align-self: center;
+}
+
+.village {
+
+  width: 58%;
+  margin-left: 0.5%;
+}
+
+
+.tableinfo {
+  margin-left: 10.5%;
+  margin-right: 1%;
+}
 
 
 

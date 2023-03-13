@@ -1,4 +1,4 @@
-<?php
+<!-- <?php
 session_start();
 if ($_SERVER['REQUEST_METHOD'] == "POST") {
     include("process.php");
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
 
 ?>
-
+ -->
 
 
 <!DOCTYPE html>
@@ -32,13 +32,13 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="LoginStyle.css">
+    <link rel="stylesheet" href="login.css">
     <title>login please</title>
 </head>
 
 <body>
 
-    <form action="Login.php" method="POST">
+    <form>
 
         <div class="container">
             <h1>Login</h1>
@@ -50,7 +50,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
             <button type="submit" name="login"
                 style="font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;">Login</button>
             <div>
-                <p style="text-decoration: none;  font-size: 16px;">Not have an account? <a href="SignUp.php"
+                <p style="text-decoration: none;  font-size: 16px;">Not have an account? <a href="register.html"
                         style="color: blue; text-align: right;">Sign up</a></p>
             </div>
         </div>
