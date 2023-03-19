@@ -1,26 +1,93 @@
 <!DOCTYPE html>
 <html lang="en">
 
+</body>
+</html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=, initial-scale=1.0">
+    <meta name="viewport" content="device-width, initial-scale=1.0">
     <title>work done</title>
     <link rel="stylesheet" href="work.css">
 </head>
 
 <body>
-    <p class="header">
-        Work done by our Grampanchayat</p>
+
+    <header style="top: 4%; position: sticky; ">
+    <h4 class="header1">
+        Work done by our Grampanchayat</h4>
 
 
-    <div class="container" style="width: 60%; height: auto; margin-left: 23%; margin-right: 23%; margin-top: 23px;">
+
+    <button class="mainbuttons" onclick="setVisible1()">completed Work</button>
+    <button class="mainbuttons" onclick="setVisible2()">Ongoing Work</button>
+    <button class="mainbuttons" onclick="setVisible3()">Approved Work</button>
+    <button class="mainbuttons" onclick="setVisible3()">Add Work</button>
+
+    <hr>
+
+
+
+
+
+</header>
+
+
+
+<form action="">
+    <div class="addinformation"
+        style="width:50%; margin-left: 23%;  background-color: bisque;height :75%;  margin-top:3%;">
+        <p class="defaultname" style="margin-top: 2%;padding-top: 9px;">Enter the title:</p>
+        <input class="inputtag " size="200" type="text" placeholder="Enter the title">
+        <p class="defaultname ">Enter the description of work:</p>
+        <!-- <input  class = "inputtag" type="text" placeholder="Enter the title"> -->
+        <textarea placeholder="Enter the description" name="" id="" cols="90" rows="9" style="margin-left: 4%; font-weight: 600; "></textarea>
+        <p class="defaultname ">Select type of the work:</p>
+        <select class="inputtag" name="Please select Name" id="dropdownlist" style="display: block;">
+            <option value="None" selected>None</option>
+            <option value="Sudhir">Add to Ongoing work</option>
+            <option value="Sudhir">Add to Completed work</option>
+            <option value="Sudhir">Add to Approved work
+            <option value="">
+        </select>
+        <p class="defaultname">Select some images:</p>
+        <input type="file" id="img" name="img" accept="image"
+            style="display: block; width: 239px; height: 123px;margin-left: 4%; margin-bottom: -6%;">
+
+        <button type="submit" name="login"
+            style="font-family: 'Franklin Gothic Medium';margin-bottom: 5%; width: 55%;  margin-left: 23%; font-size: 16px;  ">Submit</button>
+
+
+
+    </div>
+
+</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="completed" id="completedwork"
+        style="width: 60%;visibility: hidden; height: auto; margin-left: 23%; margin-right: 23%; ">
 
         <ul>
 
             <li>
 
-                <p style="font-size: 23px; color: green;"><b>Construction of the new roads.</b></p>
+                <p style="font-size: 23; color: red; "><b>Construction of the new roads.</b></p>
                 <div class="decription">
                     The local development needs of the village are discussed at the Gram Sabha at village level.
                     The demands so generated are then complaints about the roads,then our Grampanchayat decide
@@ -37,15 +104,12 @@
             <hr style=" border: 1px solid black; background-color:black;">
 
 
-           
-           
-
-
-
-
             <li>
 
-                <p class="maintext" style="font-size: 23px; color: green;"><b>Provide the water supply to every home in village</b></p>
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Provide the water supply to
+                        every home
+                        in
+                        village</b></p>
                 <div class="decription">
                     The Grampanchayat of the village has taken a major step towards improving the
                     quality of life of its villagers by making available water supply to every
@@ -66,7 +130,10 @@
 
             <li>
 
-                <p class = "maintext" style="font-size: 23px; color: green;"><b>Provide new furniture and electrical devices to school</b></p>
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Provide new furniture and
+                        electrical
+                        devices
+                        to school</b></p>
                 <div class="decription">
                     Our Grampanchayat provide the new furiture to school as banches,tables,chairs,
                     racks,etc for free.And also provide the electronic divices as computer,sound
@@ -87,7 +154,8 @@
 
             <li>
 
-                <p class="maintext" style="font-size: 23px; color:green ;"><b>Provide the road side light</b></p>
+                <p class="maintext" style="font-size: 23; color: red;  color:green ;"><b>Provide the road side light</b>
+                </p>
                 <div class="decription">
                     Grampanchayat provide the lights on the road at night.People can travel on
                     the road at night safetly.For safety road side light important for traveling
@@ -107,7 +175,277 @@
 
             <li>
 
-                <p class="maintext" style="font-size: 23px; color: green;"><b>Build the Mandir and Sabhamandap</b></p>
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Build the Mandir and
+                        Sabhamandap</b>
+                </p>
+                <div class="decription">
+                    Grampanchayat can build a Mandir and sabhamandap for the village by utilizing
+                    founds from Government.If the village does not have adequate funds for that
+                    they contribuit the founds from villager.
+                    Finally once the construction is completed the Grampanchayat organized the pran
+                    pratishthan ceremony.
+                </div>
+
+                <div class="images">
+                    <img src="Project Images/Mandir1.jpeg" alt="">
+                    <img src="Project Images/mandir2.jpeg" alt="">
+
+                </div>
+
+            </li>
+
+
+
+            <hr style=" border: 1px solid black; background-color:black;">
+
+        </ul>
+    </div>
+
+
+
+
+
+
+
+    <div class="ongoing" id="ongoingwork"
+        style="width:60%; visibility: hidden; height: auto; margin-left: 23%; margin-right: 23%;">
+
+        <ul>
+
+            <li>
+
+                <p style="font-size: 23; color: red;  color: green;"><b>second work start</b></p>
+                <div class="decription">
+                    The local development needs of the village are discussed at the Gram Sabha at village level.
+                    The demands so generated are then complaints about the roads,then our Grampanchayat decide
+                    the made a new road on the perticular location(from bus stop to kale vasti).
+                </div>
+                <div class="images">
+
+                    <img src="Project Images/road1.jpeg" alt="">
+                    <img src="Project Images/road2.jpeg" alt="">
+
+                </div>
+
+            </li>
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Provide the water supply to
+                        every home
+                        in
+                        village</b></p>
+                <div class="decription">
+                    The Grampanchayat of the village has taken a major step towards improving the
+                    quality of life of its villagers by making available water supply to every
+                    home in the village.Through the initiative the Grampanchayat is determined
+                    to ensure that each house hold in the village has access to clean drinking
+                    water.
+                </div>
+                <div class="images">
+                    <img src="Project Images/water1.jpeg" alt="">
+                    <img src="Project Images/water2.jpeg" alt="">
+
+                </div>
+
+            </li>
+
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Provide new furniture and
+                        electrical
+                        devices
+                        to school</b></p>
+                <div class="decription">
+                    Our Grampanchayat provide the new furiture to school as banches,tables,chairs,
+                    racks,etc for free.And also provide the electronic divices as computer,sound
+                    system,light tubes,etc.This initiative helps to ensure that the student have
+                    access to the necessary tools for their education.
+                </div>
+                <div class="images">
+                    <img src="Project Images/D1.jpeg" alt="">
+                    <img src="Project Images/D2.jpeg" alt="">
+
+                </div>
+
+            </li>
+
+
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color:green ;"><b>Provide the road side light</b>
+                </p>
+                <div class="decription">
+                    Grampanchayat provide the lights on the road at night.People can travel on
+                    the road at night safetly.For safety road side light important for traveling
+                    on the road at night.Thats why Grampanchayat provides pole at the side of the
+                    road on that pole light have fixed.
+                </div>
+                <div class="images">
+                    <img src="Project Images/Light1.jpeg" alt="">
+                    <img src="Project Images/light2.jpeg" alt="">
+
+                </div>
+
+            </li>
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Build the Mandir and
+                        Sabhamandap</b>
+                </p>
+                <div class="decription">
+                    Grampanchayat can build a Mandir and sabhamandap for the village by utilizing
+                    founds from Government.If the village does not have adequate funds for that
+                    they contribuit the founds from villager.
+                    Finally once the construction is completed the Grampanchayat organized the pran
+                    pratishthan ceremony.
+                </div>
+                <div class="images">
+                    <img src="Project Images/Mandir1.jpeg" alt="">
+                    <img src="Project Images/mandir2.jpeg" alt="">
+
+                </div>
+
+            </li>
+
+
+
+            <hr style=" border: 1px solid black; background-color:black;">
+        </ul>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="futurework" id="approvedwork"
+        style="width: 60%; height: auto; visibility: hidden; margin-left: 23%; margin-right: 23%; margin-top: 23px;">
+
+        <ul>
+
+            <li>
+
+                <p style="font-size: 23; color: red;  color: green;"><b>third work start</b></p>
+                <div class="decription">
+                    The local development needs of the village are discussed at the Gram Sabha at village level.
+                    The demands so generated are then complaints about the roads,then our Grampanchayat decide
+                    the made a new road on the perticular location(from bus stop to kale vasti).
+                </div>
+                <div class="images">
+
+                    <img src="Project Images/road1.jpeg" alt="">
+                    <img src="Project Images/road2.jpeg" alt="">
+
+                </div>
+
+            </li>
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Provide the water supply to
+                        every home
+                        in
+                        village</b></p>
+                <div class="decription">
+                    The Grampanchayat of the village has taken a major step towards improving the
+                    quality of life of its villagers by making available water supply to every
+                    home in the village.Through the initiative the Grampanchayat is determined
+                    to ensure that each house hold in the village has access to clean drinking
+                    water.
+                </div>
+                <div class="images">
+                    <img src="Project Images/water1.jpeg" alt="">
+                    <img src="Project Images/water2.jpeg" alt="">
+
+                </div>
+
+            </li>
+
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Provide new furniture and
+                        electrical
+                        devices
+                        to school</b></p>
+                <div class="decription">
+                    Our Grampanchayat provide the new furiture to school as banches,tables,chairs,
+                    racks,etc for free.And also provide the electronic divices as computer,sound
+                    system,light tubes,etc.This initiative helps to ensure that the student have
+                    access to the necessary tools for their education.
+                </div>
+                <div class="images">
+                    <img src="Project Images/D1.jpeg" alt="">
+                    <img src="Project Images/D2.jpeg" alt="">
+
+                </div>
+
+            </li>
+
+
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color:green ;"><b>Provide the road side light</b>
+                </p>
+                <div class="decription">
+                    Grampanchayat provide the lights on the road at night.People can travel on
+                    the road at night safetly.For safety road side light important for traveling
+                    on the road at night.Thats why Grampanchayat provides pole at the side of the
+                    road on that pole light have fixed.
+                </div>
+                <div class="images">
+                    <img src="Project Images/Light1.jpeg" alt="">
+                    <img src="Project Images/light2.jpeg" alt="">
+
+                </div>
+
+            </li>
+            <hr style=" border: 1px solid black; background-color:black;">
+
+
+
+            <li>
+
+                <p class="maintext" style="font-size: 23; color: red;  color: green;"><b>Build the Mandir and
+                        Sabhamandap</b>
+                </p>
                 <div class="decription">
                     Grampanchayat can build a Mandir and sabhamandap for the village by utilizing
                     founds from Government.If the village does not have adequate funds for that
@@ -138,7 +476,86 @@
 
 
 
+
+
+
+
+
     </div>
+
+
+    
+
+
+
+
+    <script>
+    var x = document.getElementById("completedwork")
+    var y = document.getElementById("ongoingwork")
+    var z = document.getElementById("approvedwork")
+
+
+        function setVisible1() {
+
+            
+
+
+            if (y.style.visibility === "visible" || z.style.visibility ==="visible") {
+
+                z.style.display = "none"
+                y.style.display = "none"
+            }
+
+            if (x.style.visibility === "hidden") {
+                x.style.visibility = "visible";
+            }
+            else {
+                x.style.display = "none";
+            }
+        }
+        function setVisible2() {
+
+            
+
+
+            if (x.style.visibility === "visible" || z.style.visibility ==="visible" || x.style.display === "none" || z.style.display === "none" ) {
+                x.style.display = "none"
+                z.style.display = "none"
+            }
+
+            if (y.style.visibility === "hidden" || y.style.display === "none") {
+                y.style.visibility = "visible";
+                y.style.position = "absolute";
+                y.style.top = "14%";
+                y.style.zIndex = 3;
+            }
+            else {
+                y.style.display = "none";
+            }
+        }
+        function setVisible3() {
+
+            let z = document.getElementById("approvedwork")
+            // let x = document.getElementById("completedwork")
+
+
+            if (x.style.visibility === "visible" || y.style.visibility === "visible") {
+                z.style.display = "none"
+                y.style.display = "none"
+            }
+            if (z.style.visibility === "hidden") {
+                z.style.visibility = "visible"; 
+                z.style.position = "absolute";
+                z.style.top = "14%";
+            }
+            else {
+                z.style.display = "none";
+            }
+        }
+
+    </script>
+
+
 
 
 

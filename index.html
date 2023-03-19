@@ -5,7 +5,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
+    <title>Home laxmidahiwadi | online </title>
+    <link rel="icon" type="image/x-icon" href="images/icons8-house-with-garden-16.png">
     <link rel="stylesheet" href="index.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -13,7 +14,6 @@
 </head>
 
 <body>
-
 
 
     <header style="position: sticky; top: 0%;">
@@ -27,22 +27,24 @@
                 <li><a href="index.html">Home</a></li>
                 <li><a href="work.html">Work</a></li>
                 <li><a href="community.html">Community</a></li>
-                <li><a href="service.html">Services</a></li>
-                <li><a href="register.html">Register</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="register.html">Register/Login</a></li>
+                <!-- <li><a href="login.html">Login</a></li> -->
+                <li><a href="register.html">Write a message</a></li>
                 <div>
 
                     <div
                         style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
-                        <span id="Login" style="color: red; font-weight: bold;"> Welcome to Laxmi-Dahiwadi
-
-                        </span>
+                        <span id="Login" style="color: red; font-weight: bold;width: 50px; margin-right: 34px;">
+                            Laxmi-Dahiwadi </span>
                     </div>
                 </div>
                 <div style="text-align: end;">
-                    <span id="dot"
-                        style=" margin-top: 3px; margin-right: 40px; font-size: 30px; background-color: rgb(0, 0, 0); text-align: center;color: red; font-weight: bold; border: 1px solid green;">
-                        S </span>
+
+     <a style="text-decoration: none;color: red; cursor: pointer;" href="#" onclick="makeVisible()"><span
+                            id="dot"
+                            style=" margin-top: 3px; margin-right:80px; font-size: 30px; background-color: rgb(0, 0, 0); text-align: center; font-weight: bold; border: 1px solid green;">S</a>
+                    </span>
                 </div>
 
 
@@ -50,8 +52,22 @@
 
 
         </nav>
+
+
+
+        <div id="seeprofile" class="profileclicked"
+            style="width: 260px ; height: 300px; border: 2px solid red; z-index: 3; 
+position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; border-radius: 13px; visibility: hidden; ">
+
+        </div>
+
+
+
+
+
+
         <marquee behavior="side" direction="left" scrollamount="10"
-            style="border: 3px solid rgb(18, 17, 17); position: sticky; background-color: black; margin-top: 0.3%;">
+            style="border: 3px solid rgb(18, 17, 17); position: sticky; background-color: black; margin-top: 0.1%;">
             <div style="font-size: 23px; font-weight: bold;  color: white;">
                 <p>Generating random paragraphs can be an excellent way for writers to get their creative flow going at
                     the
@@ -66,41 +82,34 @@
 
     <div class="maincontainer" style="display: flexbox;">
 
-    
+        <div class="sidebar">
+            <div class="notice" style="border:2px solid black; width: auto;  margin-top: -1%;  height: 600px; ">
+                <p> Notices</p>
+                <div class="list">
+                    <marquee behavior="" direction="up">
+                        <ul style="height:500px">
+                            <li>first section Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem!</li>
+                            <li>first section for the new row section</li>
+                            <li>first section Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae
+                                delectus dignissimos non?</li>
+
+                            <li>first section Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, numquam
+                                doloribus? Earum eius error temporibus veritatis illo enim placeat deleniti?</li>
+                            <li>first section Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur
+                                aspernatur sint voluptate.</li>
+                            <li>first section Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, similique
+                                reiciendis aspernatur esse dolore sunt saepe qui quos doloribus ipsam repudiandae vitae
+                                unde!</li>
 
 
+                        </ul>
+
+                    </marquee>
+
+                </div>
 
 
-
-
-
-
-
-
-        <div class="sidebar" style="border:2px solid red">
-<div class="notice" style="border:2px solid black; width: auto; height: auto; ">
-<p style="background-color: burlywood; font-size: 18px; text-align: center; font-weight: 700; margin-top: 2%;">Notices</p>
-
-<div class="list">
-    <marquee behavior="" direction="up">
-<ul>
-<li>first section Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem!</li>
-<li>first section for the new row section</li>
-<li>first section Lorem ipsum dolor sit, amet consectetur adipisicing elit. Repudiandae delectus dignissimos non?</li>
-
-<li>first section Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vero, numquam doloribus? Earum eius error temporibus veritatis illo enim placeat deleniti?</li>
-<li>first section Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequuntur aspernatur sint voluptate.</li>
-<li>first section Lorem ipsum dolor, sit amet consectetur adipisicing elit. Est, similique reiciendis aspernatur esse dolore sunt saepe qui quos doloribus ipsam repudiandae vitae unde!</li>
-
-
-</ul>
-
-</marquee>
-
-</div>
-
-
-</div>
+            </div>
 
 
         </div>
@@ -108,14 +117,15 @@
         <div>
             <div class="outercontainer" style="display: flex;">
 
-                <img style="width: 372px; height: auto; margin-left: 1.5%;" src="images/laxmi temple.jfif" alt="">
+                <img style="width: 399px; margin-top: 0%; height: 244px; margin-left: 0.7%;"
+                    src="images/laxmi temple.jfif" alt="">
 
 
 
                 <div class="innercontainer" style="display: flex; margin-left: 5%;">
 
                     <div style="margin-right: 3px;" class="information"><img src="images/D2.jpeg" alt="">
-                        <p class="postinfo" style="margin-left: 25px;">Name - sudhir takale <br>
+                        <p class="postinfo" style="margin-left: 0.5%;">Name - sudhir takale <br>
                             post-sarpanch <br>
 
                             Adress- sajfhdjs <br>
@@ -156,12 +166,13 @@
             </div>
 
 
-            <hr style="height: 2px; margin-left: 1.5%; margin-right: 1.5%; background-color: black;">
+            <hr style="height: 2px; margin-left: 0.5%; margin-right: 1.5%; background-color: black;">
 
             <div class="graminfo" style="display: flex;">
 
                 <div class="village">
-                    <p style="font-size:23px; text-align: center; color: red;background-color: black; font-weight: 600;">
+                    <p
+                        style="font-size:23px; text-align: center; color: red;background-color: black; font-weight: 600;">
                         Village information</p>
                     <p style="font-size: 17px; font-weight: 500;"> According to Census 2011 information the location
                         code or
@@ -338,29 +349,35 @@
             </div>
             <hr style="height: 2px; margin-left: 1.5%; margin-right: 1.5%;">
 
-<div class="services">
+            <div class="services" id="services">
 
-<p style="background-color: rgb(25, 24, 24); color: white; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;"><span style="margin-left: 5%; font-size: 23px; padding: 4px;">Services</span></p>
-<div class="container">
-    <div class="grid-item"><a href="#">Income Certificate</a></div>
-    <div class="grid-item"><a href="#">Rahivasi Certificate</a></div>
-    <div class="grid-item"><a href="#">Birth Registration</a></div>
-    <div class="grid-item"><a href="#">House renting</a></div>
-    <div class="grid-item"><a href="#">Cast Certificate</a></div>
-    <div class="grid-item"><a href="#">7-12 Certificate</a></div>
-    <div class="grid-item"><a href="#">Water Bills</a></div>
-    <div class="grid-item"><a href="#">Death Certificate</a></div>
-    <div class="grid-item"><a href="#">Death Certificate</a></div>
-    <div class="grid-item"><a href="#">Marriage Registration</a></div>
-    <div class="grid-item"><a href="#">House Registration</a></div>
-    <div class="grid-item"><a href="#">Others</a></div>
+                <p
+                    style="background-color: rgb(25, 24, 24); color: white; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;">
+                    <span style="margin-left: 5%; font-size: 23px; padding: 4px;">Services</span>
+                </p>
+                <div class="container">
+                    <div class="grid-item"><a href="#">Online Payment</a></div>
+                    <div class="grid-item"><a href="#">मिळकत माहिती</a></div>
+                    <div class="grid-item"><a href="#"> रहिवासी प्रमाणपत्र</a></div>
+                    <div class="grid-item"><a href="community.html"> सरपंच कार्यकाल</a></div>
+                    <div class="grid-item"><a href="community.html">कर्मचारी माहिती</a></div>
+                    <div class="grid-item"><a href="#">सदस्य कार्यकारणी</a></div>
+                    <div class="grid-item"><a href="#">उपसरपंच कार्यकाल</a></div>
+                    <div class="grid-item"><a href="#">सभेची माहिती</a></div>
+                    <div class="grid-item"><a href="#">जन्म दाखला</a></div>
+                    <div class="grid-item"><a href="#">विवाह दाखला</a></div>
+                    <div class="grid-item"><a href="#">मृत्यू दाखला</a></div>
+                    <div class="grid-item"><a href="#">उत्पन्न प्रमाणपत्र</a></div>
+                    <div class="grid-item"><a href="work.html">नियोजीत विकास कामे</a></div>
+                    <div class="grid-item"><a href="#">घरभाडे</a></div>
+                    <div class="grid-item"><a href="#">पाणी बिल</a></div>
+                    <div class="grid-item"><a href="work.html">पुर्ण झालेली विकास कामे</a></div>
+                    <div class="grid-item"><a href="work.html">चालू असलेली विकास कामे</a></div>
+                    <div class="grid-item"><a href="#">जमा-खर्च पत्रक</a></div>
+                    <div class="grid-item"><a href="#">ग्रामपंचायतीला पत्र</a></div>
+                    <div class="grid-item"><a href="#">Others</a></div>
 
-</div>
-
-
-
-
-</div>
+                </div>
 
 
 
@@ -370,17 +387,19 @@
 
 
 
+
+
+
+
+
+            </div>
 
         </div>
 
-
-
-
-
     </div>
 
-    
-  
+
+
 
 
     <footer>
@@ -458,7 +477,21 @@
 
 
 
+    <script>
 
+
+        function makeVisible() {
+
+            var x = document.getElementById("seeprofile");
+            if (x.style.visibility === "hidden") {
+                x.style.visibility = "visible";
+            } else {
+                x.style.display = "none";
+            }
+        }
+
+
+    </script>
 
 
 
