@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>see photos</title>
+    <title>view photos | gram</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
@@ -13,9 +13,13 @@
         background-color: #139aa9;
     }
 
+    .js-js-hidden {
+        display: none;
+    }
+
     div.gallery {
         margin-left: 1.5%;
-        margin-right: o.6%;
+        margin-right: 0.6%;
         margin-top: 1%;
         border: 1px solid #ccc;
         float: left;
@@ -24,7 +28,7 @@
     }
 
     div.gallery:hover {
-        border: 1px solid #139aa9;
+        border: 1px solid #610948;
     }
 
     p {
@@ -32,7 +36,7 @@
                 #e354cd, #141114, #19c4ca);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-    
+
     }
 
 
@@ -67,7 +71,7 @@
     }
 </style>
 
-<body onclick="makeVisible2()">
+<body>
 
 
 
@@ -84,8 +88,8 @@
     </div>
 
 
-    <div id="add-image"
-        style="width:23%; z-index: auto; height: 20%;  font-weight: bold; float: right; margin-right: 4%; visibility: hidden;">
+    <div id="add-image" class="newclass"
+        style="width:23%; z-index: auto; height: 20%;  font-weight: bold; float: right; margin-right: 4%; display: none;">
 
         <form action="not given" class="p-3"
             style="position: absolute; border: 2px solid black; background-image:linear-gradient(#e9e96b, rgb(118, 226, 125), rgb(197, 96, 192));">
@@ -165,27 +169,24 @@
     <script>
 
 
+
+
+        let x = document.getElementById("add-image");
+
+        let disp = 0;
         function makeVisible() {
-            let x = document.getElementById("add-image");
 
 
-            if (x.style.visibility === "hidden" || x.style.display === "none") {
-
-                x.style.visibility = "visible";
+            if (disp == 1) {
+                x.style.display = "none";
+                disp = 0;
             }
             else {
-                x.style.display = "none";
+                x.style.display = "block ";
+                disp = 1;
             }
 
-
         }
-
-
-
-
-
-
-
 
 
 

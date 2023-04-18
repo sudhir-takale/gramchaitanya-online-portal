@@ -1,9 +1,13 @@
-body {
+body  {
 
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    
+   
 }
 
-
+ body {
+     background-color: #139aa9;
+ }
 .header1 {
     text-align: center;
     font-size: 28px;
@@ -66,17 +70,20 @@ body {
 
 }
 
-button {
+
+/* hover functionality for button */
+.button-tags button:hover {
+    cursor: pointer;
+    background-color: rgb(48, 10, 27);
+}
+
+.button-tags button {
+    border-radius: 23px;
     padding: 0.75em;
     border: none;
     outline: none;
-    background-color: rgb(25, 135, 203);
+    background-color: rgb(170, 30, 88);
     color: white;
     border-radius: 0.25em;
-}
-
-/* hover functionality for button */
-button:hover {
-    cursor: pointer;
-    background-color: rgb(161, 16, 84);
+    border-radius: 7px;
 }

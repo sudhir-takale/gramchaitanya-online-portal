@@ -1,40 +1,70 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-</head>
-<body>
+<header style="position: sticky; top: 0%;">
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <!-- <a class="navbar-brand" href="#">Navbar</a> -->
-            <!-- <button class="navbar-toggler" type="button" data-mdb-toggle="collapse" data-mdb-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="fas fa-bars"></i>
-            </button> -->
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <a class="nav-link" href="#">Features</a>
-                    <a class="nav-link" href="#">Pricing</a>
-                    <a class="nav-link disabled">Disabled</a>
+    <p class="maintext">
+        <a style="text-decoration-line: none; color: red;" href="index.html">E-Grampanchayat, <br> Laxmi
+            Dahiwadi</a>
+    </p>
+    <nav>
+        <ul class="menu">
+
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/work.html">Work</a></li>
+            <li><a href="/community.html">Community</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="/gallery.html">Gallery</a></li>
+            <!-- <li><a href="/feedback.html">Write a message</a></li> -->
+            <li><a href="/register.html">Login</a></li>
+            <div>
+
+                <div
+                    style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
+                    <span id="Login" style="color: red; font-weight: bold;width: 50px; margin-right: 34px;">
+                        Laxmi-Dahiwadi </span>
                 </div>
             </div>
-        </div>
+            <div style="text-align: end;">
+
+                <a style="text-decoration: none;color: red; cursor: pointer;" href="#" onclick="makeVisible()">
+                    <span id="dot"
+                        style=" margin-top: 3px; margin-right:80px; font-size: 30px; background-color: rgb(0, 0, 0); text-align: center; font-weight: bold; border: 1px solid green;">S</a>
+                </span>
+            </div>
+
+
+        </ul>
+
+
     </nav>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w74AqPfDkMBDXo30jS1Sgez4pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-    
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.4/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz4ATKxIep4tiCxS/Z4fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ43GR44B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe4d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-</body>
-</html>
+
+
+
+    <div id="seeprofile" class="profileclicked"
+        style="width: 120px ; height: auto; border: 2px solid red; z-index: 3; 
+position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; visibility: hidden; ">
+        <div class="list1">
+
+            <p><a href="#">View Profile</a></p>
+            <p style="margin-top:-15px ;"><a href="#">Log Out</a></p>
+
+        </div>
+
+
+    </div>
+
+
+
+
+
+
+    <marquee behavior="side" direction="left" scrollamount="10"
+        style="border: 3px solid rgb(18, 17, 17); position: sticky; background-color: black; margin-top: 0.1%;">
+        <div style="font-size: 23px; font-weight: bold;  color: white;">
+            <p>Generating random paragraphs can be an excellent way for writers to get their creative flow going at
+                the
+                beginning of
+                the day. The writer has no idea what topic the random paragraph will be about when it appears. This
+                forces the writer to
+                use creativity to complete one of three common writing challenges.</p>
+        </div>
+    </marquee>
+</header>

@@ -1,20 +1,12 @@
-body{
+body {
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.maintext {
-
-    font-size: 29px;
-    font-weight: bold;
-
-    text-align: center;
-
+    
+    background-color: cornflowerblue;
 
 }
 
 .container {
-    margin-top: 100px;
+   
     margin-left: 44px;
     margin-right: 44px;
     margin-left: 20%;
@@ -25,10 +17,9 @@ body{
 
 .container li {
     display: flex;
-    border-style: groove;
 
     box-shadow: 1px 2px 9px black;
-    margin-top: 45px;
+    margin-top: 25px;
 
 
 }
@@ -37,38 +28,40 @@ body{
     margin-left: 45px;
     margin-top: 11px;
     letter-spacing: 0.2mm;
-    font-size: 17px;
+    font-size: 16px;
+    font-family: cursive;
 
 }
 
-
-
 .search {
-    position: absolute;
-    top: 88px;
-    margin-top: 23px;
 
     font-size: 23px;
-    right: 40px;
     font-size: 18px;
-    background-color: #000080;
+    text-align: end;
 }
 
 .searchbutton {
-    background-color: #000080;
-    color: white;
+    background-color: blue;
     font-weight: 900;
-    font-size: 14px;
+    font-size: 18px;
     border-radius: 5px;
+    height: 35px;
 }
 
 .inputbutton {
-    
-    height: 26px;
+    color: rgb(20, 19, 19);
+    font-size: 18px;
+    height: 35px;
     border-radius: 3px;
+    background-color: rgb(10, 123, 216);
 }
 
-.search:hover {
+button:hover {
+    cursor: pointer;
 
-    box-shadow: 2px 2px 8px black;
+    color: rgb(194, 24, 24);
+}
+
+.add:hover {
+    color: red;
 }
