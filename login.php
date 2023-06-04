@@ -1,27 +1,3 @@
-<!-- <?php
-session_start();
-if ($_SERVER['REQUEST_METHOD'] == "POST") {
-    include("process.php");
-
-    $USERNAME = $_POST['USERNAME'];
-    $PASSWORD = $_POST['PASSWORD'];
-    $query = "select * from USERS where USERNAME = '$USERNAME'and PASSWORD = '$PASSWORD'";
-    $result = mysqli_query($conn, $query);
-
-
-
-    if ($result && mysqli_num_rows($result) > 0) {
-        $_SESSION['USERNAME'] = $USERNAME;
-
-        header("Location: Navbar.php");
-        die;
-    } 
-
-
-}
-
-<!-- ?>  -->
-
 
 
 <!DOCTYPE html>
@@ -81,7 +57,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
                             <button type="button" class="btn btn-primary w-50 ">Submit</button>
                             <p class="fw-bold" style=" margin-left:50%; font-size: 14px; margin-top: 3%;">Not have
                                 account?
-                                <a href="register.html" style="color: blue;">Register</a>
+                                <a href="register.php" style="color: blue;">Register</a>
                             </p>
                         </div>
 
