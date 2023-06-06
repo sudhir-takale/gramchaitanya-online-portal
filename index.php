@@ -15,7 +15,22 @@
 </head>
 
 <body onclick="hide()">
+    <?php
 
+
+
+    session_start();
+    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+        header("Location: login.php");
+        exit;
+    }
+
+
+    echo "<script>console.log('Debug Objects: " . $_SESSION["role"] . "' );</script>";
+    echo "Welcome " . $_SESSION["role"] . "!";
+
+
+    ?>
 
     <header style="position: sticky; top: 0%;">
 

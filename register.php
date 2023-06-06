@@ -1,4 +1,4 @@
-// Purpose: Displays the registration form and processes the registration data.
+<!--  Purpose: Displays the registration form and processes the registration data. -->
 
 
 <!DOCTYPE html>
@@ -22,7 +22,7 @@
         <div class=" container h-custom"
             style=" width: 120%;  border-radius: 17px; box-shadow: 2px 2px 16px 1px black;">
             <h1>Please register</h1>
-            <!-- <p>Fill the Below Form</p>  -->
+            
             <div style="text-align: center;"
                 class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <img src="images/user.png" alt=""
@@ -84,7 +84,7 @@
             <div class="row">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Date of Birth</label>
-                    <input type="text" placeholder="Enter date of birth" class="form-control " id="validationServer01" name = "dob"
+                    <input type="date" placeholder="Enter date of birth" class="form-control " id="validationServer01" name = "dob"
                         value="">
 
                 </div>

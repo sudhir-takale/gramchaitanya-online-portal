@@ -1,138 +1,86 @@
 <?php
-include 'database.php';
-
-echo "Welcome to process page";
-
-$name = $email = $adharno = $password = $confirm_password = "";
-
-// Define variables to store error messages
-$first_name_err = $middle_name_err = $mobile_number_err = $last_name_err = $adharno_err = $dob_err = $adhar_err = $password_err = $confirm_password_err = "";
-// Process the form when it is submitted
+session_start();
+include('database.php');
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Validate first_name field
-    if (empty($_POST["first_name"])) {
-        $first_name_err = "Name is required";
+    $errors = array(); // Initialize an error array
+
+    // Validate adharno
+    $adharno = $_POST["adharno"];
+    if (empty($adharno)) {
+        $errors[] = "Adhar Number is required";
+    } elseif (!preg_match("/^\d{12}$/", $adharno)) {
+        $errors[] = "Invalid Adhar Number";
+    }
+
+    // Validate mobilenumber
+    $mobilenumber = $_POST["mobile_number"];
+    if (empty($mobilenumber)) {
+        $errors[] = "Mobile Number is required";
+    } elseif (!preg_match("/^[0-9]{10}$/", $mobilenumber)) {
+        $errors[] = "Invalid Mobile Number";
+    }
+
+    // Validate first_name
+    $first_name = $_POST["first_name"];
+    if (empty($first_name)) {
+        $errors[] = "First Name is required";
+    }
+    $middle_name = $_POST["middle_name"];
+    if (empty($middle_name)) {
+        $errors[] = "middle Name is required";
+    }
+
+    // Validate last_name
+    $last_name = $_POST["last_name"];
+    if (empty($last_name)) {
+        $errors[] = "Last Name is required";
+    }
+
+    // Validate dob
+    $dob = $_POST["dob"];
+    if (empty($dob)) {
+        $errors[] = "Date of Birth is required";
+    }
+
+    // Validate password
+    $password = $_POST["password"];
+    if (empty($password)) {
+        $errors[] = "Password is required";
+    } elseif (strlen($password) < 6) {
+        $errors[] = "Password should be at least 6 characters long";
+    }
+
+    // Validate confirm_password
+    $confirm_password = $_POST["confirm_password"];
+    if (empty($confirm_password)) {
+        $errors[] = "Confirm Password is required";
+    } elseif ($password !== $confirm_password) {
+        $errors[] = "Passwords do not match";
+    }
+
+    // If there are no validation errors, proceed with database insertion
+    if (empty($errors)) {
+        $sql = "INSERT INTO users (adharno, firstname, middlename, lastname, dateofbirth, mobileno, password) VALUES ('$adharno', '$first_name', '$middle_name', '$last_name', '$dob', '$mobilenumber', '$password')";
+
+        $result = mysqli_query($conn, $sql);
+
+        if ($result === true) {
+            echo "<script>alert('Registration Successful')</script>";
+            $_SESSION['username'] = $adharno; // Set the username session variable
+            $_SESSION['role'] = 'user'; // S
+            header("Location: index.php");
+            exit;
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
     } else {
-        // Remove any unwanted characters
-        $first_name = test_input($_POST["first_name"]);
-        // Additional validation for name (if needed)
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $first_name)) {
-            $first_name_err = "Only letters and white space allowed";
+        // Display validation errors
+        foreach ($errors as $error) {
+            // header("Location: registration.php");
+            echo $error . "<br>";
         }
     }
 
-    // middle_name validation
-
-
-    if (empty($_POST["middle_name"])) {
-        $middle_name_err = "Name is required";
-    } else {
-        // Remove any unwanted characters
-        $middle_name = test_input($_POST["middle_name"]);
-        // Additional validation for name (if needed)
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $middle_name)) {
-            $midddle_name_err = "Only letters and white space allowed";
-        }
-    }
-
-    // last_name validation
-
-    if (empty($_POST["last_name"])) {
-        $last_name_err = "Name is required";
-    } else {
-        // Remove any unwanted characters
-        $last_name = test_input($_POST["last_name"]);
-        // Additional validation for name (if needed)
-        if (!preg_match("/^[a-zA-Z-' ]*$/", $last_name)) {
-            $last_name_err = "Only letters and white space allowed";
-        }
-    }
-
-    // Validate email field
-
-    if (empty($_POST["adharno"])) {
-        $adhar_err = "Adhar no is required";
-    } else {
-        $adharno = test_input($_POST["adharno"]);
-        // Additional validation for email (if needed)
-        if (!filter_var($adharno, FILTER_VALIDATE_EMAIL)) {
-            $adhar_err = "Invalid Adhar no format";
-        }
-    }
-    //mobile number validation
-
-    if (empty($_POST["mobile_number"])) {
-        $mobile_number_err = "Mobile number is required";
-    } else {
-        $mobile_number = test_input($_POST["mobile_number"]);
-
-        // Validate mobile number format
-        if (!validateMobileNumber($mobile_number)) {
-            $mobile_number_err = "Invalid mobile number";
-        }
-    }
-
-    // validating date of birth
-    if (empty($_POST["dob"])) {
-        $dob_err = "Date of birth  is required";
-    } else {
-        $dob = test_input($_POST["dob"]);
-        // Additional validation for email (if needed)
-        if (!filter_var($dob, FILTER_VALIDATE_EMAIL)) {
-            $dob_err = "Invalid Adhar no format";
-        }
-    }
-
-    // Validate password field
-    if (empty($_POST["password"])) {
-        $password_err = "Password is required";
-    } else {
-        $password = test_input($_POST["password"]);
-        // Additional validation for password (if needed)
-    }
-
-    // Validate confirm password field
-    if (empty($_POST["confirm_password"])) {
-        $confirm_password_err = "Please confirm password";
-    } else {
-        $confirm_password = test_input($_POST["confirm_password"]);
-        // Additional validation for confirm password (if needed)
-        if ($password !== $confirm_password) {
-            $confirm_password_err = "Passwords do not match";
-        }
-    }
-
-    // If there are no errors, you can proceed with further actions (e.g., database operations, sending emails, etc.)
-    if (empty($dob_err) && empty($mobile_number_err) && empty($first_name_err) && empty($last_name_err) && empty($middle_name_err) && empty($adharno_err) && empty($password_err) && empty($confirm_password_err)) {
-        // Process the form data (e.g., store in a database, send email, etc.)
-        // ...
-        // After processing, you can redirect the user to a success page
-        header("Location: index.php");
-        exit();
-    }
+    mysqli_close($conn);
 }
-
-// Helper function to trim the input and remove any unwanted characters
-function test_input($data)
-{
-    $data = trim($data);
-    $data = stripslashes($data);
-    $data = htmlspecialchars($data);
-    return $data;
-}
-
-
-function validateMobileNumber($mobile_number)
-{
-    // Regular expression pattern for mobile number validation
-    $pattern = "/^[0-9]{10}$/"; // Assuming 10-digit mobile number format
-
-    return preg_match($pattern, $mobile_number);
-}
-
-
-
-
-
-
 ?>
