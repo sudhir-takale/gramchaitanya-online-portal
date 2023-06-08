@@ -1,3 +1,6 @@
+<!--  Purpose: Displays the registration form and processes the registration data. -->
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,64 +17,65 @@
 
 
 
-    <form class="row g-0 w-50 d-block p-3 mx-auto mt-4 col-10 col-md-4 col-lg-4">
-     <div class=" container h-custom"
+    <form class="row g-0 w-50 d-block p-3 mx-auto mt-4 col-10 col-md-4 col-lg-4" method="POST"
+        action="registration_process.php">
+        <div class=" container h-custom"
             style=" width: 120%;  border-radius: 17px; box-shadow: 2px 2px 16px 1px black;">
-        <h1>Please register</h1>
-            <!-- <p>Fill the Below Form</p>  -->
+            <h1>Please register</h1>
+            
             <div style="text-align: center;"
                 class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <img src="images/user.png" alt=""
                     style="width: 12%; height: 12%;   margin-top:1%; display: block; margin-left: auto; margin-right: auto">
-            
+
             </div>
             <div class="row mt-1">
                 <div class="col-md-4 mt-1">
                     <label for="validationServer01" class="form-label">First name</label>
-                    <input type="text" placeholder="Enter first name" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter first name" class="form-control " id="validationServer01" name = "first_name"
+                        value="">
 
                 </div>
                 <div class="col-md-4 mt-1">
                     <label for="validationServer01" class="form-label">Middle name</label>
-                    <input type="text" placeholder="Enter middle name" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter middle name" class="form-control " id="validationServer01" name = "middle_name"
+                        value="">
 
                 </div>
                 <div class="col-md-4 mt-1">
                     <label for="validationServer01" class="form-label">Last name</label>
-                    <input type="text" placeholder="Enter last name" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter last name" class="form-control " id="validationServer01" name = "last_name"
+                        value="">
 
                 </div>
             </div>
             <div class="row mt-1">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter Address</label>
-                    <input type="text" placeholder="Enter your address" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter your address" class="form-control " id="validationServer01" name = "address"
+                        value="">
 
                 </div>
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter city</label>
-                    <input type="text" placeholder="Enter your city" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter your city" class="form-control " id="validationServer01"
+                        value="">
 
                 </div>
             </div>
             <div class="row mt-1">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter Mobile number</label>
-                    <input type="text" maxlength="10" placeholder="Enter mobile number" class="form-control"
-                        id="validationServer01" value="" >
+                    <input type="text" maxlength="10" placeholder="Enter mobile number" class="form-control" name = "mobile_number"
+                        id="validationServer01" value="">
                     <div class="valid-feedback" style="display: none">
                         Looks good!
                     </div>
                 </div>
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter adhar no</label>
-                    <input type="text" placeholder="Enter adhar no" class="form-control"
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter adhar no" class="form-control" id="validationServer01" name = "adharno"
+                        value="">
                     <div class="valid-feedback " style="display: none">
                         Looks good!
                     </div>
@@ -80,31 +84,31 @@
             <div class="row">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Date of Birth</label>
-                    <input type="text" placeholder="Enter date of birth" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="date" placeholder="Enter date of birth" class="form-control " id="validationServer01" name = "dob"
+                        value="">
 
                 </div>
                 <div class="col-md-6 mt1">
                     <label for="validationServer01" class="form-label">Pin code</label>
-                    <input type="text" placeholder="Enter pin code" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Enter pin code" class="form-control " id="validationServer01" name = "pincode"
+                        value="">
 
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="validationServer01" class="form-label">Enter password</label>
-                    <input type="text" placeholder="Enter your password" class="form-control"
-                        id="validationServer01" value="" >
+                    <label for="validationServer01"  class="form-label">Enter password</label>
+                    <input type="text" placeholder="Enter your password" class="form-control" id="validationServer01" name = "password"
+                        value="">
                     <div class="valid-feedback" style="display: none">
                         Looks good!
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="validationServer01" class="form-label">Confirm password</label>
-                    <input type="text" placeholder="Renter the password" class="form-control "
-                        id="validationServer01" value="" >
+                    <input type="text" placeholder="Renter the password" class="form-control " id="validationServer01" name = "confirm_password" 
+                        value="">
                     <div class="valid-feedback" style="display: none">
                         Looks good!
                     </div>
@@ -113,7 +117,7 @@
 
 
                 <div class="text-center mt-2">
-                    <button type="button" class="btn btn-primary w-50 "><a href="index.html"></a>submit</button>
+                    <button type="submit" class="btn btn-primary w-50 "><a href="index.html"></a>submit</button>
                     <p style=" margin-left:60%; font-size: 14px; font-weight: bold;">Already have an account? <a
                             href="login.html" style="color: blue;">Log
                             in</a></p>
@@ -146,32 +150,8 @@
 
 
 
-    <!-- <div>
-
-        <!-- <?php
-
-        if ($_SERVER['REQUEST_METHOD'] == "POST") {
-            session_start();
-
-            $fi = $_POST['firstname'];
-            $mi = $_POST['middlename'];
-            $lastname = $_POST['lastname'];
-            $adharno = $_POST['adharno'];
-            $dateofbirth = $_POST['dateofbirth'];
-            $password = $_POST['password'];
-            $conpassword = $_POST['conpassword'];
 
 
-            $check = mysqli_query(mysqli_connect("127.0.0.1", "root", "", "gram"), "insert into USERS (USERNAME,FNAME,MNAME,LNAME,DOB,PASSWORD,CONPASSWORD) values ('$adharno','$fi','$mi','$lastname','$dateofbirth','$password','$conpassword')"); -->
-    <!-- if ($check) {
-                header("Location:Navbar.php");
-
-                die;
-            }
-
-        }
-
-    <!--  -->
 
     <script>
         (() => {
@@ -197,7 +177,7 @@
 
     </script>
 
-    
+
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w74AqPfDkMBDXo30jS1Sgez4pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>

@@ -15,7 +15,22 @@
 </head>
 
 <body onclick="hide()">
+    <?php
 
+
+
+    session_start();
+    if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+        header("Location: login.php");
+        exit;
+    }
+
+
+    echo "<script>console.log('Debug Objects: " . $_SESSION["role"] . "' );</script>";
+    echo "Welcome " . $_SESSION["role"] . "!";
+
+
+    ?>
 
     <header style="position: sticky; top: 0%;">
 
@@ -25,13 +40,13 @@
         <nav>
             <ul class="menu">
 
-                <li><a href="/index.html">Home</a></li>
-                <li><a href="/work.html">Work</a></li>
-                <li><a href="/community.html">Community</a></li>
+                <li><a href="index.php">Home</a></li>
+                <li><a href="work.php">Work</a></li>
+                <li><a href="community.php">Community</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="/gallery.html">Gallery</a></li>
-                <li><a href="/login.html">Login</a></li>
-                <li><a href="/scheme.html">Schemes</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="scheme.php">Schemes</a></li>
                 <div>
 
                     <div
