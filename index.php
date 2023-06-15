@@ -15,10 +15,9 @@
 </head>
 
 <body onclick="hide()">
+
+
     <?php
-
-
-
     session_start();
     if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         header("Location: login.php");
@@ -26,11 +25,12 @@
     }
 
 
-    echo "<script>console.log('Debug Objects: " . $_SESSION["role"] . "' );</script>";
+    echo "
+    <script>console.log('Debug Objects: " . $_SESSION["role"] . "');</script>";
     echo "Welcome " . $_SESSION["role"] . "!";
 
-
     ?>
+
 
     <header style="position: sticky; top: 0%;">
 
@@ -47,12 +47,19 @@
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="login.php">Login</a></li>
                 <li><a href="scheme.php">Schemes</a></li>
+
+
+
+                <li><a href="admin_dashboard.php">Admin</a></li>
+
+
                 <div>
 
                     <div
                         style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
                         <span id="Login" style="color: red; font-weight: bold;width: 50px; margin-right: 34px;">
-                            Laxmi-Dahiwadi </span>
+                            <?php echo $_SESSION['role'] ?>
+                        </span>
                     </div>
                 </div>
                 <div style="text-align: end;">
@@ -449,47 +456,12 @@ position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: w
                     <div class="grid-item"><a href="#">जमा-खर्च पत्रक</a></div>
                     <div class="grid-item"><a href="/documentrequest.html">ग्रामपंचायतीला पत्र</a></div>
                     <div class="grid-item"><a href="/documentrequest.html">Others</a></div>
-
                 </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
             </div>
-
-
-
-
-
-
-
-
         </div>
-
-
-
     </div>
-
     <hr>
-
-
-
-
     <div class="complaint" style="display: flex; height: 34%;">
-
-
-
-
         <div class="slideshow-container" style="border: 2px solid black;  width: 52%; margin-left:2%;">
 
             <!-- Full-width images with number and caption text -->
@@ -522,67 +494,37 @@ position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: w
             </div>
         </div>
         <!-- <br> -->
-
-
-
-
-
-
-
-
-
         <div class="secondcon" style="width: 34%; height: 45%; margin-right: 0.5%;">
 
             <h5 style="text-align: end; margin-right: 9%;">If you have any query please fill below form !</h5>
 
-
-
-            <form action="" class="m-2 bg-body-secondary border w-100 p-4 mx-auto ">
+            <form action="query.php" method="post" class="m-2 bg-body-secondary border w-100 p-4 mx-auto ">
                 <div class="mb-1 fw-bold ">
                     <label for="exampleFormControlInput1" class="form-label">Enter the heading</label>
-                    <input type="text" class="form-control" id="exampleFormControlInput1"
+                    <input type="text" class="form-control" name="heading" id="exampleFormControlInput1"
                         placeholder="Enter the heading of complaint">
 
                 </div>
                 <div class="mb-1 fw-bold ">
                     <label for="exampleFormControlTextarea1" class="form-label">Enter the decription</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                    <textarea class="form-control" name="discription" id="exampleFormControlTextarea1"
+                        rows="3"></textarea>
                 </div>
 
                 <div class="text-center mt-3">
-                    <button type="button" class="btn btn-primary w-50 ">Submit</button>
+                    <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
+                    <input type="submit" value="submit">
                 </div>
 
             </form>
-
-
-
         </div>
 
     </div>
 
     <hr>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     <div class="foot-list">
 
-
         <ul>
-
-
             <li><img src="images/digital india.webp" alt=""></li>
             <li><img src="images/flag.jpg" alt=""></li>
             <li><img src="images/digital india.webp" alt=""></li>
@@ -592,15 +534,8 @@ position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: w
             <li><img src="images/digital india.webp" alt=""></li>
             <li><img src="images/flag.jpg" alt=""></li>
             <li><img src="images/digital india.webp" alt=""></li>
-
         </ul>
-
-
-
     </div>
-
-
-
     <footer>
 
         <div class="foot" style=" height: max-content; background-color: rgb(39, 38, 38); color: white;">
@@ -624,21 +559,14 @@ position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: w
             <div class="service" style="margin-left: 20pc;">
                 <p style="font-weight:600 ; font-size: 23px ; margin-left: 35px;color: red;">Services</p>
                 <ul>
-
                     <li><a href="service.html">Marriage Registration</a></li>
                     <li><a href="service.html">Birth Registration</a></li>
                     <li><a href="service.html">Death Certificate</a></li>
                     <li><a href="service.html">Water Bills</a></li>
                     <li><a href="service.html">Residence Certificate</a></li>
-
-
-
                 </ul>
 
             </div>
-
-
-
             <div class="service" style="margin-left: 20pc;">
                 <h6 style="font-weight:600 ; font-size: 23px ; color: red;">contact us</h6>
                 <p>
@@ -646,14 +574,7 @@ position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: w
 
                     Email - Laxmidahiwadi34@gmail.com, <br> ph.no.4847734984.</p>
 
-
             </div>
-
-
-
-
-
-
         </div>
         <p style=" color: rgb(111, 243, 111); text-align: center;   background-color: rgb(39, 38, 38); height:95px; ">
             <b>
@@ -665,23 +586,9 @@ position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: w
                 <br>
                 Copyright © 2023 Elevate Software Solutions, Pandharpur </b>
         </p>
-
-
-
     </footer>
 
-
-
-
-
-
-
-
     <script>
-
-
-
-
         let x = document.getElementById("seeprofile");
 
         let disp = 0;

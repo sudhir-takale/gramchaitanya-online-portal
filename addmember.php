@@ -1,3 +1,33 @@
+<?php
+require('database.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+
+    $fname = $_POST['fname'];
+    $designation = $_POST['designation'];
+    $mobile = $_POST['mobile'];
+    $adharno = $_POST['adharno'];
+    $password = $_POST['password'];
+    // $date = $_POST['date'];
+    $photo = $_POST['photo'];
+
+    $query = "INSERT INTO admins (name,adharno,role,mobilenumber,password,photo) VALUES ('$fname','$adharno','$designation','$mobile','$password','$photo')";
+
+    if (mysqli_query($conn, $query)) {
+        echo "inserted succesfully";
+
+    } else {
+        echo "error" . $conn->error;
+    }
+
+
+}
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,48 +41,58 @@
 </head>
 
 <body>
-
-
-
-    <form action="" class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 ">
+    <form action="addmember.php" class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 "
+        method="post">
         <p class="align-center"
             style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">
             Add Member</p>
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter Name </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter member name">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="fname"
+                placeholder="Enter member name">
+
+        </div>
+        <div class="mb-3 ">
+            <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number </label>
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="adharno"
+                placeholder="Enter adhar number">
 
         </div>
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter designation </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1"
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="designation"
                 placeholder="Enter member designation">
 
         </div>
-        <div class="mb-3 ">
+        <!-- <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter joined date </label>
-            <input type="date" class="form-control" id="exampleFormControlInput1" placeholder="Enter date joined">
+            <input type="date" class="form-control" name="date" id="exampleFormControlInput1"
+                placeholder="Enter date joined">
 
-        </div>
+        </div> -->
 
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter mobile number </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" maxlength="10"
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="mobile" maxlength="10"
                 placeholder="Enter mobile number">
 
         </div>
 
-
+        <div class="mb-3 ">
+            <label for="formFileMultiple" class="form-label">Enter your password</label>
+            <input class="form-control" type="password" id="formFileMultiple" name="password" multiple>
+        </div>
 
         <div class="mb-3 ">
             <label for="formFileMultiple" class="form-label">Upload photo</label>
-            <input class="form-control" type="file" id="formFileMultiple" multiple>
+            <input class="form-control" type="file" id="formFileMultiple" name="photo" multiple>
         </div>
 
 
 
         <div class="text-center">
-            <button type="button" class="btn btn-primary w-50 ">Submit</button>
+            <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
+            <input type="submit" value="submit">
         </div>
 
     </form>
@@ -70,5 +110,6 @@
         crossorigin="anonymous"></script>
 
 </body>
+
 
 </html>

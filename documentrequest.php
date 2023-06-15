@@ -14,7 +14,7 @@
 
     <div class=" container h-custom"
         style="background-color: white; height: max-content; width: 45%; border-radius: 17px; box-shadow: 2px 2px 16px 1px black; margin-top: 4%;">
-        <h4 class=" mb-4" style="text-align: center;  "> Add required documents</h4>
+        <h4 class=" mb-4 p-2" style="text-align: center; "> Add required documents</h4>
         <div class="form-group mt-2">
             <form>
 
@@ -24,19 +24,19 @@
 
         </div>
         <div class="form-group mt-2">
-            <label for="exampleInputPassword1">Enter Name</label>
-            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter benefiaciary name">
+            <label for="exampleInputPassword1">Enter Beneficiary Name</label>
+            <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter Beneficiary Name">
         </div>
         <div class="form-group mt-2">
             <label for="exampleInputPassword1">Enter mobile number</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your mobile number">
         </div>
-        <div class="form-group mt-2">
+        <!-- <div class="form-group mt-2">
             <label for="exampleInputPassword1">Enter adhar number</label>
             <input type="text" class="form-control" id="exampleInputPassword1" placeholder="Enter your adhar number">
-        </div>
+        </div> -->
         <div class="form-group mt-2">
-            <label for="exampleInputPassword1">Enter date of birth</label>
+            <label for="exampleInputPassword1">Enter date of Birth</label>
             <input type="date" class="form-control" id="exampleInputPassword1" placeholder="Enter date of birth">
         </div>
         <div class="form-group mt-2">
@@ -49,12 +49,13 @@
             <input type="file" class="form-control" id="exampleInputPassword1" placeholder="Upload documents" multiple>
         </div>
         <div class="form-group form-check mt-3">
-            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 25px; height: 25px;">
+            <input type="checkbox" class="form-check-input" id="exampleCheck1" style="width: 25px; height: 25px;"
+                required>
             <label class="form-check-label mt-1" for="exampleCheck1" style="margin-left: 2%;">I here by declare that
-                all the information given above is true</label>
+                all the information given above is True</label>
         </div>
         <div class="text-center mt-2 mb-4 ">
-            <button type="button" class="btn btn-primary w-50 mb-4"><a href="index.html"></a>submit</button>
+            <button type="submit" class="btn btn-primary w-50 mb-4"><a href="index.html"></a>submit</button>
         </div>
         </form>
 
