@@ -37,7 +37,7 @@
         <p class="maintext" style="background-image: url('images/tric.jpg');">
             <a style="text-decoration-line: none; color: red;" href="index.html">Grampanchayat, <br> Laxmi Dahiwadi</a>
         </p>
-        <nav>
+        <!-- <nav>
             <ul class="menu">
 
                 <li><a href="index.php">Home</a></li>
@@ -67,9 +67,40 @@
             </ul>
 
 
+        </nav> -->
+
+        <nav>
+            <div class="menu-toggle">
+                <a href="#" onclick="toggleMenu()">Menu</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="work.php">Work</a></li>
+                <li><a href="community.php">Community</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="scheme.php">Schemes</a></li>
+                <li><span id="site-name">Laxmi-Dahiwadi</span></li>
+            </ul>
         </nav>
+        <script>
+            function toggleMenu() {
+                var menuToggle = document.querySelector('.menu-toggle');
+                menuToggle.classList.toggle('active');
+            }
 
+            function makeVisible() {
+                var nav = document.querySelector('nav');
 
+                nav.style.position = 'fixed';
+                //   nav.style.top = '0';
+                //   nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.zIndex = '9999';
+                // Add your code to handle visibility here
+            }
+        </script>
 
         <div id="seeprofile" class="profileclicked"
             style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
