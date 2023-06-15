@@ -22,7 +22,7 @@
         <div class=" container h-custom"
             style=" width: 120%;  border-radius: 17px; box-shadow: 2px 2px 16px 1px black;">
             <h1>Please register</h1>
-            
+
             <div style="text-align: center;"
                 class="d-flex flex-row align-items-center justify-content-center justify-content-lg-start">
                 <img src="images/user.png" alt=""
@@ -32,28 +32,28 @@
             <div class="row mt-1">
                 <div class="col-md-4 mt-1">
                     <label for="validationServer01" class="form-label">First name</label>
-                    <input type="text" placeholder="Enter first name" class="form-control " id="validationServer01" name = "first_name"
-                        value="">
+                    <input type="text" placeholder="Enter first name" class="form-control " id="validationServer01"
+                        name="first_name" value="">
 
                 </div>
                 <div class="col-md-4 mt-1">
                     <label for="validationServer01" class="form-label">Middle name</label>
-                    <input type="text" placeholder="Enter middle name" class="form-control " id="validationServer01" name = "middle_name"
-                        value="">
+                    <input type="text" placeholder="Enter middle name" class="form-control " id="validationServer01"
+                        name="middle_name" value="">
 
                 </div>
                 <div class="col-md-4 mt-1">
                     <label for="validationServer01" class="form-label">Last name</label>
-                    <input type="text" placeholder="Enter last name" class="form-control " id="validationServer01" name = "last_name"
-                        value="">
+                    <input type="text" placeholder="Enter last name" class="form-control " id="validationServer01"
+                        name="last_name" value="">
 
                 </div>
             </div>
             <div class="row mt-1">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter Address</label>
-                    <input type="text" placeholder="Enter your address" class="form-control " id="validationServer01" name = "address"
-                        value="">
+                    <input type="text" placeholder="Enter your address" class="form-control " id="validationServer01"
+                        name="address" value="">
 
                 </div>
                 <div class="col-md-6 mt-1">
@@ -66,16 +66,16 @@
             <div class="row mt-1">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter Mobile number</label>
-                    <input type="text" maxlength="10" placeholder="Enter mobile number" class="form-control" name = "mobile_number"
-                        id="validationServer01" value="">
+                    <input type="text" maxlength="10" placeholder="Enter mobile number" class="form-control"
+                        name="mobile_number" id="validationServer01" value="">
                     <div class="valid-feedback" style="display: none">
                         Looks good!
                     </div>
                 </div>
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter adhar no</label>
-                    <input type="text" placeholder="Enter adhar no" class="form-control" id="validationServer01" name = "adharno"
-                        value="">
+                    <input type="text" placeholder="Enter adhar no" class="form-control" id="validationServer01"
+                        name="adharno" value="">
                     <div class="valid-feedback " style="display: none">
                         Looks good!
                     </div>
@@ -84,31 +84,31 @@
             <div class="row">
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Date of Birth</label>
-                    <input type="date" placeholder="Enter date of birth" class="form-control " id="validationServer01" name = "dob"
-                        value="">
+                    <input type="date" placeholder="Enter date of birth" class="form-control " id="validationServer01"
+                        name="dob" value="">
 
                 </div>
                 <div class="col-md-6 mt1">
                     <label for="validationServer01" class="form-label">Pin code</label>
-                    <input type="text" placeholder="Enter pin code" class="form-control " id="validationServer01" name = "pincode"
-                        value="">
+                    <input type="text" placeholder="Enter pin code" class="form-control " id="validationServer01"
+                        name="pincode" value="">
 
                 </div>
 
             </div>
             <div class="row">
                 <div class="col-md-6">
-                    <label for="validationServer01"  class="form-label">Enter password</label>
-                    <input type="text" placeholder="Enter your password" class="form-control" id="validationServer01" name = "password"
-                        value="">
+                    <label for="validationServer01" class="form-label">Enter password</label>
+                    <input type="text" placeholder="Enter your password" class="form-control" id="validationServer01"
+                        name="password" value="">
                     <div class="valid-feedback" style="display: none">
                         Looks good!
                     </div>
                 </div>
                 <div class="col-md-6">
                     <label for="validationServer01" class="form-label">Confirm password</label>
-                    <input type="text" placeholder="Renter the password" class="form-control " id="validationServer01" name = "confirm_password" 
-                        value="">
+                    <input type="text" placeholder="Renter the password" class="form-control " id="validationServer01"
+                        name="confirm_password" value="">
                     <div class="valid-feedback" style="display: none">
                         Looks good!
                     </div>
@@ -117,7 +117,7 @@
 
 
                 <div class="text-center mt-2">
-                    <button type="submit" class="btn btn-primary w-50 "><a href="index.html"></a>submit</button>
+                    <button type="submit" class="btn btn-primary w-50 ">submit</button>
                     <p style=" margin-left:60%; font-size: 14px; font-weight: bold;">Already have an account? <a
                             href="login.html" style="color: blue;">Log
                             in</a></p>

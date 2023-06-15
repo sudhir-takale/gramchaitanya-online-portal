@@ -26,10 +26,10 @@
 
     </div>
 
-    <a href="addmember.html"><button class="add"
+    <a href="addmember.php"><button class="add"
             style="width: 150px; height: 35px; padding: 4px; font-size: 19px; font-weight: bold;float:right; background-color: blueviolet;color: whitesmoke; border-radius: 4px; ">Add
             Member</button></a>
-    
+
     <div class="container">
 
         <ul>
@@ -108,19 +108,8 @@
                     Joined date :- 20/12/2001 <br>
                     Mob no :- 8461379463</div>
             </li>
-
-
-
-
         </ul>
-
-
-
     </div>
-
-
-
-
 </body>
 
 </html>
