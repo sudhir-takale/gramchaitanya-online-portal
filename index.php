@@ -31,7 +31,7 @@
     ?>
     <header style="position: sticky; top: 0%;">
         <p class="maintext" style="background-image: url('images/tric.jpg');">
-            <a style="text-decoration-line: none; color: red;" href="index.html">Grampanchayat, <br> Laxmi Dahiwadi</a>
+            <a style="text-decoration-line: none; color: red;" href="index.php">Grampanchayat, <br> Laxmi Dahiwadi</a>
         </p>
         <nav>
             <ul class="menu">
@@ -59,6 +59,45 @@
                 </div>
             </ul>
         </nav>
+<<<<<<< HEAD
+=======
+
+        <!-- <nav>
+            <div class="menu-toggle">
+                <a href="#" onclick="toggleMenu()">Menu</a>
+            </div>
+            <ul class="menu">
+                <li><a href="index.php">Home</a></li>
+                <li><a href="work.php">Work</a></li>
+                <li><a href="community.php">Community</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="gallery.php">Gallery</a></li>
+                <li><a href="login.php">Login</a></li>
+                <li><a href="scheme.php">Schemes</a></li>
+                <li><span id="site-name">Laxmi-Dahiwadi</span></li>
+            </ul>
+        </nav>
+        <script>
+            function toggleMenu() {
+                var menuToggle = document.querySelector('.menu-toggle');
+                menuToggle.classList.toggle('active');
+            }
+
+            function makeVisible() {
+                var nav = document.querySelector('nav');
+
+                nav.style.position = 'fixed';
+                nav.style.top = '0';
+                nav.style.left = '0';
+                nav.style.width = '100%';
+                nav.style.zIndex = '9999';
+
+
+
+            }
+        </script> -->
+
+>>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
         <div id="seeprofile" class="profileclicked"
             style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
             position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">

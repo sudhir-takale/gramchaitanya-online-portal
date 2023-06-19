@@ -5,6 +5,71 @@ body {
 
 }
 
+/* Default styles */
+/* nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f9f9f9;
+  padding: 10px;
+}
+
+.menu-toggle {
+  display: none;
+}
+
+.menu {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu li {
+  margin-right: 10px;
+}
+
+.menu a {
+  text-decoration: none;
+  color: red;
+}
+
+#site-name {
+  color: red;
+  font-weight: bold;
+}
+
+/* Media query for small screens */
+/* @media only screen and (max-width: 600px) {
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 0;
+    background-color: #717171;
+    color: white;
+  } */
+/* .menu li a{
+   color: white;
+  }
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu-toggle a {
+    color: rgb(212, 207, 207);
+    text-decoration: none;
+    cursor: pointer;
+    /* background-color: #717171; */
+
+/* } */
+
+/* .menu-toggle.active+.menu { */
+/* display: flex; */
+/* } */
+/* } */
+
 .maintext {
   text-align: center;
   padding: 4px;
@@ -479,4 +544,87 @@ td {
   border: 1px solid black;
   margin-bottom: -1%;
 
+<<<<<<< HEAD
+=======
+}
+
+
+
+
+/* Styles for screens up to 600px wide */
+@media (max-width: 600px) {
+
+
+  html body {
+    width: auto;
+  }
+
+  .maintext a {
+
+    font-size: 29px;
+    margin-top: 4%;
+    display: flex;
+    text-align: center;
+    margin-left: 12%;
+    color: rgb(174, 40, 174);
+    text-decoration: none;
+    font-weight: 600;
+  }
+
+  nav {
+    /* display: none; */
+  }
+
+
+
+  .headline {
+    height: auto;
+    font-size: 14px;
+    padding: 3.6%;
+  }
+
+
+  .maincontainer {
+    display: flex;
+    flex-direction: column;
+    margin-top: 0%;
+    margin-left: 0%;
+    margin-right: 0%;
+    margin-bottom: 0%;
+    width: 80%;
+    height: auto;
+    /* background-color: rgb(255, 255, 255); */
+    /* border: 1px solid black; */
+  }
+
+.outercontainer img{
+
+ width: 12%;
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+}
+
+/* Styles for screens between 601px and 900px wide */
+@media (min-width: 601px) and (max-width: 900px) {
+  /* CSS rules for medium-sized screens */
+}
+
+/* Styles for screens above 900px wide */
+@media (min-width: 901px) {
+  /* CSS rules for larger screens */
+>>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
 }

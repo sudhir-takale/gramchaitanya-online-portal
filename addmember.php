@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "inserted succesfully";
 
     } else {
-        echo "error" . $conn->error;
+        echo "error" . $conn->$error;
     }
 
 
