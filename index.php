@@ -35,9 +35,9 @@
     <header style="position: sticky; top: 0%;">
 
         <p class="maintext" style="background-image: url('images/tric.jpg');">
-            <a style="text-decoration-line: none; color: red;" href="index.html">Grampanchayat, <br> Laxmi Dahiwadi</a>
+            <a style="text-decoration-line: none; color: red;" href="index.php">Grampanchayat, <br> Laxmi Dahiwadi</a>
         </p>
-        <!-- <nav>
+        <nav>
             <ul class="menu">
 
                 <li><a href="index.php">Home</a></li>
@@ -45,14 +45,23 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="scheme.php">Schemes</a></li>
+                <?php
 
+                if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
 
+                ?>
+                <li><a href="schemes.php">Schemes</a></li>
 
-                <li><a href="admin_dashboard.php">Admin</a></li>
+                <?php
 
+                if ($_SESSION['role'] === 'admin') {
+                    echo ' <li><a href="admin_dashboard.php">Admin</a></li>';
 
+                }
+
+                ?>
                 <div>
 
                     <div
@@ -74,9 +83,9 @@
             </ul>
 
 
-        </nav> -->
+        </nav>
 
-        <nav>
+        <!-- <nav>
             <div class="menu-toggle">
                 <a href="#" onclick="toggleMenu()">Menu</a>
             </div>
@@ -101,13 +110,15 @@
                 var nav = document.querySelector('nav');
 
                 nav.style.position = 'fixed';
-                //   nav.style.top = '0';
-                //   nav.style.left = '0';
+                nav.style.top = '0';
+                nav.style.left = '0';
                 nav.style.width = '100%';
                 nav.style.zIndex = '9999';
-                // Add your code to handle visibility here
+
+
+
             }
-        </script>
+        </script> -->
 
         <div id="seeprofile" class="profileclicked"
             style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
