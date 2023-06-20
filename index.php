@@ -38,113 +38,67 @@
                 <li><a href="index.php">Home</a></li>
                 <li><a href="work.php">Work</a></li>
                 <li><a href="community.php">Community</a></li>
-                <li><a href="#services">Services</a></li>
+                <li><a href="#">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-                
                 <li><a href="login.php">Login</a></li>
-                <li><a href="scheme.php">Schemes</a></li>
+                <li><a href="schemes.php">Schemes</a></li>
                 <li><a href="admin_dashboard.php">Admin</a></li>
                 <div>
                     <div
                         style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
                         <span id="Login" style="color: red; font-weight: bold;width: 5px; margin-right: 12px;">
-                            <?php echo $_SESSION['role'] ?>
+                            <?php
+                            echo $_SESSION['role'];
+                            ?>
                         </span>
                     </div>
                 </div>
                 <div style="text-align: end;">
-                    <a style="text-decoration: none;color: red; cursor: pointer;" href="#" onclick="makeVisible()">
+                    <a style=" text-decoration: none; cursor: pointer;" href="#" onclick="makeVisible()">
                         <span id="dot"
-                            style=" margin-top: 3px; margin-right:80px; font-size: 30px; background-color: rgb(0, 0, 0); text-align: center; font-weight: bold; border: 1px solid green;">S</a>
+                            style="margin-top: 3px; margin-right:80px; font-size: 30px; background-color: rgb(0, 0, 0); text-align: center; font-weight: bold; border: 1px solid green;">S</a>
                     </span>
                 </div>
             </ul>
         </nav>
-<<<<<<< HEAD
-        <<<<<<< HEAD=======<!-- <nav>
-            <div class="menu-toggle">
-                <a href="#" onclick="toggleMenu()">Menu</a>
-            </div>
-            <ul class="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="work.php">Work</a></li>
-                <li><a href="community.php">Community</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="scheme.php">Schemes</a></li>
-                <li><span id="site-name">Laxmi-Dahiwadi</span></li>
-            </ul>
-            </nav>
-            <script>
-                function toggleMenu() {
-                    var menuToggle = document.querySelector('.menu-toggle');
-                    menuToggle.classList.toggle('active');
-                }
 
-                function makeVisible() {
-                    var nav = document.querySelector('nav');
-
-                    nav.style.position = 'fixed';
-                    nav.style.top = '0';
-                    nav.style.left = '0';
-                    nav.style.width = '100%';
-                    nav.style.zIndex = '9999';
-
-
-
-                }
-            </script> -->
-
-            >>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
-            <div id="seeprofile" class="profileclicked"
-                style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
-=======
         <div id="seeprofile" class="profileclicked"
             style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
->>>>>>> b17c9ed9588dfe71d4b67d9add9f57c6ee08d270
             position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">
-                <div class="list1" style="margin-top: 4%;">
+            <div class="list1" style="margin-top: 4%;">
 
-                    <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
-                            Profile</a></p>
-                    <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-                            href="#">Log Out</a></p>
-
-                </div>
-
-<<<<<<< HEAD
-=======
                 <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
                         Profile</a></p>
                 <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
                         href="logout.php">Log Out</a></p>
->>>>>>> b17c9ed9588dfe71d4b67d9add9f57c6ee08d270
 
             </div>
-            <marquee behavior="side" direction="left" scrollamount="10"
-                style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
-                <div style="font-size: 22px; font-weight: bold;  color: black;">
-                    <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना
-                        आपण
-                        आपल्याच विचार विश्वात
-                        हरवून जातो. काही विषय
-                        आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार
-                        करायला
-                        लावतात.
 
-                        निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे
-                        आकार
-                        देण्याचे काम करते.</p>
-                </div>
-            </marquee>
+
+        </div>
+        <marquee behavior="side" direction="left" scrollamount="10"
+            style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
+            <div style="font-size: 22px; font-weight: bold;  color: black;">
+                <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना
+                    आपण
+                    आपल्याच विचार विश्वात
+                    हरवून जातो. काही विषय
+                    आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार
+                    करायला
+                    लावतात.
+
+                    निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे
+                    आकार
+                    देण्याचे काम करते.</p>
+            </div>
+        </marquee>
     </header>
     <div class="extra">
         <p class="headline">Grampanchayat Laxmi Dahiwadi Welcomes You !</p>
 
         <div class="maincontainer" style="display: flexbox;">
 
-            <div class="sidebar">
+            <div class="sidebar" style="max-height:fit-content;z-index:inherit;">
                 <div class="notice" style="border:2px solid black; width: auto;  margin-top: -1%;  height: 600px; ">
                     <p> Notices</p>
                     <div class="list">
@@ -207,7 +161,8 @@
                     <div class="innercontainer" style="display: flex; margin-left: 5%;">
 
                         <div style="margin-right: 2px;" class="information"><img src="images/Dummy1.jpeg" alt="">
-                            <p class="postinfo" style="margin-left: 3%; text-overflow: ellipsis;">Name - Saurabh Patil <br>
+                            <p class="postinfo" style="margin-left: 3%; text-overflow: ellipsis;">Name - Saurabh Patil
+                                <br>
                                 Post - Sarpanch <br>
 
                                 Adress - Patil Wasti <br>
@@ -442,51 +397,51 @@
                         <span style="margin-left: 5%; font-size: 23px; padding: 4px;">Services</span>
                     </p>
                     <div class="container" id="#">
-                        <div class="grid-item"><a href="/documentrequest.html">Online Payment</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">मिळकत माहिती</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html"> रहिवासी प्रमाणपत्र</a></div>
-                        <div class="grid-item"><a href="/community.html"> सरपंच कार्यकाल</a></div>
-                        <div class="grid-item"><a href="/community.html">कर्मचारी माहिती</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">Online Payment</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">मिळकत माहिती</a></div>
+                        <div class="grid-item"><a href="documentrequest.php"> रहिवासी प्रमाणपत्र</a></div>
+                        <div class="grid-item"><a href="community.php"> सरपंच कार्यकाल</a></div>
+                        <div class="grid-item"><a href="community.php">कर्मचारी माहिती</a></div>
                         <div class="grid-item"><a href="#">सदस्य कार्यकारणी</a></div>
                         <div class="grid-item"><a href="#">उपसरपंच कार्यकाल</a></div>
-                        <div class="grid-item"><a href="#">सभेची माहिती</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">जन्म दाखला</a></div>
+                        <div class="grid-item"><a href="documentrequest.php">सभेची माहिती</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">जन्म दाखला</a></div>
                         <div class="grid-item"><a href="/documentrequest.html">विवाह दाखला</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">मृत्यू दाखला</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">उत्पन्न प्रमाणपत्र</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">मृत्यू दाखला</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">उत्पन्न प्रमाणपत्र</a></div>
                         <div class="grid-item"><a href="/work.html">नियोजीत विकास कामे</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">घरभाडे</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">पाणी बिल</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">घरभाडे</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">पाणी बिल</a></div>
                         <div class="grid-item"><a href="/work.html">पुर्ण झालेली विकास कामे</a></div>
                         <div class="grid-item"><a href="/work.html">चालू असलेली विकास कामे</a></div>
                         <div class="grid-item"><a href="#">जमा-खर्च पत्रक</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">ग्रामपंचायतीला पत्र</a></div>
-                        <div class="grid-item"><a href="/documentrequest.html">Others</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">ग्रामपंचायतीला पत्र</a></div>
+                        <div class="grid-item"><a href="/documentrequest.php">Others</a></div>
                     </div>
                 </div>
             </div>
         </div>
         <hr>
-        <div class="complaint" style="display: flex; height: 34%;">
+        <div class="complaint" style=" margin-left: 50px; height: 34%;">
             <div class="slideshow-container" style="border: 2px solid black;  width: 52%; margin-left:2%;">
 
-                <!-- Full-width images with number and caption text -->
+                Full-width images with number and caption text
                 <div class="mySlides fade">
                     <div class="numbertext">1 / 3</div>
                     <img src="images/tricolor.jpg" style="width:100%; height: 100%;">
-                    <!-- <div class="text">Caption Text</div> -->
+                    <div class="text">Caption Text</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">2 / 3</div>
                     <img src="images/tricolor.jpg" style="width:100%">
-                    <!-- <div class="text">Caption Two</div> -->
+                    <div class="text">Caption Two</div>
                 </div>
 
                 <div class="mySlides fade">
                     <div class="numbertext">3 / 3</div>
                     <img src="images/tricolor.jpg" style="width:100%">
-                    <!-- <div class="text">Caption Three</div> -->
+                    <div class="text">Caption Three</div>
                 </div>
 
                 <!-- Next and previous buttons -->
@@ -499,7 +454,7 @@
                     <span class="dot" onclick="currentSlide(3)"></span>
                 </div>
             </div>
-            <!-- <br> -->
+            <br>
             <div class="secondcon" style="width: 34%; height: 45%; margin-right: 0.5%;">
 
                 <h5 style="text-align: end; margin-right: 9%;">If you have any query please fill below form !</h5>

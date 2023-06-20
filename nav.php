@@ -30,9 +30,19 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="scheme.php">Schemes</a></li>
-                <li><a href="admin_dashboard.php">Admin</a></li>
+
+                <?php
+                if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+                    echo '   <li><a href="login.php">Login</a></li>';
+                }
+                ?>
+                <li><a href="schemes.php">Schemes</a></li>
+                <?php
+                if ($_SESSION['role'] == 'admin')
+
+                    echo ' <li><a href="admin_dashboard.php">Admin</a></li>';
+
+                ?>
 
 
             </ul>

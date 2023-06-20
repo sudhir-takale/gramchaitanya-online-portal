@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "inserted successfully";
         header("location:index.php");
     } else {
-        echo "error" . $conn->error;
+        echo "error" . $error;
     }
 }
 ?>

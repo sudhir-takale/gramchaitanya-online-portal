@@ -11,31 +11,32 @@
     <meta name="viewport" content="device-width, initial-scale=1.0">
     <title>gram | work done</title>
     <link rel="stylesheet" href="work.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
 </head>
 
-<body >   
+<body>
 
     <header>
-        <div style=" position: sticky; border: 2px ridge black; border-left-style: dashed; background-color: rgb(200, 180, 27); height: 100px; border-radius: 13px; border-bottom-style: dotted;">
+        <div
+            style=" position: sticky; border: 2px ridge black; border-left-style: dashed; background-color: rgb(200, 180, 27); height: 100px; border-radius: 13px; border-bottom-style: dotted;">
 
 
 
-            <p class="header1" style="font-size: 34px;font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 900; padding-top: 17px; ">
+            <p class="header1"
+                style="font-size: 34px;font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 900; padding-top: 17px; ">
                 Work done by our Grampanchayat</p>
-      
-            
-            </div>
-            <div style="margin-top: 2%;margin-bottom: 1%;" class="button-tags">
-                <button class="mainbuttons" onclick="setVisible1()">completed Work</button>
-                <button class="mainbuttons" onclick="setVisible2()">Ongoing Work</button>
-                <button class="mainbuttons" onclick="setVisible3()">Approved Work</button>
-                <button class="mainbuttons" onclick="setVisible3()">Add Work</button>
-            </div>
 
-        
+
+        </div>
+        <div style="margin-top: 2%;margin-bottom: 1%;" class="button-tags">
+            <button class="mainbuttons" onclick="setVisible1()">completed Work</button>
+            <button class="mainbuttons" onclick="setVisible2()">Ongoing Work</button>
+            <button class="mainbuttons" onclick="setVisible3()">Approved Work</button>
+            <button class="mainbuttons" onclick="setVisible3()">Add Work</button>
+        </div>
+
+
 
 
 
@@ -45,7 +46,9 @@
 
 
     <form action="" class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 ">
-        <p class="align-center" style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">Add work</p>
+        <p class="align-center"
+            style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">
+            Add work</p>
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter headline </label>
             <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter headline">

@@ -1,3 +1,17 @@
+<?php
+
+
+include 'database.php';
+session_start();
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: login.php");
+    exit;
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -36,7 +50,8 @@
                 #e354cd, #141114, #19c4ca);
         -webkit-text-fill-color: transparent;
         -webkit-background-clip: text;
-        
+        background-clip: text;
+
     }
 
 
@@ -74,17 +89,16 @@
 <body>
 
 
-
     <div style="background-color: whitesmoke; border: 2px solid black;">
         <p style="text-align: center; font-size: 44px; font-weight: bolder;
-     margin-bottom: -1.7% ; ">See the photos of village</p>
+     margin-bottom: -1.7% ;">See the photos of village</p>
 
-        <div style="text-align: end ; margin-right: 4%;">
+        <div style="text-align:end;margin-right: 4%;">
             <button type="button" class="btn btn-primary button-glow border-dark fw-bolder" onclick="makeVisible()">Add
                 images</button>
         </div>
 
-        <hr>
+
     </div>
 
 
