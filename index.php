@@ -40,6 +40,7 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
+                
                 <li><a href="login.php">Login</a></li>
                 <li><a href="scheme.php">Schemes</a></li>
                 <li><a href="admin_dashboard.php">Admin</a></li>
@@ -59,45 +60,6 @@
                 </div>
             </ul>
         </nav>
-<<<<<<< HEAD
-=======
-
-        <!-- <nav>
-            <div class="menu-toggle">
-                <a href="#" onclick="toggleMenu()">Menu</a>
-            </div>
-            <ul class="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="work.php">Work</a></li>
-                <li><a href="community.php">Community</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="scheme.php">Schemes</a></li>
-                <li><span id="site-name">Laxmi-Dahiwadi</span></li>
-            </ul>
-        </nav>
-        <script>
-            function toggleMenu() {
-                var menuToggle = document.querySelector('.menu-toggle');
-                menuToggle.classList.toggle('active');
-            }
-
-            function makeVisible() {
-                var nav = document.querySelector('nav');
-
-                nav.style.position = 'fixed';
-                nav.style.top = '0';
-                nav.style.left = '0';
-                nav.style.width = '100%';
-                nav.style.zIndex = '9999';
-
-
-
-            }
-        </script> -->
-
->>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
         <div id="seeprofile" class="profileclicked"
             style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
             position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">
@@ -106,7 +68,7 @@
                 <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
                         Profile</a></p>
                 <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-                        href="#">Log Out</a></p>
+                        href="logout.php">Log Out</a></p>
 
             </div>
 
@@ -193,36 +155,36 @@
 
                     <div class="innercontainer" style="display: flex; margin-left: 5%;">
 
-                        <div style="margin-right: 2px;" class="information"><img src="images/_MG_0531 c.jpg" alt="">
-                            <p class="postinfo" style="margin-left: 3%; text-overflow: ellipsis;">Name - Kapil Pise <br>
+                        <div style="margin-right: 2px;" class="information"><img src="images/Dummy1.jpeg" alt="">
+                            <p class="postinfo" style="margin-left: 3%; text-overflow: ellipsis;">Name - Saurabh Patil <br>
                                 Post - Sarpanch <br>
 
-                                Adress - Hole <br>
+                                Adress - Patil Wasti <br>
                                 Phone - 9763302259 <br>
 
                             </p>
                         </div>
 
-                        <div class="information"><img src="images/_MG_0529 c.jpg" alt="">
-                            <p style="margin-left: 25px; " class="postinfo">Name - Sudhir Takale <br>
+                        <div class="information"><img src="images/Dummy1.jpeg" alt="">
+                            <p style="margin-left: 25px; " class="postinfo">Name - Ajit Shinde <br>
                                 Post - Deputy Sarpanch <br>
 
-                                Adress - Laxmi dahiwadi <br>
+                                Adress - Takale Wasti <br>
                                 Phone - 8432414111<br>
 
                             </p>
                         </div>
 
-                        <div class="information"><img src="images/_MG_0528 c.jpg" alt="">
-                            <p style="margin-left: 25px;" class="postinfo"> Name - Vinod Asabe<br>
+                        <div class="information"><img src="images/Dummy1.jpeg" alt="">
+                            <p style="margin-left: 25px;" class="postinfo"> Name - Prakash Rajge<br>
                                 Post - Gramsevak <br>
-                                Adress - Shelve <br>
+                                Adress - Mali Wasti <br>
                                 Phone - 9756895465<br>
 
                             </p>
                         </div>
-                        <div class="information"><img src="images/_MG_0532 c.jpg" alt="">
-                            <p style="margin-left: 25px;" class="postinfo"> Name - Ashok Pawar <br>
+                        <div class="information"><img src="images/Dummy1.jpeg" alt="">
+                            <p style=" margin-left: 25px;" class="postinfo"> Name - Ramesh Sutar <br>
                                 Post - Talathi <br>
                                 Adress - Khedbhose <br>
                                 Phone - 9325317610<br>
