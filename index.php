@@ -40,6 +40,10 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
+<<<<<<< HEAD
+=======
+
+>>>>>>> 1741aad44aea8b36b5854763f687d73eb486baa0
                 <li><a href="login.php">Login</a></li>
                 <li><a href="schemes.php">Schemes</a></li>
                 <li><a href="admin_dashboard.php">Admin</a></li>
@@ -70,7 +74,11 @@
                 <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
                         Profile</a></p>
                 <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
+<<<<<<< HEAD
                         href="logout.php">Log Out</a></p>
+=======
+                        href="#">Log Out</a></p>
+>>>>>>> 1741aad44aea8b36b5854763f687d73eb486baa0
 
             </div>
 
