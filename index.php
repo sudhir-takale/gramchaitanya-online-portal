@@ -40,13 +40,20 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-<<<<<<< HEAD
-=======
-
->>>>>>> 1741aad44aea8b36b5854763f687d73eb486baa0
-                <li><a href="login.php">Login</a></li>
                 <li><a href="schemes.php">Schemes</a></li>
-                <li><a href="admin_dashboard.php">Admin</a></li>
+
+                <?php
+
+                if (!$_SESSION['loggedin']) {
+                    echo '<li><a href="login.php">Login</a></li>';
+                }
+                ?>
+
+                <?php
+                if ($_SESSION['role'] == 'admin') {
+                    echo ' <li><a href="admin_dashboard.php">Admin</a></li>';
+                }
+                ?>
                 <div>
                     <div
                         style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
@@ -71,14 +78,12 @@
             position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">
             <div class="list1" style="margin-top: 4%;">
 
-                <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
+                <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; "
+                        href="viewprofile.php">View
                         Profile</a></p>
                 <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-<<<<<<< HEAD
                         href="logout.php">Log Out</a></p>
-=======
-                        href="#">Log Out</a></p>
->>>>>>> 1741aad44aea8b36b5854763f687d73eb486baa0
+
 
             </div>
 
@@ -106,7 +111,7 @@
 
         <div class="maincontainer" style="display: flexbox;">
 
-            <div class="sidebar" style="max-height:fit-content;z-index:inherit;">
+            <div class="sidebar" style="max-height:12px;">
                 <div class="notice" style="border:2px solid black; width: auto;  margin-top: -1%;  height: 600px; ">
                     <p> Notices</p>
                     <div class="list">
@@ -431,38 +436,7 @@
         </div>
         <hr>
         <div class="complaint" style=" margin-left: 50px; height: 34%;">
-            <div class="slideshow-container" style="border: 2px solid black;  width: 52%; margin-left:2%;">
 
-                Full-width images with number and caption text
-                <div class="mySlides fade">
-                    <div class="numbertext">1 / 3</div>
-                    <img src="images/tricolor.jpg" style="width:100%; height: 100%;">
-                    <div class="text">Caption Text</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">2 / 3</div>
-                    <img src="images/tricolor.jpg" style="width:100%">
-                    <div class="text">Caption Two</div>
-                </div>
-
-                <div class="mySlides fade">
-                    <div class="numbertext">3 / 3</div>
-                    <img src="images/tricolor.jpg" style="width:100%">
-                    <div class="text">Caption Three</div>
-                </div>
-
-                <!-- Next and previous buttons -->
-                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-                <a class="next" onclick="plusSlides(1)">&#10095;</a>
-
-                <div style="text-align:center;">
-                    <span class="dot" onclick="currentSlide(1)"></span>
-                    <span class="dot" onclick="currentSlide(2)"></span>
-                    <span class="dot" onclick="currentSlide(3)"></span>
-                </div>
-            </div>
-            <br>
             <div class="secondcon" style="width: 34%; height: 45%; margin-right: 0.5%;">
 
                 <h5 style="text-align: end; margin-right: 9%;">If you have any query please fill below form !</h5>
