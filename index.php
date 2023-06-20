@@ -46,7 +46,7 @@
                 <div>
                     <div
                         style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
-                        <span id="Login" style="color: red; font-weight: bold;width: 50px; margin-right: 34px;">
+                        <span id="Login" style="color: red; font-weight: bold;width: 5px; margin-right: 12px;">
                             <?php echo $_SESSION['role'] ?>
                         </span>
                     </div>
@@ -59,10 +59,7 @@
                 </div>
             </ul>
         </nav>
-<<<<<<< HEAD
-=======
-
-        <!-- <nav>
+        <<<<<<< HEAD=======<!-- <nav>
             <div class="menu-toggle">
                 <a href="#" onclick="toggleMenu()">Menu</a>
             </div>
@@ -76,55 +73,58 @@
                 <li><a href="scheme.php">Schemes</a></li>
                 <li><span id="site-name">Laxmi-Dahiwadi</span></li>
             </ul>
-        </nav>
-        <script>
-            function toggleMenu() {
-                var menuToggle = document.querySelector('.menu-toggle');
-                menuToggle.classList.toggle('active');
-            }
+            </nav>
+            <script>
+                function toggleMenu() {
+                    var menuToggle = document.querySelector('.menu-toggle');
+                    menuToggle.classList.toggle('active');
+                }
 
-            function makeVisible() {
-                var nav = document.querySelector('nav');
+                function makeVisible() {
+                    var nav = document.querySelector('nav');
 
-                nav.style.position = 'fixed';
-                nav.style.top = '0';
-                nav.style.left = '0';
-                nav.style.width = '100%';
-                nav.style.zIndex = '9999';
+                    nav.style.position = 'fixed';
+                    nav.style.top = '0';
+                    nav.style.left = '0';
+                    nav.style.width = '100%';
+                    nav.style.zIndex = '9999';
 
 
 
-            }
-        </script> -->
+                }
+            </script> -->
 
->>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
-        <div id="seeprofile" class="profileclicked"
-            style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
+            >>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
+            <div id="seeprofile" class="profileclicked"
+                style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
             position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">
-            <div class="list1" style="margin-top: 4%;">
+                <div class="list1" style="margin-top: 4%;">
 
-                <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
-                        Profile</a></p>
-                <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-                        href="#">Log Out</a></p>
+                    <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
+                            Profile</a></p>
+                    <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
+                            href="#">Log Out</a></p>
+
+                </div>
+
 
             </div>
+            <marquee behavior="side" direction="left" scrollamount="10"
+                style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
+                <div style="font-size: 22px; font-weight: bold;  color: black;">
+                    <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना
+                        आपण
+                        आपल्याच विचार विश्वात
+                        हरवून जातो. काही विषय
+                        आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार
+                        करायला
+                        लावतात.
 
-
-        </div>
-        <marquee behavior="side" direction="left" scrollamount="10"
-            style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
-            <div style="font-size: 22px; font-weight: bold;  color: black;">
-                <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना आपण
-                    आपल्याच विचार विश्वात
-                    हरवून जातो. काही विषय
-                    आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार करायला
-                    लावतात.
-
-                    निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे आकार
-                    देण्याचे काम करते.</p>
-            </div>
-        </marquee>
+                        निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे
+                        आकार
+                        देण्याचे काम करते.</p>
+                </div>
+            </marquee>
     </header>
     <div class="extra">
         <p class="headline">Grampanchayat Laxmi Dahiwadi Welcomes You !</p>

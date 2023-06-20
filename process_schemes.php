@@ -14,7 +14,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $result = mysqli_query($conn, $query);
     if ($result == true) {
-        echo 'Inserted successfully';
+        echo '<script>alert("Scheme added successfully")</script>';
+        header("Location: schemes.php");
     } else {
         echo 'Error';
     }
