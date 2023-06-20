@@ -40,7 +40,7 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-                
+
                 <li><a href="login.php">Login</a></li>
                 <li><a href="scheme.php">Schemes</a></li>
                 <li><a href="admin_dashboard.php">Admin</a></li>
@@ -60,84 +60,37 @@
                 </div>
             </ul>
         </nav>
-<<<<<<< HEAD
-        <<<<<<< HEAD=======<!-- <nav>
-            <div class="menu-toggle">
-                <a href="#" onclick="toggleMenu()">Menu</a>
-            </div>
-            <ul class="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="work.php">Work</a></li>
-                <li><a href="community.php">Community</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="login.php">Login</a></li>
-                <li><a href="scheme.php">Schemes</a></li>
-                <li><span id="site-name">Laxmi-Dahiwadi</span></li>
-            </ul>
-            </nav>
-            <script>
-                function toggleMenu() {
-                    var menuToggle = document.querySelector('.menu-toggle');
-                    menuToggle.classList.toggle('active');
-                }
 
-                function makeVisible() {
-                    var nav = document.querySelector('nav');
-
-                    nav.style.position = 'fixed';
-                    nav.style.top = '0';
-                    nav.style.left = '0';
-                    nav.style.width = '100%';
-                    nav.style.zIndex = '9999';
-
-
-
-                }
-            </script> -->
-
-            >>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
-            <div id="seeprofile" class="profileclicked"
-                style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
-=======
         <div id="seeprofile" class="profileclicked"
             style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
->>>>>>> b17c9ed9588dfe71d4b67d9add9f57c6ee08d270
             position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">
-                <div class="list1" style="margin-top: 4%;">
+            <div class="list1" style="margin-top: 4%;">
 
-                    <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
-                            Profile</a></p>
-                    <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-                            href="#">Log Out</a></p>
-
-                </div>
-
-<<<<<<< HEAD
-=======
                 <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; " href="#">View
                         Profile</a></p>
                 <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-                        href="logout.php">Log Out</a></p>
->>>>>>> b17c9ed9588dfe71d4b67d9add9f57c6ee08d270
+                        href="#">Log Out</a></p>
 
             </div>
-            <marquee behavior="side" direction="left" scrollamount="10"
-                style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
-                <div style="font-size: 22px; font-weight: bold;  color: black;">
-                    <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना
-                        आपण
-                        आपल्याच विचार विश्वात
-                        हरवून जातो. काही विषय
-                        आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार
-                        करायला
-                        लावतात.
 
-                        निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे
-                        आकार
-                        देण्याचे काम करते.</p>
-                </div>
-            </marquee>
+
+        </div>
+        <marquee behavior="side" direction="left" scrollamount="10"
+            style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
+            <div style="font-size: 22px; font-weight: bold;  color: black;">
+                <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना
+                    आपण
+                    आपल्याच विचार विश्वात
+                    हरवून जातो. काही विषय
+                    आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार
+                    करायला
+                    लावतात.
+
+                    निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे
+                    आकार
+                    देण्याचे काम करते.</p>
+            </div>
+        </marquee>
     </header>
     <div class="extra">
         <p class="headline">Grampanchayat Laxmi Dahiwadi Welcomes You !</p>
@@ -207,7 +160,8 @@
                     <div class="innercontainer" style="display: flex; margin-left: 5%;">
 
                         <div style="margin-right: 2px;" class="information"><img src="images/Dummy1.jpeg" alt="">
-                            <p class="postinfo" style="margin-left: 3%; text-overflow: ellipsis;">Name - Saurabh Patil <br>
+                            <p class="postinfo" style="margin-left: 3%; text-overflow: ellipsis;">Name - Saurabh Patil
+                                <br>
                                 Post - Sarpanch <br>
 
                                 Adress - Patil Wasti <br>
