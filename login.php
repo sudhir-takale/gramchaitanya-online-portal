@@ -8,16 +8,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    // Perform admin login validation
     $adminSql = "SELECT * FROM admins WHERE adharno = '$username' AND password ='$password'";
     $adminResult = mysqli_query($conn, $adminSql);
 
     if ($adminResult && mysqli_num_rows($adminResult) == 1) {
-        // Admin login successful
+
         $adminRow = mysqli_fetch_assoc($adminResult);
         $_SESSION["username"] = $adminRow["adharno"];
         $_SESSION["role"] = $adminRow["role"];
         // $_SESSION["name"] = $adminRow["name"];
+        // $_SESSION["phone"] = $adminRow["phone"];
         $_SESSION["loggedin"] = true;
 
         mysqli_free_result($adminResult);

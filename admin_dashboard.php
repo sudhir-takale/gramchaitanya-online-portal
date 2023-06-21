@@ -22,7 +22,9 @@
 
   echo "Welcome " . $_SESSION["username"] . "!";
   echo "Welcome " . $_SESSION["role"];
-
+  // echo "Welcome " . $_SESSION["phone"];
+  // echo "Welcome " . $_SESSION["name"];
+  
   ?>
   <?php
   include('nav.php');

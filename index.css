@@ -5,71 +5,6 @@ body {
 
 }
 
-/* Default styles */
-/* nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background-color: #f9f9f9;
-  padding: 10px;
-}
-
-.menu-toggle {
-  display: none;
-}
-
-.menu {
-  display: flex;
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-}
-
-.menu li {
-  margin-right: 10px;
-}
-
-.menu a {
-  text-decoration: none;
-  color: red;
-}
-
-#site-name {
-  color: red;
-  font-weight: bold;
-}
-
-/* Media query for small screens */
-/* @media only screen and (max-width: 600px) {
-
-  .menu {
-    display: none;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px 0;
-    background-color: #717171;
-    color: white;
-  } */
-/* .menu li a{
-   color: white;
-  }
-  .menu-toggle {
-    display: block;
-  }
-
-  .menu-toggle a {
-    color: rgb(212, 207, 207);
-    text-decoration: none;
-    cursor: pointer;
-    /* background-color: #717171; */
-
-/* } */
-
-/* .menu-toggle.active+.menu { */
-/* display: flex; */
-/* } */
-/* } */
-
 .maintext {
   text-align: center;
   padding: 4px;
@@ -121,6 +56,39 @@ nav li a:hover {
 nav a.active {
   background-color: #04aa6d;
   color: white;
+}
+
+.profile {
+  position: relative;
+}
+
+.profile .profile-link {
+  text-decoration: none;
+  color: #333;
+  padding: 5px;
+}
+
+.profile .profile-menu {
+  position: absolute;
+  top: 100%;
+  right: 0;
+  background-color: #f0f0f0;
+  border: 1px solid #ccc;
+  display: none;
+}
+
+.profile .profile-menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.profile .profile-menu ul li {
+  padding: 5px;
+}
+
+.profile:hover .profile-menu {
+  display: block;
 }
 
 #dot {
@@ -544,8 +512,6 @@ td {
   border: 1px solid black;
   margin-bottom: -1%;
 
-<<<<<<< HEAD
-=======
 }
 
 
@@ -571,9 +537,6 @@ td {
     font-weight: 600;
   }
 
-  nav {
-    /* display: none; */
-  }
 
 
 
@@ -597,12 +560,12 @@ td {
     /* border: 1px solid black; */
   }
 
-.outercontainer img{
+  .outercontainer img {
 
- width: 12%;
+    width: 12%;
 
 
-}
+  }
 
 
 
@@ -626,5 +589,4 @@ td {
 /* Styles for screens above 900px wide */
 @media (min-width: 901px) {
   /* CSS rules for larger screens */
->>>>>>> ac660f27797c1b99bdb3cfcca0111f3cf40ceb9d
 }

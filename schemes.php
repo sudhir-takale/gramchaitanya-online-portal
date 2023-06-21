@@ -26,14 +26,17 @@ $result = mysqli_query($conn, $query);
 
         li {
             text-align: left;
-            color: red;
+            color: black;
             background-color: pink;
+            font-size: 20px;
+            padding: 3px;
         }
 
         ul {
             border: 2px solid black;
             display: inline-block;
-            width: 500px;
+            width: 600px;
+            padding: 40px;
         }
     </style>
 
@@ -44,7 +47,7 @@ $result = mysqli_query($conn, $query);
     <?php
     while ($row = mysqli_fetch_assoc($result)) {
         ?>
-        <ul>
+        <ul type='none'>
             <li>
                 Scheme No:
                 <?php echo $row['id']; ?>
