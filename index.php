@@ -17,6 +17,7 @@
 <body onclick="hide()">
 
 
+
     <?php
     session_start();
     if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
@@ -27,6 +28,7 @@
     echo "
     <script>console.log('Debug Objects: " . $_SESSION["role"] . "');</script>";
     echo "Welcome " . $_SESSION["role"] . "!";
+    require 'navbar.php';
 
     ?>
     <header style="position: sticky; top: 0%;">
@@ -40,10 +42,6 @@
                 <li><a href="community.php">Community</a></li>
                 <li><a href="#">Services</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
-<<<<<<< HEAD
-                <li><a href="login.php">Login</a></li>
-=======
->>>>>>> 78a1fe369981a649e91a6644db04adcf2fead3bf
                 <li><a href="schemes.php">Schemes</a></li>
 
                 <?php
@@ -92,7 +90,6 @@
             </div>
 
 
-        </div>
         <marquee behavior="side" direction="left" scrollamount="10"
             style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
             <div style="font-size: 22px; font-weight: bold;  color: black;">
@@ -162,8 +159,8 @@
 
                 <a class="mapimage" target="_blank"
                     href="https://www.google.com/maps/place/Laxmidahiwadi,+Maharashtra+413305/@17.4776098,75.2994298,616m/data=!3m1!1e3!4m6!3m5!1s0x3bc6a063c76d6e3b:0x6e8c7795b2d6306b!8m2!3d17.4775118!4d75.2985785!16s%2Fg%2F1hhvxpky8"><img
-                        style="width: 89%; height: 15%; margin-top: 10%; margin-left: 4%;" src="images/map.jpg"
-                        alt=""></a>
+                        style="width: 89%; height: 15%; margin-top: 10%; margin-left: 4%;" src="images/map.jpg" alt="">
+                </a>
 
             </div>
 
@@ -406,8 +403,7 @@
                 </div>
                 <hr style="height: 2px; margin-left: 1.5%; margin-right: 1.5%;">
 
-                <div class="services" id="services"
-                    style="background-image: linear-gradient(50deg,rgb(74,234,220) 5%,rgb(151,120,209) 50%,rgb(207,42,186) 10%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);">
+                <div class="services p-3" id="services" style= "background-color:	#FFBD33";>
 
                     <p
                         style="background-color: rgb(25, 24, 24); color: white; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;">

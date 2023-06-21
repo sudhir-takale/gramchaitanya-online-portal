@@ -9,9 +9,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO complaint (heading,discription) VALUES ('$heading','$discription')";
 
     if (mysqli_query($conn, $query)) {
-        echo "inserted successfully";
-    } else {
-        echo "error " . $conn->error;
+        echo '<script> window.alert("Complaint posted Successfully!") </script>';
+        header("Location: index.php");
     }
 }
 ?>
