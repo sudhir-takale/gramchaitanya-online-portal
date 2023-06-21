@@ -16,8 +16,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $adminRow = mysqli_fetch_assoc($adminResult);
         $_SESSION["username"] = $adminRow["adharno"];
         $_SESSION["role"] = $adminRow["role"];
-        // $_SESSION["name"] = $adminRow["name"];
-        // $_SESSION["phone"] = $adminRow["phone"];
+        
         $_SESSION["loggedin"] = true;
 
         mysqli_free_result($adminResult);

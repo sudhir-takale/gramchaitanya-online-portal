@@ -1,32 +1,62 @@
 <?php
 require('database.php');
 
+$errors = [];
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-
     $fname = $_POST['fname'];
     $designation = $_POST['designation'];
     $mobile = $_POST['mobile'];
     $adharno = $_POST['adharno'];
     $password = $_POST['password'];
-    // $date = $_POST['date'];
-    $photo = $_POST['photo'];
 
-    $query = "INSERT INTO admins (name,adharno,designation,mobilenumber,password,photo) VALUES ('$fname','$adharno','$designation','$mobile','$password','$photo')";
-
-    if (mysqli_query($conn, $query)) {
-        echo "inserted succesfully";
-
-    } else {
-        echo "error" . $conn->$error;
+    // Validate form inputs
+    if (empty($fname)) {
+        $errors[] = "Name is required.";
     }
 
+    if (empty($designation)) {
+        $errors[] = "Designation is required.";
+    }
 
+    if (empty($mobile)) {
+        $errors[] = "Mobile number is required.";
+    } elseif (!preg_match("/^[0-9]{10}$/", $mobile)) {
+        $errors[] = "Mobile number must be 10 digits.";
+    }
+
+    if (empty($adharno)) {
+        $errors[] = "Aadhar number is required.";
+    } elseif (!preg_match("/^[0-9]{12}$/", $adharno)) {
+        $errors[] = "Aadhar number must be 12 digits.";
+    }
+
+    if (empty($password)) {
+        $errors[] = "Password is required.";
+    }
+
+    if (empty($_FILES['photo']['name'])) {
+        $errors[] = "Photo is required.";
+    }
+
+    // If there are no validation errors, proceed with inserting data into the database
+    if (empty($errors)) {
+        $photo = $_FILES['photo']['tmp_name'];
+        $photoData = file_get_contents($photo);
+        $photoData = mysqli_real_escape_string($conn, $photoData);
+
+        $query = "INSERT INTO admins (name, adharno, designation, mobilenumber, password, photo) VALUES ('$fname', '$adharno', '$designation', '$mobile', '$password', '$photoData')";
+
+        if (mysqli_query($conn, $query)) {
+            echo "<script>window.alert('New member added Successfully!')</script>";
+            header("Location: community.php");
+            exit;
+        } else {
+            echo "Error: " . mysqli_error($conn);
+        }
+    }
 }
 ?>
-
-
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -41,75 +71,71 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </head>
 
 <body>
-    <form action="addmember.php" class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 "
-        method="post">
+    <form action="addmember.php" class="mt-3 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 "
+        method="post" enctype="multipart/form-data">
         <p class="align-center"
             style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">
             Add Member</p>
-        <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter Name </label>
+
+        <?php if (!empty($errors)): ?>
+            <div class="alert alert-danger">
+                <ul>
+                    <?php foreach ($errors as $error): ?>
+                        <li>
+                            <?php echo $error; ?>
+                        </li>
+                    <?php endforeach; ?>
+                </ul>
+            </div>
+        <?php endif; ?>
+
+        <div class="mb-2 ">
+            <label for="exampleFormControlInput1" class="form-label">Enter Name</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="fname"
-                placeholder="Enter member name">
-
+                placeholder="Enter member name" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : ''; ?>">
         </div>
-        <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number </label>
+
+        <div class="mb-2 ">
+            <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="adharno"
-                placeholder="Enter adhar number">
-
+                placeholder="Enter adhar number"
+                value="<?php echo isset($_POST['adharno']) ? $_POST['adharno'] : ''; ?>">
         </div>
-        <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter designation </label>
+
+        <div class="mb-2 ">
+            <label for="exampleFormControlInput1" class="form-label">Enter designation</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="designation"
-                placeholder="Enter member designation">
-
+                placeholder="Enter member designation"
+                value="<?php echo isset($_POST['designation']) ? $_POST['designation'] : ''; ?>">
         </div>
-        <!-- <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter joined date </label>
-            <input type="date" class="form-control" name="date" id="exampleFormControlInput1"
-                placeholder="Enter date joined">
 
-        </div> -->
-
-        <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter mobile number </label>
+        <div class="mb-2 ">
+            <label for="exampleFormControlInput1" class="form-label">Enter mobile number</label>
             <input type="text" class="form-control" id="exampleFormControlInput1" name="mobile" maxlength="10"
-                placeholder="Enter mobile number">
-
+                placeholder="Enter mobile number"
+                value="<?php echo isset($_POST['mobile']) ? $_POST['mobile'] : ''; ?>">
         </div>
 
-        <div class="mb-3 ">
+        <div class="mb-2 ">
             <label for="formFileMultiple" class="form-label">Enter your password</label>
-            <input class="form-control" type="password" id="formFileMultiple" name="password" multiple>
+            <input class="form-control" type="password" id="formFileMultiple" name="password" multiple
+                placeholder="Enter your password">
         </div>
 
-        <div class="mb-3 ">
+        <div class="mb-2 ">
             <label for="formFileMultiple" class="form-label">Upload photo</label>
             <input class="form-control" type="file" id="formFileMultiple" name="photo" multiple>
         </div>
 
-
-
         <div class="text-center">
-            <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
-            <input type="submit" value="submit">
+            <button type="submit" class="btn btn-primary w-50 ">Submit</button>
         </div>
 
     </form>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
         crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-
 </body>
-
 
 </html>

@@ -123,6 +123,28 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
         animation: glowing 2000ms infinite;
         box-shadow: 2px 1px 1px rgb(224, 178, 10);
     }
+
+    @media (max-width: 768px) {
+        .gallery {
+            margin-left: 5%;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.3);
+            margin: 3%;
+        }
+    }
+
+    @media (max-width: 576px) {
+        .gallery {
+            margin-left: 2%;
+        }
+
+        .gallery img:hover {
+            transform: scale(1.2);
+            margin: 2%;
+        }
+    }
 </style>
 
 <body>
