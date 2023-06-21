@@ -1,3 +1,19 @@
+<?php
+require('database.php');
+
+
+session_start();
+
+
+if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: login.php");
+    exit;
+}
+
+
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -32,83 +48,61 @@
 
     <div class="container">
 
-        <ul>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPMN6q42f7LNz96-GUNp04PqBY3a55HkkLwQ&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Suraj K Munde <br>
-                    Designation :- Sarpanch <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :-9736466749
 
-                </div>
 
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT80c9TARUeeIZd9TnqjGt40ZOfANoV5cq8jw&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px; border: 3px solid rgb(128, 0, 100);">
-                <div class="info">Name :- Miss.Anita j Raje <br>
-                    Designation :- UpSarpanch <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 8434496556</div>
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRwcCA4sLntuKgMjWNc_FhIRCo59VgeYzb3Lg&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Niraj R Kulkarni <br>
-                    Designation :- Administrative <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 9746315684</div>
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS8scDF2-YyGUfQtcJ3OBF93NjITFbqfaZ_0w&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Ram G Patil<br>
-                    Designation :- Talathi <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 9742315648</div>
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQL-J4c4oparA_k6VfSA-24K1xHNOqR_SVqBXoxxAICmyaiCtyYDhckpXyA4AvGVLAbrcU&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Rahul L Lokande <br>
-                    Designation :- Acccountant <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 8461379466</div>
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhIhQf8yuEF-RPlHgY3SmWFlsKMmUbBTROg&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Swapnil S Imade <br>
-                    Designation :- Clerk <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 8461379463</div>
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhIhQf8yuEF-RPlHgY3SmWFlsKMmUbBTROg&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Swapnil S Imade <br>
-                    Designation :- Clerk <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 8461379463</div>
-            </li>
-            <li>
 
-                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQyhIhQf8yuEF-RPlHgY3SmWFlsKMmUbBTROg&usqp=CAU"
-                    alt="" style="width: 120px; height: 110px;">
-                <div class="info">Name :- Mr.Swapnil S Imade <br>
-                    Designation :- Clerk <br>
-                    Joined date :- 20/12/2001 <br>
-                    Mob no :- 8461379463</div>
-            </li>
-        </ul>
+
+
+        <?php
+
+        $query = "SELECT * FROM ADMINS";
+
+        $result = mysqli_query($conn, $query);
+
+        if (mysqli_num_rows($result) > 0) {
+            echo '<ul>';
+
+            while ($row = mysqli_fetch_assoc($result)) {
+                echo '<li style = "padding:10px;">';
+
+                $imageData = $row['photo'];
+                $imagePath = 'community/' . $row['name'] . '.jpg';
+                file_put_contents($imagePath, $imageData);
+
+                echo '<img src="' . $imagePath . '" alt="" style="width: 120px; height: 110px;">';
+                echo '<div class="info">';
+                echo 'Name: ' . $row['name'] . '<br>';
+                echo 'Designation: ' . $row['designation'] . '<br>';
+                echo 'Joined date: ' . $row['joiningdate'] . '<br>';
+                echo 'Mob no: ' . $row['mobilenumber'];
+                echo '</div>';
+                echo '</li>';
+            }
+
+            echo '</ul>';
+        } else {
+            echo 'No data found.';
+        }
+
+        mysqli_close($conn);
+
+
+
+
+
+
+
+
+
+
+        ?>
     </div>
 </body>
 

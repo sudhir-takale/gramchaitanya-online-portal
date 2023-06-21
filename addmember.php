@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $date = $_POST['date'];
     $photo = $_POST['photo'];
 
-    $query = "INSERT INTO admins (name,adharno,role,mobilenumber,password,photo) VALUES ('$fname','$adharno','$designation','$mobile','$password','$photo')";
+    $query = "INSERT INTO admins (name,adharno,designation,mobilenumber,password,photo) VALUES ('$fname','$adharno','$designation','$mobile','$password','$photo')";
 
     if (mysqli_query($conn, $query)) {
         echo "inserted succesfully";
