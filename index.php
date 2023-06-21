@@ -33,7 +33,6 @@
     ?>
     <header style="position: sticky; top: 0%;">
 
-
         <marquee behavior="side" direction="left" scrollamount="10"
             style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
             <div style="font-size: 22px; font-weight: bold;  color: black;">

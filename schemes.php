@@ -7,8 +7,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("Location: login.php");
     exit;
 }
-$query = "select * from scheme";
-$result = mysqli_query($conn, $query);
+
 ?>
 
 <!DOCTYPE html>
@@ -18,6 +17,7 @@ $result = mysqli_query($conn, $query);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>New schemes</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
             text-align: center;
@@ -28,56 +28,65 @@ $result = mysqli_query($conn, $query);
             text-align: left;
             color: black;
             background-color: pink;
-            font-size: 20px;
-            padding: 3px;
+            font-size: 20px height:30px
         }
 
         ul {
             border: 2px solid black;
+
             display: inline-block;
-            width: 600px;
+            width: 700px;
             padding: 40px;
+            margin: 30px;
         }
     </style>
 
 </head>
 
 <body>
-    <h1>availabel schemes are</h1>
-    <?php
-    while ($row = mysqli_fetch_assoc($result)) {
-        ?>
-        <ul type='none'>
-            <li>
-                Scheme No:
-                <?php echo $row['id']; ?>
-            </li>
-            <li>
-                Scheme Name:
-                <?php echo $row['name']; ?>
-            </li>
-            <li>
-                <dl>
-                    <dt>Scheme Description:</dt>
-                    <dd>
-                        <?php echo $row['description']; ?>
-                    </dd>
-                </dl>
+    <h1>available schemes are</h1>
 
-            </li>
-            <li>
-                Scheme Start Date:
-                <?php echo $row['startdate']; ?>
-            </li>
-            <li>
-                Scheme End Date:
-                <?php echo $row['enddate']; ?>
-            </li>
-        </ul>
-        <br>
+
+    <div style="margin-left:450px">
         <?php
-    }
-    ?>
+        $query = "select * from scheme";
+        $result = mysqli_query($conn, $query);
+        if (mysqli_num_rows($result) > 0) {
+
+            while ($row = mysqli_fetch_assoc($result)) {
+
+                echo '<ul class="list-group list-group-flush" >';
+                echo '<li class="list-group-item" style="margin-left: 45px; ">  <h5>scheme no</h5> ' . $row["id"] . '</li>';
+                echo '<li class="list-group-item" style="margin-left: 45px;"> <h5>scheme name</h5>' . $row["name"] . '</li>';
+                echo '<li class="list-group-item" style="margin-left: 45px;"> <h5>about scheme</h5>' . $row["description"] . '</li>';
+                echo '<li class="list-group-item" style="margin-left: 45px;"> <h5>scheme start date</h5>' . $row["startdate"] . '</li>';
+                echo '<li class="list-group-item" style="margin-left: 45px; "> <h5>scheme end date</h5>' . $row["enddate"] . '</li>';
+                echo '</ul>';
+
+
+
+
+            }
+
+            echo '</ul>';
+        }
+
+        ?>
+
+
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+</body>
 
 
 </html>

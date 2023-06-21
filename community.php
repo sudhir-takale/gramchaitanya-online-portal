@@ -48,18 +48,6 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
 
     <div class="container">
 
-
-
-
-
-
-
-
-
-
-
-
-
         <?php
 
         $query = "SELECT * FROM ADMINS";
