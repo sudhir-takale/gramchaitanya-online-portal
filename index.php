@@ -32,63 +32,6 @@
 
     ?>
     <header style="position: sticky; top: 0%;">
-        <p class="maintext" style="background-image: url('images/tric.jpg');">
-            <a style="text-decoration-line: none; color: red;" href="index.php">Grampanchayat, <br> Laxmi Dahiwadi</a>
-        </p>
-        <nav>
-            <ul class="menu">
-                <li><a href="index.php">Home</a></li>
-                <li><a href="work.php">Work</a></li>
-                <li><a href="community.php">Community</a></li>
-                <li><a href="#">Services</a></li>
-                <li><a href="gallery.php">Gallery</a></li>
-                <li><a href="schemes.php">Schemes</a></li>
-
-                <?php
-
-                if (!$_SESSION['loggedin']) {
-                    echo '<li><a href="login.php">Login</a></li>';
-                }
-                ?>
-
-                <?php
-                if ($_SESSION['role'] == 'admin') {
-                    echo ' <li><a href="admin_dashboard.php">Admin</a></li>';
-                }
-                ?>
-                <div>
-                    <div
-                        style="display: inline;position: absolute;top: 50%;-ms-transform: translateY(-50%); transform: translateY(-50%);">
-                        <span id="Login" style="color: red; font-weight: bold;width: 5px; margin-right: 12px;">
-                            <?php
-                            echo $_SESSION['role'];
-                            ?>
-                        </span>
-                    </div>
-                </div>
-                <div style="text-align: end;">
-                    <a style=" text-decoration: none; cursor: pointer;" href="#" onclick="makeVisible()">
-                        <span id="dot"
-                            style="margin-top: 3px; margin-right:80px; font-size: 30px; background-color: rgb(0, 0, 0); text-align: center; font-weight: bold; border: 1px solid green;">S</a>
-                    </span>
-                </div>
-            </ul>
-        </nav>
-
-        <div id="seeprofile" class="profileclicked"
-            style="width: 180px ; height: auto; border: 2px solid red; z-index: 3; 
-            position: absolute; float: right; right: 0.9%; opacity: 0.9; background-color: white; margin-top:0.7%; display: none; ">
-            <div class="list1" style="margin-top: 4%;">
-
-                <p> <a style="font-size: 16px; font-family: Verdana, Geneva, Tahoma, sans-serif; "
-                        href="viewprofile.php">View
-                        Profile</a></p>
-                <p style="margin-top:-12px ; font-size: 16px ; font-family: Verdana, Geneva, Tahoma, sans-serif;"><a
-                        href="logout.php">Log Out</a></p>
-
-
-            </div>
-
 
         <marquee behavior="side" direction="left" scrollamount="10"
             style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
@@ -403,7 +346,7 @@
                 </div>
                 <hr style="height: 2px; margin-left: 1.5%; margin-right: 1.5%;">
 
-                <div class="services p-3" id="services" style= "background-color:	#FFBD33";>
+                <div class="services p-3" id="services" style="background-color:	#FFBD33" ;>
 
                     <p
                         style="background-color: rgb(25, 24, 24); color: white; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;">
