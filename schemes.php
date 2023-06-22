@@ -21,30 +21,50 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <style>
         body {
             text-align: center;
-            background-color: paleturquoise;
+            /* background-color: paleturquoise; */
         }
 
         li {
             text-align: left;
-            color: black;
-            background-color: pink;
-            font-size: 20px height:30px
+            /* color: black; */
+            /* background-color: pink; */
+            font-size: 17px;
+            height: auto;
         }
 
         ul {
             border: 2px solid black;
 
             display: inline-block;
-            width: 700px;
-            padding: 40px;
-            margin: 30px;
+            width: 800px;
+            padding: 10px;
+            margin: 20px;
+        }
+
+        .scheme-details {
+            margin-left: 45px;
+            margin-bottom: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 10px;
+        }
+
+        .scheme-details li {
+            list-style: none;
+            margin-bottom: 10px;
+        }
+
+        .scheme-details h5 {
+            font-size: 17px;
+            margin-bottom: 5px;
         }
     </style>
 
 </head>
 
 <body>
-    <h1>available schemes are</h1>
+    <h1>New Schemes</h1>
 
 
     <div style="margin-left:450px">
@@ -59,19 +79,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
         <?php
-        $query = "select * from scheme";
+        $query = "select * from scheme ORDER BY id DESC";
         $result = mysqli_query($conn, $query);
         if (mysqli_num_rows($result) > 0) {
 
             while ($row = mysqli_fetch_assoc($result)) {
 
-                echo '<ul class="list-group list-group-flush" >';
-                echo '<li class="list-group-item" style="margin-left: 45px; ">  <h5>scheme no</h5> ' . $row["id"] . '</li>';
-                echo '<li class="list-group-item" style="margin-left: 45px;"> <h5>scheme name</h5>' . $row["name"] . '</li>';
-                echo '<li class="list-group-item" style="margin-left: 45px;"> <h5>about scheme</h5>' . $row["description"] . '</li>';
-                echo '<li class="list-group-item" style="margin-left: 45px;"> <h5>scheme start date</h5>' . $row["startdate"] . '</li>';
-                echo '<li class="list-group-item" style="margin-left: 45px; "> <h5>scheme end date</h5>' . $row["enddate"] . '</li>';
+                echo '<ul class="list-group list-group-flush scheme-details">';
+                echo '<li class="list-group-item"><h5>Scheme name :</h5>' . $row["name"] . '</li>';
+                echo '<li class="list-group-item"><h5>Description of Scheme :</h5>' . $row["description"] . '</li>';
+                echo '<li class="list-group-item"><h5>Scheme Starting date:</h5>' . $row["startdate"] . '</li>';
+                echo '<li class="list-group-item"><h5>Scheme will end on:</h5>' . $row["enddate"] . '</li>';
                 echo '</ul>';
+
 
 
 
