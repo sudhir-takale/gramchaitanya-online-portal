@@ -1,3 +1,23 @@
+<?php
+include 'database.php';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $headline = $_POST['headline'];
+    $description = $_POST['description'];
+    $typework = $_POST['type'];
+
+    $query = "INSERT INTO $typework (name,description) VALUES ('$headline','$description')";
+
+    if (mysqli_query($conn, $query)) {
+        echo "inserted successfully";
+        header("location:index.php");
+    } else {
+        echo "error" . mysqli_error($conn);
+    }
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -45,38 +65,41 @@
 
 
 
-    <form action="" class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 ">
+    <form action="work.php" method="post"
+        class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 ">
         <p class="align-center"
             style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">
             Add work</p>
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter headline </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" placeholder="Enter headline">
+            <input type="text" class="form-control" id="exampleFormControlInput1" name="headline"
+                placeholder="Enter headline">
 
         </div>
         <div class="mb-3 ">
-            <label for="exampleFormControlTextarea1" class="form-label">Enter work decription </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <label for="exampleFormControlTextarea1" class="form-label">Enter work description </label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
         </div>
         <label for="exampleFormControlInput1" class="form-label">Select from list</label>
 
-        <select class="form-select mb-3 " aria-label="Default select example">
-            <option selected>Select your choice</option>
-            <option value="1">Ongoing work</option>
-            <option value="2">Completed work</option>
-            <option value="3">Approved work</option>
+        <select class="form-select mb-3 " name="type" aria-label="Default select example">
+            <option selected>Select type of work</option>
+            <option value="ongoing">ongoing</option>
+            <option value="completed">completed</option>
+            <option value="approved">approved</option>
         </select>
 
 
-        <div class="mb-3 ">
+        <!-- <div class="mb-3 ">
             <label for="formFileMultiple" class="form-label">Upload relevant files</label>
             <input class="form-control" type="file" id="formFileMultiple" multiple>
-        </div>
+        </div> -->
 
 
 
         <div class="text-center">
-            <button type="button" class="btn btn-primary w-50 ">Submit</button>
+            <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
+            <input type="submit" value="submit">
         </div>
 
     </form>

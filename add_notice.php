@@ -2,8 +2,6 @@
 
 include 'database.php';
 
-
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail = $_POST['email'];
     $notice = $_POST['notice'];

@@ -48,6 +48,16 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
     <div style="margin-left:450px">
+
+
+        <form action="add_schemes.php">
+            <input style="float: right; margin-right:20px; background-color:pink" type="submit" value="add schemes">
+
+            <input style="float: right; margin-right:20px; background-color:pink" type="submit"
+                value="delete schemes"><br><br>
+        </form>
+
+
         <?php
         $query = "select * from scheme";
         $result = mysqli_query($conn, $query);
@@ -72,7 +82,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         }
 
         ?>
-        <button>add schemes</button>
+        <br>
 
     </div>
 
