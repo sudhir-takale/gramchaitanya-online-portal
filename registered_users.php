@@ -42,17 +42,25 @@ if (!($_SESSION['role'] == 'admin') && ($_SESSION['loggedin'] == true)) {
             background-color: #cde4ff;
         }
 
-        caption {
+        p {
             font-size: 24px;
             font-weight: bold;
             margin-bottom: 15px;
+            text-align: center;
         }
     </style>
 </head>
 
 <body>
+
+    <?php
+
+    require 'navbar.php';
+
+    ?>
+    <p>Registered Users</p>
+
     <table>
-        <caption>Registered Users</caption>
         <thead>
             <tr>
                 <th>ID</th>
@@ -68,19 +76,10 @@ if (!($_SESSION['role'] == 'admin') && ($_SESSION['loggedin'] == true)) {
 
             <?php
 
-            // require 'database.php';
-            include 'database.php';
 
-            // $servername = "127.0.0.1";
-            // $username = "root";
-            // $password = "";
-            // $database = "gramvikas";
-            
-            // $conn = new mysqli($servername, $username, $password, $database);
-            // if ($conn->connect_error) {
-            //     die("Connection failed: " . $conn->connect_error);
-            // }
-            
+            require 'database.php';
+
+
             $sql = "SELECT id, firstname, middlename, lastname, adharno, mobileno, dateofbirth FROM users";
             $result = mysqli_query($conn, $sql);
 
@@ -100,7 +99,7 @@ if (!($_SESSION['role'] == 'admin') && ($_SESSION['loggedin'] == true)) {
                 echo "<tr><td colspan='7'>No data found.</td></tr>";
             }
 
-            $connection->close();
+            $conn->close();
             ?>
         </tbody>
     </table>

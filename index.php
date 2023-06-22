@@ -59,40 +59,21 @@
                 <div class="notice" style="border:2px solid black; width: auto;  margin-top: -1%;  height: 600px; ">
                     <p> Notices</p>
                     <div class="list">
-                        <marquee behavior="sidebar" direction="up">
-                            <ul style="height:500px">
-                                <li>आज सकाळी वर्तमान पत्रात आलेली तुझी बातमी की, तू जिल्हास्तरीय निबंध स्पर्धेत सहभागी
-                                    होऊन
-                                    प्रथम क्रमांक पटकावला आहेस.</li>
-                                <li>आज तुला प्रथम क्रामांकाच पारितोषिक मिळालं हे पाहून माझं आनंद गगनात मावेना सारखं
-                                    झालंय.
-                                    तुझ्याकडे असलेली लेखनाची कला अशीच
-                                    जप . तुझ्या पुढील वाटचालीस खूप खूप शुभेच्छा.</li>
-                                <li>औपचारिक वा व्यावसायिक पत्रांचे स्वरूप थोडे वेगळे असते. अशा पत्रांच्या प्रारंभी
-                                    वरच्या
-                                    उजव्या कोपऱ्यात पत्ता लिहिताना
-                                    प्रथम आपले संपूर्ण नाव लिहावे.</li>
-
-                                <li>आमच्या शाळेला सुमारे दोनशे रोपे हवी आहेत. आपल्याकडे उपलब्ध असलेल्या वृक्षांची रोपे
-                                    आम्ही
-                                    निवडू हेपत्र मी माननीय
-                                    मुख्याध्यापकांच्या अनुमतीने लिहीत आहे. तसदीबद्दल क्षमस्व.</li>
-                                <li>आपल्या खात्याकडून वृक्षांची रोपे विनामूल्य पुरवली जाणार आहेत, असे कळले. आमच्या
-                                    शाळेलाही
-                                    अशी रोपे हवी आहेत; त्यासाठी हे
-                                    पत्र लिहीत आहे.</li>
-
-                                <li>निमंत्रणे देणे, देणगी मागणे, स्थळभेटीसाठी परवानगी घेणे, अग्निशमनदलासारख्या संस्थांना
-                                    मार्गदर्शनासाठी बोलावणे, 'शालेय
-                                    समिती'मध्ये सहभागी होण्यासाठी नगरसेवक किंवा सरपंच यांना आमंत्रित करणे,
-                                    विदयार्थ्यांच्या
-                                    समस्या सोडवण्यासाठी पालकांना
-                                    आवाहन करणे यांसारख्या प्रसंगांत विनंतिपत्रे लिहिली जातात.</li>
 
 
-                            </ul>
+                        <php require 'database.php' ; $sql="SELECT * FROM notice order by id DSC" ;
+                            $result=mysqli_query($conn, $sql); $notices=mysqli_fetch_all($result, MYSQLI_ASSOC); ?>
+                            <marquee behavior="sidebar" direction="up">
 
-                        </marquee>
+                                <ul style="height:500px;">
+                                    <?php foreach ($notices as $notice): ?>
+                                        <li>
+                                            <?php echo $notice['notice']; ?>
+                                        </li>
+                                    <?php endforeach; ?>
+                                </ul>
+
+                            </marquee>
 
                     </div>
 
@@ -399,8 +380,9 @@
 
                     <div class="text-center mt-3">
                         <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
-                        <input type="reset" value="reset">
-                        <input type="submit" value="submit">
+                        <button type="button" class="btn btn-primary w-25">Submit</button>
+                        <button type="reset" class="btn btn-primary w-25">Clear</button>
+
                     </div>
 
                 </form>

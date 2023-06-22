@@ -1,60 +1,45 @@
 <?php
-require('database.php');
+require 'database.php';
 
-$errors = [];
+// Process the notification form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Retrieve the message from the form
+    $message = $_POST['message'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fname = $_POST['fname'];
-    $designation = $_POST['designation'];
-    $mobile = $_POST['mobile'];
-    $adharno = $_POST['adharno'];
-    $password = $_POST['password'];
+    // Perform any necessary processing, such as sending the notification to recipients
+    // You can implement the logic to send the notification to the desired recipients here
 
-    // Validate form inputs
-    if (empty($fname)) {
-        $errors[] = "Name is required.";
-    }
+    // For demonstration purposes, let's assume we are storing the notifications in a database
+    // You would need to adjust the database connection details accordingly
 
-    if (empty($designation)) {
-        $errors[] = "Designation is required.";
-    }
+    // Insert the notification into the database
+    $sql = "INSERT INTO notifications (message) VALUES ('$message')";
 
-    if (empty($mobile)) {
-        $errors[] = "Mobile number is required.";
-    } elseif (!preg_match("/^[0-9]{10}$/", $mobile)) {
-        $errors[] = "Mobile number must be 10 digits.";
-    }
+    if (mysqli_query($conn, $sql)) {
+        // Get the list of recipients from the database or any other source
+        $recipientEmails = ['sudhirtakale99@gmail.com', 'shtakale1111@gmail.com'];
 
-    if (empty($adharno)) {
-        $errors[] = "Aadhar number is required.";
-    } elseif (!preg_match("/^[0-9]{12}$/", $adharno)) {
-        $errors[] = "Aadhar number must be 12 digits.";
-    }
+        // Send the notification to each recipient via email
+        foreach ($recipientEmails as $recipientEmail) {
+            $to = $recipientEmail;
+            $subject = "New Notification";
+            $emailMessage = "A new notification has been sent: $message";
+            $headers = "From: sudhirtakale.sknscoe.comp@gmail.com\r\n";
+            $headers .= "Reply-To: sudhirtakale.sknscoe.comp@gmail.com\r\n";
+            $headers .= "Content-Type: text/html\r\n";
 
-    if (empty($password)) {
-        $errors[] = "Password is required.";
-    }
-
-    if (empty($_FILES['photo']['name'])) {
-        $errors[] = "Photo is required.";
-    }
-
-    // If there are no validation errors, proceed with inserting data into the database
-    if (empty($errors)) {
-        $photo = $_FILES['photo']['tmp_name'];
-        $photoData = file_get_contents($photo);
-        $photoData = mysqli_real_escape_string($conn, $photoData);
-
-        $query = "INSERT INTO admins (name, adharno, designation, mobilenumber, password, photo) VALUES ('$fname', '$adharno', '$designation', '$mobile', '$password', '$photoData')";
-
-        if (mysqli_query($conn, $query)) {
-            echo "<script>window.alert('New member added Successfully!')</script>";
-            header("Location: community.php");
-            exit;
-        } else {
-            echo "Error: " . mysqli_error($conn);
+            // Send the email
+            if (mail($to, $subject, $emailMessage, $headers)) {
+                echo "<p>Notification sent successfully to $recipientEmail!</p>";
+            } else {
+                echo "<p>Failed to send notification to $recipientEmail.</p>";
+            }
         }
+    } else {
+        echo "Error: " . $sql . "<br>" . $conn->error;
     }
+
+    $conn->close();
 }
 ?>
 
@@ -65,77 +50,57 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add member</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <title>Welcome to Admin Dashboard</title>
+    <link rel="stylesheet" href="admin_style.css">
 </head>
 
 <body>
-    <form action="addmember.php" class="mt-3 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 "
-        method="post" enctype="multipart/form-data">
-        <p class="align-center"
-            style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-            Add Member</p>
+    <?php
+    session_start();
+    if (!($_SESSION['role'] == 'admin') && ($_SESSION['loggedin'] == true)) {
+        header("Location:login.php");
+        exit();
+    }
+    ?>
 
-        <?php if (!empty($errors)): ?>
-            <div class="alert alert-danger">
-                <ul>
-                    <?php foreach ($errors as $error): ?>
-                        <li>
-                            <?php echo $error; ?>
-                        </li>
-                    <?php endforeach; ?>
-                </ul>
+    <div id="mySidenav" class="sidenav">
+        <!-- Navigation links -->
+    </div>
+
+    <div id="main">
+        <div class="head">
+            <!-- Dashboard header -->
+        </div>
+
+        <div class="col-div-8">
+            <div class="box-8">
+                <div class="content-box">
+                    <div class="container2">
+                        <p class="h">Communication and Notification</p>
+                        <form method="POST" action="send_notification.php" class="notification-form">
+                            <label for="message">Message:</label>
+                            <textarea name="message" id="message" rows="5" placeholder="Enter your message"></textarea>
+                            <button type="submit">Send Notification</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        <?php endif; ?>
-
-        <div class="mb-2 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter Name</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="fname"
-                placeholder="Enter member name" value="<?php echo isset($_POST['fname']) ? $_POST['fname'] : ''; ?>">
         </div>
 
-        <div class="mb-2 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="adharno"
-                placeholder="Enter adhar number"
-                value="<?php echo isset($_POST['adharno']) ? $_POST['adharno'] : ''; ?>">
+        <div class="col-div-4">
+            <div class="box-4">
+                <div class="content-box">
+                    <p>Total Sale <span>Sell All</span></p>
+                    <div class="circle-wrap">
+                        <!-- Circle progress bar -->
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <div class="mb-2 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter designation</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="designation"
-                placeholder="Enter member designation"
-                value="<?php echo isset($_POST['designation']) ? $_POST['designation'] : ''; ?>">
-        </div>
+        <!-- JavaScript code -->
 
-        <div class="mb-2 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter mobile number</label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="mobile" maxlength="10"
-                placeholder="Enter mobile number"
-                value="<?php echo isset($_POST['mobile']) ? $_POST['mobile'] : ''; ?>">
-        </div>
-
-        <div class="mb-2 ">
-            <label for="formFileMultiple" class="form-label">Enter your password</label>
-            <input class="form-control" type="password" id="formFileMultiple" name="password" multiple
-                placeholder="Enter your password">
-        </div>
-
-        <div class="mb-2 ">
-            <label for="formFileMultiple" class="form-label">Upload photo</label>
-            <input class="form-control" type="file" id="formFileMultiple" name="photo" multiple>
-        </div>
-
-        <div class="text-center">
-            <button type="submit" class="btn btn-primary w-50 ">Submit</button>
-        </div>
-
-    </form>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 
 </html>

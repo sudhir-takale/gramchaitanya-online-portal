@@ -1,3 +1,49 @@
+<?php
+// Process the notification form submission
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+  // Retrieve the message from the form
+  $message = $_POST['message'];
+
+  // Perform any necessary processing, such as sending the notification to recipients
+  // You can implement the logic to send the notification to the desired recipients here
+
+  // For demonstration purposes, let's assume we are storing the notifications in a database
+  // You would need to adjust the database connection details accordingly
+
+
+  // Insert the notification into the database
+  $sql = "INSERT INTO notifications (message) VALUES ('$message')";
+
+  if ($conn->query($sql) === TRUE) {
+    // Get the list of recipients from the database or any other source
+    $recipientEmails = ['sudhirtakale99@gmail.com', 'shtakale1111@gmail.com'];
+
+    // Send the notification to each recipient via email
+    foreach ($recipientEmails as $recipientEmail) {
+      $to = $recipientEmail;
+      $subject = "New Notification";
+      $emailMessage = "A new notification has been sent: $message";
+      $headers = "From: sudhirtakale.sknscoe.comp@gmail.com\r\n";
+      $headers .= "Reply-To: your_email@example.com\r\n";
+      $headers .= "Content-Type: text/html\r\n";
+
+      // Send the email
+      if (mail($to, $subject, $emailMessage, $headers)) {
+        echo "<p>Notification sent successfully to $recipientEmail!</p>";
+      } else {
+        echo "<p>Failed to send notification to $recipientEmail.</p>";
+      }
+    }
+  } else {
+    echo "Error: " . $sql . "<br>" . $conn->error;
+  }
+
+  // Close the database connection
+  $conn->close();
+}
+?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -10,6 +56,53 @@
   <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 
 </head>
+<style>
+  .container2 {
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+  }
+
+  .p {
+    text-align: center;
+    margin-bottom: 2%;
+    font-weight: bold;
+  }
+
+  .notification-form {
+    margin-top: 2%;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 5px;
+  }
+
+  .notification-form label {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .notification-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    resize: vertical;
+  }
+
+  .notification-form button {
+    background-color: #007bff;
+    color: #fff;
+    margin-top: 1%;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .notification-form button:hover {
+    background-color: #0056b3;
+  }
+</style>
 
 <body>
 
@@ -26,7 +119,7 @@
     <!-- <p class="logo"><span>M</span>-SoftTech</p> -->
     <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> Dashboard</a>
     <a href="registered_users.php" class="icon-a"><i class="fa fa-users icons"></i> Registered Users</a>
-    <a href="report.php" class="icon-a"><i class="fa fa-list icons"></i> Reports</a>
+    <a href="complaint.php" class="icon-a"><i class="fa fa-list icons"></i> Complaints</a>
     <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i> Orders</a>
     <a href="#" class="icon-a"><i class="fa fa-tasks icons"></i> Inventory</a>
     <a href="#" class="icon-a"><i class="fa fa-user icons"></i> Accounts</a>
@@ -44,6 +137,7 @@
 
       <div class="clearfix"></div>
       <br />
+
 
       <div class="col-div-3">
         <div class="box">
@@ -74,37 +168,22 @@
       <div class="col-div-8">
         <div class="box-8">
           <div class="content-box">
-            <p>Top Selling Projects <span>Sell All</span></p>
-            <br />
-            <table>
-              <tr>
-                <th>Company</th>
-                <th>Contact</th>
-                <th>Country</th>
-              </tr>
-              <tr>
-                <td>Alfreds Futterkiste</td>
-                <td>Maria Anders</td>
-                <td>Germany</td>
-              </tr>
-              <tr>
-                <td>Centro comercial Moctezuma</td>
-                <td>Francisco Chang</td>
-                <td>Mexico</td>
-              </tr>
-              <tr>
-                <td>Ernst Handel</td>
-                <td>Roland Mendel</td>
-                <td>Austria</td>
-              </tr>
-              <tr>
-                <td>Island Trading</td>
-                <td>Helen Bennett</td>
-                <td>UK</td>
-              </tr>
 
 
-            </table>
+
+
+            <div class="container2">
+              <p class="h">Communication and Notification</p>
+
+              <form method="POST" action="" class="notification-form">
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" rows="5" placeholder="Enter your message"></textarea>
+
+                <button type="submit">Send Notification</button>
+              </form>
+            </div>
+
+
           </div>
         </div>
       </div>

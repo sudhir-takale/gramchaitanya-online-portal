@@ -64,9 +64,21 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </head>
 
 <body>
+
     <h1>New Schemes</h1>
 
 
+    <?php
+    if (($_SESSION['role'] == 'admin')) {
+
+        echo '<div class="d-flex justify-content-end" style = "margin-right: 2%;">
+        <button type="submit" class="btn btn-primary mt-4 "><a
+                style="font-size:17px;font-weight:600; width:auto;color:white; text-decoration:none;"
+                href="add_schemes.php">Add New Scheme</a></button>
+    </div>';
+
+    }
+    ?>
     <div style="margin-left:350px;">
         <?php
         $query = "select * from scheme ORDER BY id DESC";
@@ -92,7 +104,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         }
 
         ?>
-        <button>add schemes</button>
+
 
     </div>
 
@@ -102,7 +114,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
 
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.4/dist/umd/popper.min.js"></script>
 
 
 
