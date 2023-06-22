@@ -3,10 +3,10 @@
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $mail = $_POST['email'];
+    $username = $_POST['username'];
     $notice = $_POST['notice'];
 
-    $query = "INSERT INTO notice (email,notice) VALUES ('$mail','$notice')";
+    $query = "INSERT INTO notice (username,notice) VALUES ('$username','$notice')";
 
     if (mysqli_query($conn, $query)) {
         echo "inserted successfully";
@@ -32,9 +32,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <form action="add_notice.php" method="post"
         style="border:2px solid black; width: 700px; height: 300px; margin-top: 15%; margin-left: 30%; background-color: rgb(165, 190, 190);">
         <div class="mb-3" style="margin-left:20px; margin-right: 20px;">
-            <label for="exampleFormControlInput1" class="form-label" style="margin: 10px;">Email address</label>
-            <input type="email" name="email" class="form-control" id="exampleFormControlInput1"
-                placeholder="name@example.com">
+            <label for="exampleFormControlInput1" class="form-label" style="margin: 10px;">Username</label>
+            <input type="text" name="username" class="form-control" id="exampleFormControlInput1"
+                placeholder="username">
         </div>
 
         <div class="mb-3" style="margin-left:20px; margin-right: 20px;">

@@ -60,6 +60,7 @@
                     <p> Notices</p>
                     <div class="list">
                         <marquee behavior="sidebar" direction="up">
+
                             <ul style="height:500px">
                                 <li>आज सकाळी वर्तमान पत्रात आलेली तुझी बातमी की, तू जिल्हास्तरीय निबंध स्पर्धेत सहभागी
                                     होऊन
@@ -149,7 +150,7 @@
                         <div class="information"><img src="images/Dummy1.jpeg" alt="">
                             <p style=" margin-left: 25px;" class="postinfo"> Name - Ramesh Sutar <br>
                                 Post - Talathi <br>
-                                Adress - Khedbhose <br>
+                                Adress - Laxmidahiwadi <br>
                                 Phone - 9325317610<br>
 
                             </p>
