@@ -119,7 +119,7 @@
                 <div class="text-center mt-2">
                     <button type="submit" class="btn btn-primary w-50 ">submit</button>
                     <p style=" margin-left:60%; font-size: 14px; font-weight: bold;">Already have an account? <a
-                            href="login.html" style="color: blue;">Log
+                            href="login.php" style="color: blue;">Log
                             in</a></p>
                 </div>
 

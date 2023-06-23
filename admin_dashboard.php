@@ -1,5 +1,36 @@
 <?php
-// Process the notification form submission
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+include('database.php');
+
+// Fetch registered users
+// Fetch registered users
+$sql = "SELECT COUNT(*) AS count FROM users WHERE adharno IS NOT NULL";
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Error running query: " . $conn->error);
+}
+
+$row = $result->fetch_assoc();
+$registeredUsers = $row['count'];
+
+// Fetch Complaints
+$sql = "SELECT COUNT(*) AS count FROM complaint WHERE id IS NOT NULL";
+$result = $conn->query($sql);
+
+if (!$result) {
+    die("Error running query: " . $conn->error);
+}
+
+$row = $result->fetch_assoc();
+$complaints = $row['count'];
+
+
+
+
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
   // Retrieve the message from the form
   $message = $_POST['message'];
@@ -138,31 +169,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="clearfix"></div>
       <br />
 
-
       <div class="col-div-3">
         <div class="box">
-          <p>67<br /><span>Registered Users</span></p>
+          <p><?php echo $registeredUsers; ?><br /><span>Registered Users</span></p>
           <i class="fa fa-users box-icon"></i>
         </div>
       </div>
       <div class="col-div-3">
         <div class="box">
-          <p>88<br /><span>Complaints</span></p>
+          <p><?php echo $complaints; ?><br /><span>Complaints</span></p>
           <i class="fa fa-list box-icon"></i>
         </div>
       </div>
-      <div class="col-div-3">
-        <div class="box">
-          <p>99<br /><span>Orders</span></p>
-          <i class="fa fa-shopping-bag box-icon"></i>
-        </div>
-      </div>
-      <div class="col-div-3">
-        <div class="box">
-          <p>78<br /><span>Tasks</span></p>
-          <i class="fa fa-tasks box-icon"></i>
-        </div>
-      </div>
+      
       <div class="clearfix"></div>
       <br /><br />
       <div class="col-div-8">
@@ -214,8 +233,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-
-      $(".nav").click(function () {
+      $(".nav").click(function() {
         $("#mySidenav").css('width', '70px');
         $("#main").css('margin-left', '70px');
         $(".logo").css('visibility', 'hidden');
@@ -228,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $(".nav2").css('display', 'block');
       });
 
-      $(".nav2").click(function () {
+      $(".nav2").click(function() {
         $("#mySidenav").css('width', '300px');
         $("#main").css('margin-left', '300px');
         $(".logo").css('visibility', 'visible');
