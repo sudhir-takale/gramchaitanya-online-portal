@@ -210,7 +210,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
       <div class="col-div-4">
         <div class="box-4">
           <div class="content-box">
-            <p>Total Sale <span>Sell All</span></p>
+            <p>Solved Queries <span></span></p>
 
             <div class="circle-wrap">
               <div class="circle">
