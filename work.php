@@ -1,161 +1,185 @@
 <?php
-include 'database.php';
+session_start();
+require 'database.php';
+if (isset($_GET['type'])) {
+    $type = $_GET['type'];
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $headline = $_POST['headline'];
-    $description = $_POST['description'];
-    $typework = $_POST['type'];
-
-    $query = "INSERT INTO $typework (name,description) VALUES ('$headline','$description')";
-
-    if (mysqli_query($conn, $query)) {
-        echo "inserted successfully";
-        header("location:index.php");
-    } else {
-        echo "error" . mysqli_error($conn);
+    if ($type === 'ongoing') {
+        $table = 'ongoing';
+        $workTitle = 'Ongoing Work';
+    } elseif ($type === 'completed') {
+        $table = 'completed';
+        $workTitle = 'Completed Work';
+    } elseif ($type === 'approved') {
+        $table = 'approved';
+        $workTitle = 'Approved Work';
     }
+
+    $query = "SELECT * FROM $table ORDER BY id DESC";
+    $result = mysqli_query($conn, $query);
+    $works = mysqli_fetch_all($result, MYSQLI_ASSOC);
+} else {
+    $type = '';
 }
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 
-</body>
-
-</html>
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="device-width, initial-scale=1.0">
     <title>gram | work done</title>
-    <link rel="stylesheet" href="work.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
+    <!-- <link rel="stylesheet" href="work.css"> -->
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet"> -->
 </head>
+<style>
+    .button-tags {
+        display: flex;
+        justify-content: center;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+
+    .mainbuttons {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: #fff;
+        font-size: 16px;
+        text-decoration: none;
+        border-radius: 4px;
+        margin-right: 10px;
+        text-align: center;
+        transition: background-color 0.3s ease;
+    }
+
+    .mainbuttons:hover {
+        background-color: #45a049;
+    }
+
+    .header1 {
+        font-size: 25px;
+        text-align: center;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-weight: 900;
+        padding-top: 10px;
+        color: #ffffff;
+        /* Font color */
+    }
+
+    .header-container {
+        background-color:  #ff9900;
+        /* Background color */
+        padding: 15px;
+        border-radius: 10px;
+    }
+
+
+
+
+    .list-group {
+        background-color: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        padding: 8px;
+        list-style: none;
+        box-shadow: 1px 1px 2px black;
+
+
+    }
+
+    .list-group-item {
+        background-color: #fff;
+        border: none;
+        padding: 7px;
+        list-style: none;
+        /* box-shadow: 1px 1px 8px black; */
+
+    }
+
+    h5 {
+        margin-top: 0;
+    }
+
+    .work-title {
+        text-align: center;
+        background-color: #f2f2f2;
+        /* Background color */
+        padding: 20px;
+        color: #333333;
+        /* Text color */
+        font-size: 28px;
+        /* Font size */
+        font-family: Arial, sans-serif;
+        /* Font family */
+        font-weight: bold;
+        /* Font weight */
+        border: 2px solid #cccccc;
+        /* Border */
+        border-radius: 10px;
+        /* Border radius */
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Box shadow */
+    }
+</style>
 
 <body>
-
     <header>
-        <div
-            style=" position: sticky; border: 2px ridge black; border-left-style: dashed; background-color: rgb(200, 180, 27); height: 100px; border-radius: 13px; border-bottom-style: dotted;">
+        <div class="header-container">
+            <p class="header1">Initiatives undertaken by our Grampanchayat</p>
+        </div>
+        <div style="margin-top: 2%; margin-bottom: 1%;" class="button-tags">
+            <a href="work.php?type=completed" class="mainbuttons">Completed Work</a>
+            <a href="work.php?type=ongoing" class="mainbuttons">Ongoing Work</a>
+            <a href="work.php?type=approved" class="mainbuttons">Approved Work</a>
+            <?php
 
-            <p class="header1"
-                style="font-size: 34px;font-family: Verdana, Geneva, Tahoma, sans-serif; font-weight: 900; padding-top: 17px; ">
-                Work done by our Grampanchayat</p>
+            if ($_SESSION['role'] == 'admin') {
+                echo '<a href="addwork.php" class="mainbuttons">Add New Work</a>';
+            }
+            ?>
 
 
         </div>
-        <div style="margin-top: 2%;margin-bottom: 1%;" class="button-tags">
-            <button class="mainbuttons" onclick="setVisible1()">completed Work</button>
-            <button class="mainbuttons" onclick="setVisible2()">Ongoing Work</button>
-            <button class="mainbuttons" onclick="setVisible3()">Approved Work</button>
-            <button class="mainbuttons" onclick="setVisible3()">Add Work</button>
-        </div>
-
     </header>
 
-    <form action="work.php" method="post"
-        class="m-5 bg-primary-subtle  border w-50 p-4 mx-auto col-10 col-md-8 col-lg-6 ">
-        <p class="align-center"
-            style="text-align: center; font-size: 30px; font-weight: 800; font-family: Verdana, Geneva, Tahoma, sans-serif;">
-            Add work</p>
-        <div class="mb-3 ">
-            <label for="exampleFormControlInput1" class="form-label">Enter headline </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="headline"
-                placeholder="Enter headline">
+    <?php if ($type): ?>
+        <div style="margin-left:15%; margin-right:15%;">
+            <h1 class="work-title">
+                <?php echo $workTitle; ?>
+            </h1>
+            <?php if (!empty($works)): ?>
+                <?php foreach ($works as $work): ?>
 
+                    <ul class="list-group list-group-flush scheme-details">
+                        <li class="list-group-item">
+                            <?php echo $work["id"]; ?>
+                            <h2>Scheme name :</h2>
+                            <p
+                                style="font-size:18px;color:#000080;font-weight:600; margin-bottom:-0.1%;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                                <?php echo $work["name"]; ?>
+                            </p>
+                        </li>
+                        <li class="list-group-item">
+                            <h3>Description of Scheme :</h3>
+                            <p
+                                style="font-size:18px;color:#000080;font-weight:600; font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">
+                                <?php echo $work["description"]; ?>
+                            </p>
+                        </li>
+                    </ul>
+                <?php endforeach; ?>
+            <?php else: ?>
+                <p>No works found.</p>
+            <?php endif; ?>
         </div>
-        <div class="mb-3 ">
-            <label for="exampleFormControlTextarea1" class="form-label">Enter work description </label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="description" rows="3"></textarea>
-        </div>
-        <label for="exampleFormControlInput1" class="form-label">Select from list</label>
+    <?php endif; ?>
 
-        <select class="form-select mb-3 " name="type" aria-label="Default select example">
-            <option selected>Select type of work</option>
-            <option value="ongoing">ongoing</option>
-            <option value="completed">completed</option>
-            <option value="approved">approved</option>
-        </select>
-
-        <div class="text-center">
-            <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
-            <input type="submit" value="submit">
-        </div>
-
-    </form>
-
-    <script>
-        var x = document.getElementById("completedwork")
-        var y = document.getElementById("ongoingwork")
-        var z = document.getElementById("approvedwork")
-
-        function setVisible1() {
-
-            if (y.style.visibility === "visible" || z.style.visibility === "visible") {
-
-                z.style.display = "none"
-                y.style.display = "none"
-            }
-
-            if (x.style.visibility === "hidden") {
-                x.style.visibility = "visible";
-            }
-            else {
-                x.style.display = "none";
-            }
-        }
-        function setVisible2() {
-
-            if (x.style.visibility === "visible" || z.style.visibility === "visible" || x.style.display === "none" || z.style.display === "none") {
-                x.style.display = "none"
-                z.style.display = "none"
-            }
-
-            if (y.style.visibility === "hidden" || y.style.display === "none") {
-                y.style.visibility = "visible";
-                y.style.position = "absolute";
-                y.style.top = "14%";
-                y.style.zIndex = 3;
-            }
-            else {
-                y.style.display = "none";
-            }
-        }
-        function setVisible3() {
-
-            let z = document.getElementById("approvedwork")
-            // let x = document.getElementById("completedwork")
-
-
-            if (x.style.visibility === "visible" || y.style.visibility === "visible") {
-                z.style.display = "none"
-                y.style.display = "none"
-            }
-            if (z.style.visibility === "hidden") {
-                z.style.visibility = "visible";
-                z.style.position = "absolute";
-                z.style.top = "14%";
-            }
-            else {
-                z.style.display = "none";
-            }
-        }
-
-    </script>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
 
 </body>
+
+
 
 </html>

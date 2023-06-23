@@ -24,6 +24,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             /* background-color: paleturquoise; */
         }
 
+        h1 {
+            font-size: 40px;
+            font-weight: bold;
+            margin: 10px;
+            background-color: paleturquoise;
+            padding: 40px;
+            border-radius: 5px;
+            color: #003366;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
         li {
             text-align: left;
             /* color: black; */
@@ -65,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body>
 
-    <h1>New Schemes</h1>
+    <h1>Recently Added Schemes</h1>
 
 
     <?php

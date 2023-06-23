@@ -61,19 +61,27 @@
                     <div class="list">
 
 
-                        <php require 'database.php' ; $sql="SELECT * FROM notice order by id DSC" ;
-                            $result=mysqli_query($conn, $sql); $notices=mysqli_fetch_all($result, MYSQLI_ASSOC); ?>
-                            <marquee behavior="sidebar" direction="up">
+                        <?php
+                        require 'database.php';
 
-                                <ul style="height:500px;">
-                                    <?php foreach ($notices as $notice): ?>
-                                        <li>
-                                            <?php echo $notice['notice']; ?>
-                                        </li>
-                                    <?php endforeach; ?>
-                                </ul>
+                        $sql = "SELECT * FROM notices";
+                        $result = mysqli_query($conn, $sql);
 
-                            </marquee>
+                        if ($result) {
+                            $notices = mysqli_fetch_all($result, MYSQLI_ASSOC);
+                        } else {
+                            $notices = array(); // Initialize an empty array if there's an error or no notices found
+                        }
+                        ?>
+                        <marquee behavior="sidebar" direction="up">
+                            <ul style="height: 500px;">
+                                <?php foreach ($notices as $notice): ?>
+                                    <li>
+                                        <?php echo $notice['notice']; ?>
+                                    </li>
+                                <?php endforeach; ?>
+                            </ul>
+                        </marquee>
 
                     </div>
 

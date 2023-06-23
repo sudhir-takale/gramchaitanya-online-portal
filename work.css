@@ -1,89 +1,92 @@
-body  {
+/* work.css */
 
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    
-   
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    margin: 0;
+    padding: 0;
 }
 
- body {
-     background-color: #139aa9;
- }
-.header1 {
+header {
+    background-color: #ffcc00;
+    padding: 20px;
     text-align: center;
-    font-size: 28px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
 
+.header1 {
+    font-size: 34px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 900;
+    padding-top: 17px;
+    color: #333;
+    margin: 0;
+}
 
+.button-tags {
+    display: flex;
+    justify-content: center;
+    margin-top: 2%;
+    margin-bottom: 1%;
 }
 
 .mainbuttons {
-    font-size: 19px;
-    margin-left: 9%;
-    margin-right: 4%;
-    background-color: green;
-    color: white;
-    font-weight: 700;
-}
-
-.mainsection li:hover {
-
-    color: black;
-    font-weight: 600;
-    box-shadow: 3px 2px 8px rgb(26, 24, 24);
-}
-
-.images img {
-
-    width: 100px;
-    height: 100px;
-    margin-top: 9px;
-    margin-left: 33px;
-}
-
-.decription {
-    font-size: 17px;
-    line-height: 1.5;
-    letter-spacing: 1;
-}
-
-.maintext {
-    color: darkseagreen;
-}
-
-.defaultname {
-
-    font-size: 19px;
-    font-weight: 400;
-    letter-spacing: 1cap;
-    margin-left: 4%;
-    margin-top: 2%;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-}
-
-.inputtag {
-    width: 75%;
-    font-weight: 600;
-    height: 35px;
-    font-size: 19px;
-    margin-top: -1%;
-
-    margin-left: 4%;
-
-}
-
-
-/* hover functionality for button */
-.button-tags button:hover {
-    cursor: pointer;
-    background-color: rgb(48, 10, 27);
-}
-
-.button-tags button {
-    border-radius: 23px;
-    padding: 0.75em;
+    background-color: #333;
     border: none;
-    outline: none;
-    background-color: rgb(170, 30, 88);
-    color: white;
-    border-radius: 0.25em;
-    border-radius: 7px;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: 700;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.mainbuttons:hover {
+    background-color: #555;
+}
+
+.scheme-details {
+    margin-top: 20px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.scheme-details h5 {
+    font-size: 18px;
+    margin-bottom: 10px;
+    color: #333;
+}
+
+.scheme-details p {
+    margin: 0;
+    color: #555;
+}
+
+.list-group-item {
+    border: none;
+    padding: 5px 0;
+}
+
+.list-group-item:first-child {
+    padding-top: 0;
+}
+
+.list-group-item:last-child {
+    padding-bottom: 0;
+}
+
+.list-group-item h5 {
+    font-size: 16px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.list-group-item p {
+    margin: 0;
+    color: #555;
 }

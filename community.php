@@ -22,29 +22,154 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>community</title>
-    <link rel="stylesheet" href="community.css">
 </head>
 
+<style>
+    .admin-list {
+        width: 50%;
+        margin: 0 auto;
+        list-style: none;
+        padding: 0;
+    }
+
+    .admin-list li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 20px;
+        background-color: #f9f9f9;
+        border-radius: 5px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+    }
+
+    .admin-list img {
+        width: 120px;
+        height: 110px;
+        margin-right: 20px;
+        border-radius: 5px;
+    }
+
+    .admin-list .info {
+        font-size: 16px;
+        color: #333;
+    }
+
+    .admin-list .info p {
+        margin-bottom: 5px;
+    }
+
+    .admin-list .info span {
+        font-weight: bold;
+    }
+
+    .admin-list .info a {
+        color: #0066cc;
+        text-decoration: none;
+    }
+
+    .admin-list .info a:hover {
+        text-decoration: underline;
+    }
+
+
+
+    .hh {
+        box-sizing: border-box;
+
+        box-shadow: 5px 2px 6px black;
+    }
+
+    .search {
+        display: flex;
+        justify-content: center;
+        margin-bottom: 4%;
+    }
+
+    .inputbutton {
+        padding: 8px;
+        font-size: 16px;
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 4%;
+    }
+
+    .searchbutton {
+        padding: 8px 16px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        margin-bottom: 4%;
+
+        cursor: pointer;
+    }
+
+    .add {
+        cursor: pointer;
+    }
+
+    .add:hover,
+    .searchbutton:hover {
+        background-color: #45a049;
+    }
+
+    .admin-list .info a:hover {
+        text-decoration: underline;
+    }
+
+    .admin-item:hover {
+        background-color: #eaeaea;
+    }
+
+    .add-member-button {
+        /* display: inline-block; */
+        padding: 12px 24px;
+        font-size: 16px;
+        font-weight: bold;
+        text-decoration: none;
+        text-align: end;
+        float: right;
+        border: none;
+        border-radius: 4px;
+        background-color: #4CAF50;
+        color: white;
+        transition: background-color 0.3s ease;
+    }
+
+    .add-member-button:hover {
+        background-color: #45a049;
+        cursor: pointer;
+    }
+</style>
+
 <body>
+    <div style="margin-bottom: 12px; background-color: #3498db;" class="hh">
+        <h1 style="font-size: 40px; font-weight: 900; text-align: center; color: white; padding: 20px;">
+            Welcome to Grampanchayat Laxmi Dahiwadi
+        </h1>
 
-    <div style=" border: 2px solid red; margin-bottom: 12px;background-color: brown;">
-
-        <p style="font-size: 34px; font-weight: 900; text-align: center;">
-            Welcome to Grampanchayat laxmi dahiwadi
-        </p>
-
-        <div class="search" style="margin-bottom: 1%;">
+        <div class="search" style="margin-bottom: 30px; text-align: center;" class="hh">
             <form id="form">
                 <input class="inputbutton" type="search" id="query" name="Search" placeholder="Search...">
                 <button class="searchbutton">Search</button>
             </form>
         </div>
 
+
+        <?php
+
+        if ($_SESSION['role'] == 'admin') {
+            echo '     <a href="addmember.php">
+            <button class="add-member-button">Add Member</button>
+        </a> ';
+        }
+
+
+        ?>
+
     </div>
 
-    <a href="addmember.php"><button class="add"
-            style="width: 150px; height: 35px; padding: 4px; font-size: 19px; font-weight: bold;float:right; background-color: blueviolet;color: whitesmoke; border-radius: 4px; ">Add
-            Member</button></a>
 
     <div class="container">
 
@@ -55,10 +180,10 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
         $result = mysqli_query($conn, $query);
 
         if (mysqli_num_rows($result) > 0) {
-            echo '<ul>';
-
+            echo '<ul class="admin-list">'; // Add CSS class to the <ul> element
+        
             while ($row = mysqli_fetch_assoc($result)) {
-                echo '<li style = "padding:10px;">';
+                echo '<li style="padding: 10px;">';
 
                 $imageData = $row['photo'];
                 $imagePath = 'community/' . $row['name'] . '.jpg';
@@ -81,17 +206,9 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
 
         mysqli_close($conn);
 
-
-
-
-
-
-
-
-
-
         ?>
     </div>
+
 </body>
 
 </html>

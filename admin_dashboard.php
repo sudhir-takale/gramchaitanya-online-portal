@@ -10,9 +10,7 @@ include('database.php');
 $sql = "SELECT COUNT(*) AS count FROM users WHERE adharno IS NOT NULL";
 $result = $conn->query($sql);
 
-if (!$result) {
-    die("Error running query: " . $conn->error);
-}
+
 
 $row = $result->fetch_assoc();
 $registeredUsers = $row['count'];
@@ -21,9 +19,6 @@ $registeredUsers = $row['count'];
 $sql = "SELECT COUNT(*) AS count FROM complaint WHERE id IS NOT NULL";
 $result = $conn->query($sql);
 
-if (!$result) {
-    die("Error running query: " . $conn->error);
-}
 
 $row = $result->fetch_assoc();
 $complaints = $row['count'];
@@ -65,10 +60,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         echo "<p>Failed to send notification to $recipientEmail.</p>";
       }
     }
-  } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
   }
-
   // Close the database connection
   $conn->close();
 }
@@ -151,10 +143,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <a href="#" class="icon-a"><i class="fa fa-dashboard icons"></i> Dashboard</a>
     <a href="registered_users.php" class="icon-a"><i class="fa fa-users icons"></i> Registered Users</a>
     <a href="complaint.php" class="icon-a"><i class="fa fa-list icons"></i> Complaints</a>
-    <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i> Orders</a>
+    <!-- <a href="#" class="icon-a"><i class="fa fa-shopping-bag icons"></i> Orders</a>
     <a href="#" class="icon-a"><i class="fa fa-tasks icons"></i> Inventory</a>
     <a href="#" class="icon-a"><i class="fa fa-user icons"></i> Accounts</a>
-    <a href="#" class="icon-a"><i class="fa fa-list-alt icons"></i> Tasks</a>
+    <a href="#" class="icon-a"><i class="fa fa-list-alt icons"></i> Tasks</a> -->
 
   </div>
   <div id="main">
@@ -171,17 +163,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
       <div class="col-div-3">
         <div class="box">
-          <p><?php echo $registeredUsers; ?><br /><span>Registered Users</span></p>
+          <p>
+            <?php echo $registeredUsers; ?><br /><span>Registered Users</span>
+          </p>
           <i class="fa fa-users box-icon"></i>
         </div>
       </div>
       <div class="col-div-3">
         <div class="box">
-          <p><?php echo $complaints; ?><br /><span>Complaints</span></p>
+          <p>
+            <?php echo $complaints; ?><br /><span>Complaints</span>
+          </p>
           <i class="fa fa-list box-icon"></i>
         </div>
       </div>
-      
+
       <div class="clearfix"></div>
       <br /><br />
       <div class="col-div-8">
@@ -233,7 +229,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-      $(".nav").click(function() {
+      $(".nav").click(function () {
         $("#mySidenav").css('width', '70px');
         $("#main").css('margin-left', '70px');
         $(".logo").css('visibility', 'hidden');
@@ -246,7 +242,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $(".nav2").css('display', 'block');
       });
 
-      $(".nav2").click(function() {
+      $(".nav2").click(function () {
         $("#mySidenav").css('width', '300px');
         $("#main").css('margin-left', '300px');
         $(".logo").css('visibility', 'visible');

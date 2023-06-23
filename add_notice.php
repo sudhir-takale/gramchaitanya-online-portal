@@ -6,7 +6,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];
     $notice = $_POST['notice'];
 
-    $query = "INSERT INTO notice (username,notice) VALUES ('$username','$notice')";
+    $query = "INSERT INTO notices (username,notice) VALUES ('$username','$notice')";
 
     if (mysqli_query($conn, $query)) {
         echo "inserted successfully";
@@ -42,11 +42,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <textarea class="form-control" name="notice" id="exampleFormControlTextarea1" rows="3"></textarea>
         </div>
 
-        <div class="mb-3" style="margin-left:40%; margin-right: 20px; width: 100px; ">
-            <input type="submit" value="submit" class="form-control" id="exampleFormControlInput1">
+        <div class="d-flex justify-content-center">
+            <button type="submit" class="btn btn-primary mt-4 w-25 mb-4"
+                style="margin-right: 10px; margin-left: 10px;">Submit</button>
         </div>
 
     </form>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.4/dist/umd/popper.min.js"></script>
 </body>
 
 </html>
