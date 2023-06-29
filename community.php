@@ -4,6 +4,22 @@ require('database.php');
 
 session_start();
 
+if (isset($_POST['delete'])) {
+    $memberId = $_POST['member_id']; // Assuming the notice ID is passed as a hidden input field
+
+    // Prepare the delete query
+    $deleteQuery = "DELETE FROM admins WHERE id = $memberId";
+
+    // Execute the delete query
+    if (mysqli_query($conn, $deleteQuery)) {
+        // Deletion successful
+        echo "<script> alert('Member Deleted Successfully') </script>";
+    } else {
+        // Error deleting notice
+        echo "Error deleting Member: " . mysqli_error($conn);
+    }
+}
+
 
 if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
     header("Location: login.php");
@@ -195,8 +211,14 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
                 echo 'Designation: ' . $row['designation'] . '<br>';
                 echo 'Joined date: ' . $row['joiningdate'] . '<br>';
                 echo 'Mob no: ' . $row['mobilenumber'];
-                echo '</div>';
+                echo '   <div style="float:right; margin-top:-21px;">
+            <form action="" method="post">
+               <input type="hidden" name="member_id" value="' . $row['id'] . '">
+                 <button type="submit" name="delete" class="btn btn-primary" style=" margin-left:400px; background-color: green">Delete</button>
+            </form>
+        </div> </div>';
                 echo '</li>';
+
             }
 
             echo '</ul>';

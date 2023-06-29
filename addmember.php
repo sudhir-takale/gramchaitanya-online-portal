@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" name="adharno"
+            <input type="text" class="form-control" id="exampleFormControlInput1" maxlength="12" ; name="adharno"
                 placeholder="Enter adhar number">
 
         </div>
