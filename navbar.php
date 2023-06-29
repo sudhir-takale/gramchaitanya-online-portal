@@ -135,8 +135,8 @@
                                 class="d-inline-block align-text-top">
                         </a>
                         <ul class="dropdown-menu dropdown-menu-right" aria-labelledby="profileDropdown">
-                            <li><a class="dropdown-item" href="#">Your Name</a></li>
-                            <li><a class="dropdown-item" href="#">View Profile</a></li>
+                            <li><a class="dropdown-item">Name</a></li>
+                            <li><a class="dropdown-item" href="viewprofile.php">View Profile</a></li>
                             <li><a class="dropdown-item" href="logout.php">Logout</a></li>
                         </ul>
                     </div>
