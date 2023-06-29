@@ -388,7 +388,7 @@
 
                     <div class="text-center mt-3">
                         <!-- <button type="button" class="btn btn-primary w-50 ">Submit</button> -->
-                        <button type="button" class="btn btn-primary w-25">Submit</button>
+                        <button type="submit" class="btn btn-primary w-25">Submit</button>
                         <button type="reset" class="btn btn-primary w-25">Clear</button>
 
                     </div>
