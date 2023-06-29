@@ -64,7 +64,7 @@
                         <?php
                         require 'database.php';
 
-                        $sql = "SELECT * FROM notices";
+                        $sql = "SELECT * FROM notices order by id DESC limit 2";
                         $result = mysqli_query($conn, $sql);
 
                         if ($result) {
