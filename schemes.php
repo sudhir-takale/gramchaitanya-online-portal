@@ -105,10 +105,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
                 echo '<li class="list-group-item"><h5>Scheme will end on:</h5>' . $row["enddate"] . '</li>';
                 echo '</ul>';
 
-
-
-
-
             }
 
             echo '</ul>';
