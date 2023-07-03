@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // $date = $_POST['date'];
     $photo = $_POST['photo'];
 
-    $query = "INSERT INTO admins (name,adharno,role,mobilenumber,password,photo) VALUES ('$fname','$adharno','$designation','$mobile','$password','$photo')";
+    $query = "INSERT INTO admins (name,adharno,designation,mobilenumber,password,photo) VALUES ('$fname','$adharno','$designation','$mobile','$password','$photo')";
 
     if (mysqli_query($conn, $query)) {
         echo "<script>window.alert('New member successfully'); </script>";
@@ -55,8 +55,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
         <div class="mb-3 ">
             <label for="exampleFormControlInput1" class="form-label">Enter Adhar Number </label>
-            <input type="text" class="form-control" id="exampleFormControlInput1" maxlength="12" ; name="adharno"
-                placeholder="Enter adhar number">
+            <input type="text" class="form-control" id="exampleFormControlInput1" minlength="12" maxlength="12" ;
+                name="adharno" placeholder="Enter adhar number">
 
         </div>
         <div class="mb-3 ">
@@ -87,7 +87,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         <div class="mb-3 ">
             <label for="formFileMultiple" class="form-label">Upload photo</label>
-            <input class="form-control" type="file" id="formFileMultiple" name="photo" multiple>
+            <input class="form-control" type="file" name="photo" multiple>
         </div>
 
 

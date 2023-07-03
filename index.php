@@ -50,21 +50,22 @@
             </div>
         </marquee>
     </header>
-    <div class="extra">
-        <p class="headline">Grampanchayat Laxmi Dahiwadi Welcomes You !</p>
+    <div class="extra" >
+        <p class="headline" style="color:black;background-color:#77CDF3
+">Grampanchayat Laxmi Dahiwadi Welcomes You !</p>
 
         <div class="maincontainer" style="display: flexbox;">
 
-            <div class="sidebar" style="max-height:12px;">
-                <div class="notice" style="border:2px solid black; width: auto;  margin-top: -1%;  height: 600px; ">
-                    <p> Notices</p>
+            <div class="sidebar" style="max-height:12px; ">
+                <div class="notice" style="border:1px solid black; width: auto;  margin-top: -1%;  height: 600px;box-shadow:1px 2px 5px black; border-radius:15px;">
+                    <p style = "background-color:cadetblue;border-radius:15px; box-shadow: 2px 1px 8px cadetblue; "> Notices</p>
                     <div class="list">
 
 
                         <?php
                         require 'database.php';
 
-                        $sql = "SELECT * FROM notices order by id DESC limit 2";
+                        $sql = "SELECT * FROM notices order by id DESC limit 4";
                         $result = mysqli_query($conn, $sql);
 
                         if ($result) {
@@ -204,32 +205,32 @@
                             <tbody>
                                 <tr>
                                     <td>स्थापना दिनांक</td>
-                                    <td>date</td>
+                                    <td>20/12/1963</td>
 
                                 </tr>
                                 <tr>
                                     <td>ग्रा.प.फोन नं. </td>
-                                    <td>Francisco Chang</td>
+                                    <td>8998521245</td>
 
                                 </tr>
                                 <tr>
                                     <td>सदस्य संख्या</td>
-                                    <td>date</td>
+                                    <td>6</td>
 
                                 </tr>
                                 <tr>
                                     <td>कर्मचारी संख्या </td>
-                                    <td>Francisco Chang</td>
+                                    <td>12</td>
 
                                 </tr>
                                 <tr>
                                     <td>लोकसंख्या</td>
-                                    <td>date</td>
+                                    <td>5,628 </td>
 
                                 </tr>
                                 <tr>
                                     <td>क्षेत्रफळ </td>
-                                    <td>Francisco Chang</td>
+                                    <td>2755.82 hectares</td>
 
                                 </tr>
                                 <tr>
@@ -239,91 +240,91 @@
                                 </tr>
                                 <tr>
                                     <td> Annual income </td>
-                                    <td>Francisco </td>
+                                    <td>15 lakh</td>
 
                                 </tr>
                                 <tr>
                                     <td>पोष्ट ऑफिस</td>
-                                    <td>date</td>
+                                    <td>1</td>
 
                                 </tr>
                                 <tr>
                                     <td>गटार लांबी</td>
-                                    <td>Francisco Chang</td>
+                                    <td>5 km</td>
 
                                 </tr>
                                 <tr>
                                     <td>रस्ता लांबी</td>
-                                    <td>Francisco Chang</td>
+                                    <td>18 km</td>
 
                                 </tr>
                                 <tr>
                                     <td>गॅस एजन्सी</td>
-                                    <td>Francisco Chang</td>
+                                    <td>1</td>
 
                                 </tr>
                                 <tr>
                                     <td>महिला मंडळ</td>
-                                    <td>Francisco Chang</td>
+                                    <td>1</td>
 
                                 </tr>
                                 <tr>
                                     <td>सहकारी सोसायटी</td>
-                                    <td>Francisco Chang</td>
+                                    <td>2</td>
 
                                 </tr>
                                 <tr>
                                     <td>बचत गट</td>
-                                    <td>Francisco Chang</td>
+                                    <td>10</td>
 
                                 </tr>
                                 <tr>
                                     <td>Bank</td>
-                                    <td>Francisco Chang</td>
+                                    <td>1</td>
 
                                 </tr>
 
 
                                 <tr>
                                     <td>Wards</td>
-                                    <td>Francisco Chang</td>
+                                    <td>5</td>
 
                                 </tr>
                                 <tr>
                                     <td>Schools</td>
-                                    <td>Francisco Chang</td>
+                                    <td>8</td>
 
                                 </tr>
                                 <tr>
                                     <td>Temples</td>
-                                    <td>Francisco Chang</td>
+                                    <td>19</td>
 
                                 </tr>
                                 <tr>
                                     <td>Hospitals</td>
-                                    <td>Francisco Chang</td>
+                                    <td>9</td>
 
                                 </tr>
 
 
                                 <tr>
                                     <td>Animal's Hospital</td>
-                                    <td>Francisco Chang</td>
+                                    <td>1</td>
 
                                 </tr>
                                 <tr>
                                     <td>Library</td>
-                                    <td>Francisco Chang</td>
+                                    <td>4</td>
 
                                 </tr>
                                 <tr>
                                     <td>Weekly Market</td>
-                                    <td>Francisco Chang</td>
+                                    <td>Friday</td>
 
                                 </tr>
                                 <tr>
                                     <td>Mangal Karyalay</td>
-                                    <td>Francisco Chang</td>
+                                    <td>1</td>
 
                                 </tr>
                             </tbody>
@@ -335,17 +336,18 @@
                 </div>
                 <hr style="height: 2px; margin-left: 1.5%; margin-right: 1.5%;">
 
-                <div class="services p-3" id="services" style="background-color:	#FFBD33" ;>
+                <div class="services p-3" id="services">
 
                     <p
-                        style="background-color: rgb(25, 24, 24); color: white; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;">
+                        style="background-color: rgb(25, 24, 24); color: yellow; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;">
                         <span style="margin-left: 5%; font-size: 23px; padding: 4px;">Services</span>
                     </p>
-                    <div class="container" id="#">
-                        <div class="grid-item"><a href="/documentrequest.php">Online Payment</a></div>
+                    <div class="container" id="servicess">
+                        <div class="grid-item"><a href="/documentrequest.php">Online Payment</a>
+                        </div>
                         <div class="grid-item"><a href="/documentrequest.php">मिळकत माहिती</a></div>
                         <div class="grid-item"><a href="documentrequest.php"> रहिवासी प्रमाणपत्र</a></div>
-                        <div class="grid-item"><a href="community.php"> सरपंच कार्यकाल</a></div>
+                        <div class="grid-item"><a href="community.php">सरपंच कार्यकाल</a></div>
                         <div class="grid-item"><a href="community.php">कर्मचारी माहिती</a></div>
                         <div class="grid-item"><a href="#">सदस्य कार्यकारणी</a></div>
                         <div class="grid-item"><a href="#">उपसरपंच कार्यकाल</a></div>
@@ -354,11 +356,11 @@
                         <div class="grid-item"><a href="/documentrequest.html">विवाह दाखला</a></div>
                         <div class="grid-item"><a href="/documentrequest.php">मृत्यू दाखला</a></div>
                         <div class="grid-item"><a href="/documentrequest.php">उत्पन्न प्रमाणपत्र</a></div>
-                        <div class="grid-item"><a href="/work.html">नियोजीत विकास कामे</a></div>
+                        <div class="grid-item"><a href="/work.pho">नियोजीत विकास कामे</a></div>
                         <div class="grid-item"><a href="/documentrequest.php">घरभाडे</a></div>
                         <div class="grid-item"><a href="/documentrequest.php">पाणी बिल</a></div>
                         <div class="grid-item"><a href="/work.html">पुर्ण झालेली विकास कामे</a></div>
-                        <div class="grid-item"><a href="/work.html">चालू असलेली विकास कामे</a></div>
+                        <div class="grid-item"><a href="/work.php">चालू असलेली विकास कामे</a></div>
                         <div class="grid-item"><a href="#">जमा-खर्च पत्रक</a></div>
                         <div class="grid-item"><a href="/documentrequest.php">ग्रामपंचायतीला पत्र</a></div>
                         <div class="grid-item"><a href="/documentrequest.php">Others</a></div>
@@ -367,13 +369,13 @@
             </div>
         </div>
         <hr>
-        <div class="complaint" style=" margin-left: 50px; height: 34%;">
+        <div class="complaint " style=" margin-left: 50px; height: 34%; ">
 
-            <div class="secondcon" style="width: 34%; height: 45%; margin-right: 0.5%;">
+            <div class="secondcon p-3" style="width: 34%; height: 45%; margin-right: 0.5%; border: 1px solid black; box-shadow:4px 2px 10px black; border-radius:19px;" >
 
                 <h5 style="text-align: end; margin-right: 9%;">If you have any query please fill below form !</h5>
 
-                <form action="query.php" method="post" class="m-2 bg-body-secondary border w-100 p-4 mx-auto ">
+                <form action="query.php" method="post" class="m-2 bg-body-primary border w-100 p-4 mx-auto">
                     <div class="mb-1 fw-bold ">
                         <label for="exampleFormControlInput1" class="form-label">Enter the heading</label>
                         <input type="text" class="form-control" name="heading" id="exampleFormControlInput1"
@@ -408,6 +410,9 @@
                 <li><img src="images/flag.jpg" alt=""></li>
                 <li><img src="images/digital india.webp" alt=""></li>
                 <li><img src="images/flag.jpg" alt=""></li>
+
+                <li><img src="images/digital india.webp" alt=""></li>
+                <li><img src="images/flag.jpg" alt=""></li>
                 <li><img src="images/digital india.webp" alt=""></li>
                 <li><img src="images/flag.jpg" alt=""></li>
                 <li><img src="images/digital india.webp" alt=""></li>
@@ -422,11 +427,11 @@
 
                 <ol>
 
-                    <li><a href="service.html">Home</a></li>
-                    <li><a href="service.html">Services</a></li>
+                    <li><a href="index.php">Home</a></li>
+                    <li><a href="servicess">Services</a></li>
 
-                    <li><a href="service.html">Community</a></li>
-                    <li><a href="service.html">Register</a></li>
+                    <li><a href="community.php">Community</a></li>
+                    <li><a href="register.php">Register</a></li>
 
 
                 </ol>
@@ -437,11 +442,11 @@
             <div class="service" style="margin-left: 20pc;">
                 <p style="font-weight:600 ; font-size: 23px ; margin-left: 35px;color: red;">Services</p>
                 <ul>
-                    <li><a href="service.html">Marriage Registration</a></li>
-                    <li><a href="service.html">Birth Registration</a></li>
-                    <li><a href="service.html">Death Certificate</a></li>
-                    <li><a href="service.html">Water Bills</a></li>
-                    <li><a href="service.html">Residence Certificate</a></li>
+                    <li><a href="servicess">Marriage Registration</a></li>
+                    <li><a href="servicess">Birth Registration</a></li>
+                    <li><a href="servicess">Death Certificate</a></li>
+                    <li><a href="servicess">Water Bills</a></li>
+                    <li><a href="servicess">Residence Certificate</a></li>
                 </ul>
 
             </div>
@@ -466,61 +471,13 @@
         </p>
     </footer>
 
-    <script>
-        let x = document.getElementById("seeprofile");
 
-        let disp = 0;
-        function makeVisible() {
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
-
-            if (disp == 1) {
-                x.style.display = "none";
-                disp = 0;
-            }
-            else {
-                x.style.display = "block ";
-                disp = 1;
-            }
-
-        }
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
 
 
-    </script>
 
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
-        crossorigin="anonymous"></script>
-
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
-        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
-        crossorigin="anonymous"></script>
-
-
-    <script>
-        let slideIndex = 0;
-        showSlides();
-
-        function showSlides() {
-            let i;
-            let slides = document.getElementsByClassName("mySlides");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < slides.length; i++) {
-                slides[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > slides.length) { slideIndex = 1 }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" active", "");
-            }
-            slides[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " active";
-            setTimeout(showSlides, 2000); // Change image every 2 seconds
-        }
-    </script>
 
 </body>
 

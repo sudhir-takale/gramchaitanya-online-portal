@@ -228,6 +228,7 @@ td {
   text-decoration: none;
   cursor: pointer;
   font-weight: 600;
+  color: black;
 
 }
 
@@ -280,9 +281,9 @@ td {
 
 .service li a {
   text-decoration: none;
-  color: black;
+  color: yellow;
   cursor: pointer;
-  color: white;
+
   /* margin-left: 23px; */
 }
 
@@ -463,6 +464,7 @@ td {
     height: auto;
     font-size: 14px;
     padding: 3.6%;
+    
   }
 
 

@@ -75,7 +75,7 @@
                 <div class="col-md-6 mt-1">
                     <label for="validationServer01" class="form-label">Enter adhar no</label>
                     <input type="text" placeholder="Enter adhar no" class="form-control" id="validationServer01"
-                        name="adharno" value="">
+                        name="adharno" value="" maxlength = "12" minlength="12">
                     <div class="valid-feedback " style="display: none">
                         Looks good!
                     </div>

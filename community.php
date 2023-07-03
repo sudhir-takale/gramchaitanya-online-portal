@@ -157,6 +157,42 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
         background-color: #45a049;
         cursor: pointer;
     }
+
+    .button-24 {
+        background: #FF4742;
+        border: 1px solid #FF4742;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 1px 2px 4px;
+        /* box-sizing: border-box; */
+        color: #FFFFFF;
+        cursor: pointer;
+        width: 110px;
+        font-family: nunito, roboto, proxima-nova, "proxima nova", sans-serif;
+        font-size: 15px;
+        font-weight: 600;
+        line-height: 16px;
+        min-height: 40px;
+        outline: 0;
+        padding: 6px 7px;
+
+        text-rendering: geometricprecision;
+        text-transform: none;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+
+    }
+
+    .button-24:hover,
+    .button-24:active {
+        background-color: initial;
+        background-position: 0 0;
+        color: #FF4742;
+    }
+
+    .button-24:active {
+        opacity: .5;
+    }
 </style>
 
 <body>
@@ -187,49 +223,52 @@ if (!isset($_SESSION["username"]) || $_SESSION["loggedin"] !== true) {
     </div>
 
 
-    <div class="container">
+ <div class="container">
+    <?php
+    $query = "SELECT * FROM ADMINS";
+    $result = mysqli_query($conn, $query);
 
-        <?php
+    if (mysqli_num_rows($result) > 0) {
+        echo '<ul class="admin-list">';
 
-        $query = "SELECT * FROM ADMINS";
+        while ($row = mysqli_fetch_assoc($result)) {
+            echo '<li style="padding: 10px;">';
 
-        $result = mysqli_query($conn, $query);
+            $imageData = $row['photo'];
+            $imagePath = 'community/' . $row['name'] . '.jpg';
+            file_put_contents($imagePath, $imageData);
 
-        if (mysqli_num_rows($result) > 0) {
-            echo '<ul class="admin-list">'; // Add CSS class to the <ul> element
-        
-            while ($row = mysqli_fetch_assoc($result)) {
-                echo '<li style="padding: 10px;">';
+            echo '<img src="' . $imagePath . '" alt="Fetching Image" style="width: 120px; height: 110px;">';
+            echo '<div class="info">';
+            echo 'Name: ' . $row['name'] . '<br>';
+            echo 'Designation: ' . $row['designation'] . '<br>';
+            echo 'Joined date: ' . $row['joiningdate'] . '<br>';
+            echo 'Mob no: ' . $row['mobilenumber'];
 
-                $imageData = $row['photo'];
-                $imagePath = 'community/' . $row['name'] . '.jpg';
-                file_put_contents($imagePath, $imageData);
+            echo '<div style="float:right; margin-top:-21px; margin-left:300px;">';
 
-                echo '<img src="' . $imagePath . '" alt="" style="width: 120px; height: 110px;">';
-                echo '<div class="info">';
-                echo 'Name: ' . $row['name'] . '<br>';
-                echo 'Designation: ' . $row['designation'] . '<br>';
-                echo 'Joined date: ' . $row['joiningdate'] . '<br>';
-                echo 'Mob no: ' . $row['mobilenumber'];
-                echo '   <div style="float:right; margin-top:-21px;">
-            <form action="" method="post">
-               <input type="hidden" name="member_id" value="' . $row['id'] . '">
-                 <button type="submit" name="delete" class="btn btn-primary" style=" margin-left:400px; background-color: green">Delete</button>
-            </form>
-        </div> </div>';
-                echo '</li>';
-
+            // Check if user is logged in as admin
+            if (isset($_SESSION['role']) && $_SESSION['role'] === 'admin') {
+                echo '<form action="" method="post">';
+                echo '<input type="hidden" name="member_id" value="' . $row['id'] . '">';
+                echo '<button class="button-24" type="submit" name="delete">Delete</button>';
+                echo '</form>';
             }
 
-            echo '</ul>';
-        } else {
-            echo 'No data found.';
+            echo '</div>';
+
+            echo '</div>';
+            echo '</li>';
         }
 
-        mysqli_close($conn);
+        echo '</ul>';
+    } else {
+        echo 'No data found.';
+    }
 
-        ?>
-    </div>
+    mysqli_close($conn);
+    ?>
+</div>
 
 </body>
 

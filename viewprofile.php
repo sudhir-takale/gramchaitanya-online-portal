@@ -1,10 +1,50 @@
-<?php 
+<?php
+include 'database.php';
+session_start();
 
-require 'database.php';
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+    header("Location: login.php");
+    exit;
+}
+// Set initial values for the variables
+$first_name = '';
+$middle_name = '';
+$last_name = '';
+$mobile_number = '';
+$date_of_birth = '';
 
+// Get the current user ID
+$username = $_SESSION['username'];
 
+// Fetch user data from the database
+$sql = "SELECT adharno, firstname, middlename,password, lastname, mobileno, dateofbirth FROM users WHERE adharno = '$username'";
+if ($result = mysqli_query($conn, $sql)) {
+    if (mysqli_num_rows($result) == 1) {
+        $row = mysqli_fetch_assoc($result);
+        $first_name = $row['firstname'];
+        $username = $row['adharno'];
+        $middle_name = $row['middlename'];
+        $last_name = $row['lastname'];
+        $mobile_number = $row['mobileno'];
+        $password = $row['password'];
+        $date_of_birth = $row['dateofbirth'];
 
+        // <br /><b>Warning</b>:  Undefined variable $first_name in <b>C:\xampp\htdocs\Project\viewprofile.php</b> on line <b>50</b><br />
+    }
+    mysqli_free_result($result);
+}
+
+// Close the database connection
+mysqli_close($conn);
 ?>
+
+
+
+
+
+
+
+
 
 
 
@@ -13,87 +53,138 @@ require 'database.php';
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Profile</title>
+    <title>View Profile | Edit Profile</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         body {
-            background-color: #f8f9fa;
-            font-family: Arial, sans-serif;
+            padding: 20px;
+            background-image: url('images/backimage.jpg');
+            background-size: cover;
+            background-position: center;
         }
 
         .container {
             max-width: 500px;
             margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #999;
         }
 
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 20px;
         }
 
         .form-label {
             font-weight: bold;
         }
 
-        .form-control {
-            width: 100%;
-            padding: 0.375rem 0.75rem;
-            font-size: 1rem;
-            line-height: 1.5;
-            border-radius: 0.25rem;
-            border: 1px solid #ced4da;
-            transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
-        }
-
-        .form-control:focus {
-            border-color: #80bdff;
-            outline: 0;
-            box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
-        }
-
         .btn-primary {
-            background-color: #007bff;
-            border-color: #007bff;
+            width: 100%;
         }
 
-        .btn-primary:hover {
-            background-color: #0069d9;
-            border-color: #0062cc;
+        .name-inputs {
+            display: flex;
+            gap: 10px;
         }
 
-        @media (max-width: 576px) {
-            .container {
-                max-width: 100%;
-                padding: 0 15px;
-            }
+        .btn-cancel {
+            background-color: #ccc;
+            border-color: #ccc;
+            color: #fff;
         }
+
+        .btn-cancel:hover {
+            background-color: #999;
+            border-color: #999;
+        }
+        
     </style>
 </head>
 
 <body>
-    <div class="container">
+    <div class="container mt-5">
         <h2>Edit Profile</h2>
         <form action="" method="post">
-            <div class="form-group">
-                <label class="form-label" for="name">Name</label>
-                <input type="text" class="form-control" id="name" name="name" value="<?php echo $name; ?>" required>
+            <div class="form-group name-inputs">
+                <div class="form-group">
+                    <label class="form-label" for="first_name">First Name</label>
+                    <input type="text" class="form-control" id="first_name" name="first_name"
+                        value="<?php echo $first_name; ?>" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="middle_name">Middle Name</label>
+                    <input type="text" class="form-control" id="middle_name" name="middle_name"
+                        value="<?php echo $middle_name; ?>" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="last_name">Last Name</label>
+                    <input type="text" class="form-control" id="last_name" name="last_name"
+                        value="<?php echo $last_name; ?>" required>
+                </div>
             </div>
             <div class="form-group">
-                <label class="form-label" for="email">Email</label>
-                <input type="email" class="form-control" id="email" name="email" value="<?php echo $email; ?>" required>
+                <label class="form-label" for="mobile_number">Aadhaar Number</label>
+                <input type="text" class="form-control" id="mobile_number" name="mobile_number"
+                    value="<?php echo $username; ?>" required>
             </div>
             <div class="form-group">
-                <label class="form-label" for="password">Password</label>
-                <input type="password" class="form-control" id="password" name="password" required>
+                <label class="form-label" for="mobile_number">Mobile Number</label>
+                <input type="tel" class="form-control" id="mobile_number" name="mobile_number"
+                    value="<?php echo $mobile_number; ?>" required>
             </div>
-            <div class="form-group">
-                <label class="form-label" for="confirm_password">Confirm Password</label>
-                <input type="password" class="form-control" id="confirm_password" name="confirm_password" required>
+
+            <div class="form-group name-inputs">
+                <div class="form-group">
+                    <label class="form-label" for="first_name">Date of Birth</label>
+                    <input type="date" class="form-control" id="first_name" name="first_name"
+                        value="<?php echo $date_of_birth; ?>" required>
+                </div>
+                <div class="form-group">
+                    <label class="form-label" for="middle_name">Password</label>
+                    <input type="password" class="form-control" id="middle_name" name="password"
+                        value="<?php echo $password; ?>" required>
+                    <span class="password-toggle" onclick="togglePasswordVisibility()"></span>
+                </div>
+
             </div>
-            <button type="submit" class="btn btn-primary">Update Profile</button>
+            <div class="d-flex justify-content-center">
+
+                <button type="submit" class="btn btn-primary w-50" style="margin-right: 10px; margin-left: 10px;">Save
+                    Profile</button>
+                <button type="button" class="btn btn-primary w-50" onclick="window.history.back();"
+                    style="margin-right: 10px; margin-left: 10px;">Cancel</button>
+            </div>
         </form>
     </div>
+    <script>
+
+        function togglePasswordVisibility() {
+            var passwordInput = document.getElementById("password");
+            var passwordToggle = document.querySelector(".password-toggle");
+
+            if (passwordInput.type === "password") {
+                passwordInput.type = "text";
+                passwordToggle.classList.add("visible");
+            } else {
+                passwordInput.type = "password";
+                passwordToggle.classList.remove("visible");
+            }
+        }
+
+    </script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.4/dist/umd/popper.min.js"></script>
 </body>
 
 </html>

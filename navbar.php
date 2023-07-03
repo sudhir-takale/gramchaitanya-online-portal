@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         nav {
-            background-color: #393737;
+            background-color: #393333;
 
         }
 
@@ -90,7 +90,7 @@
 <body>
     <header class="sticky-top">
         <p class="maintext mb-0" style="background-image: url('images/tric.jpg'); text-align: center;">
-            <a style="text-decoration-line: none; text-align: center; font-size: 55px; color: red;"
+            <a style="text-decoration-line: none; text-align: center; font-size: 55px; color: orange;"
                 href="index.php">Grampanchayat,
                 <br> Laxmi Dahiwadi</a>
         </p>

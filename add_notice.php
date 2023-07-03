@@ -1,5 +1,4 @@
 <?php
-
 include 'database.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -9,13 +8,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $query = "INSERT INTO notices (username,notice) VALUES ('$username','$notice')";
 
     if (mysqli_query($conn, $query)) {
-        echo "inserted successfully";
-        header("location:index.php");
+        echo "<script>alert('New notice added successfully');</script>";
+        header("location:viewnotice.php");
     } else {
-        echo "error" . $error;
+        echo "Error: " . $error;
     }
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,34 +24,62 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <title>Add new Notice | laxmi dahiwadi</title>
+    <style>
+        .form-container {
+            border: 0.5px solid black;
+            width: 500px;
+            margin: 100px auto;
+            padding: 20px;
 
-    <title>add notice</title>
+            box-shadow: 2px 2px 10px black;
+        }
+
+        .form-container h2 {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .form-label {
+            margin-bottom: 5px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 8px;
+            border-radius: 4px;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+        }
+
+        .btn-submit {
+            margin-top: 20px;
+            width: 100%;
+        }
+    </style>
 </head>
 
-<body style="background-color: rgb(107, 79, 102);">
-    <form action="add_notice.php" method="post"
-        style="border:2px solid black; width: 700px; height: 300px; margin-top: 15%; margin-left: 30%; background-color: rgb(165, 190, 190);">
-        <div class="mb-3" style="margin-left:20px; margin-right: 20px;">
-            <label for="exampleFormControlInput1" class="form-label" style="margin: 10px;">Username</label>
-            <input type="text" name="username" class="form-control" id="exampleFormControlInput1"
-                placeholder="username">
+<body>
+    <form action="add_notice.php" method="post" class="form-container">
+        <h2>Add Notice</h2>
+        <div class="mb-3">
+            <label for="username" class="form-label">Your Name:</label>
+            <input type="text" name="username" class="form-control" id="username" placeholder="Enter your name"
+                required>
         </div>
 
-        <div class="mb-3" style="margin-left:20px; margin-right: 20px;">
-            <label for="exampleFormControlTextarea1" class="form-label">type here notice</label>
-            <textarea class="form-control" name="notice" id="exampleFormControlTextarea1" rows="3"></textarea>
+        <div class="mb-3">
+            <label for="notice" class="form-label">Notice:</label>
+            <textarea class="form-control" name="notice" id="notice" rows="3" required></textarea>
         </div>
 
         <div class="d-flex justify-content-center">
-            <button type="submit" class="btn btn-primary mt-4 w-25 mb-4"
-                style="margin-right: 10px; margin-left: 10px;">Submit</button>
+            <button type="submit" class="btn btn-primary btn-submit w-25">Submit</button>
+            <button type="button" class="btn btn-primary btn-submit w-25 " style="margin-left: 2%;"
+                onclick="window.history.back();">Cancel</button>
         </div>
-
     </form>
 
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.4/dist/umd/popper.min.js"></script>
 </body>
 
