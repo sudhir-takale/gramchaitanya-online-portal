@@ -25,46 +25,39 @@
         exit;
     }
 
-    echo "
-    <script>console.log('Debug Objects: " . $_SESSION["role"] . "');</script>";
-    echo "Welcome " . $_SESSION["role"] . "!";
+    // echo "
+    // <script>console.log('Debug Objects: " . $_SESSION["role"] . "');</script>";
+    // echo "Welcome " . $_SESSION["role"] . "!";
     require 'navbar.php';
 
     ?>
     <header style="position: sticky; top: 0%;">
 
         <marquee behavior="side" direction="left" scrollamount="10"
-            style=" position: sticky; background-color:yellow; margin-top: 0.1%;">
+            style=" position: sticky; background-color:#7aab54;  margin-top: 0.1%;">
             <div style="font-size: 22px; font-weight: bold;  color: black;">
-                <p style="padding-top: 8px;">काही निबंधाचे विषय तर इतके मजेशीर असतात कि त्यांच्याबद्दल लिहीत असताना
-                    आपण
-                    आपल्याच विचार विश्वात
-                    हरवून जातो. काही विषय
-                    आपल्या अडकलेल्या विचारचक्राला चालना देतात व अनेक सामाजिक समस्या त्यांचे समाधान यांबद्दल विचार
-                    करायला
-                    लावतात.
-
-                    निबंधलेखन लेखन हि कला शाळेतील लहान मुलांच्या बुद्धीला व विचारांना एखाद्या सुंदर शिल्पाप्रमाणे
-                    आकार
-                    देण्याचे काम करते.</p>
+                <p style="padding-top: 8px;">गावाच्या वास्तव्यांची माहिती, सर्व योजनांची माहिती, आरोग्य व सामाजिक
+                    सुरक्षा, शैक्षणिक सुविधा, समाजिक कार्यक्रम, आपल्या ग्रामपंचायताच्या बाबतीतील ताज्या अपडेट्स, आणि
+                    ग्रामीण विकासाच्या गोष्टींची जाहिरात व माहिती येथे मिळवा.</p>
             </div>
         </marquee>
     </header>
     <div class="extra">
-        <p class="headline">Grampanchayat Laxmi Dahiwadi Welcomes You !</p>
+        <!-- <p class="headline">Grampanchayat Laxmi Dahiwadi Welcomes You !</p> -->
 
-        <div class="maincontainer" style="display: flexbox;">
-
-            <div class="sidebar" style="max-height:12px;">
-                <div class="notice" style="border:2px solid black; width: auto;  margin-top: -1%;  height: 600px; ">
-                    <p> Notices</p>
+        <div class="maincontainer" style="display: flexbox; margin-top:10px;">
+            <div class="sidebar" style="max-height:12px; ">
+                <div class="notice"
+                    style="border:1px solid black; width: auto;  margin-top: -1%;  height: 600px;box-shadow:1px 2px 5px black; border-radius:15px;">
+                    <p style="background-color:cadetblue;border-radius:15px; box-shadow: 2px 1px 8px cadetblue; ">
+                        Notices</p>
                     <div class="list">
 
 
                         <?php
                         require 'database.php';
 
-                        $sql = "SELECT * FROM notices order by id DESC limit 2";
+                        $sql = "SELECT * FROM notices order by id DESC limit 4";
                         $result = mysqli_query($conn, $sql);
 
                         if ($result) {
@@ -91,11 +84,10 @@
 
                 <a class="mapimage" target="_blank"
                     href="https://www.google.com/maps/place/Laxmidahiwadi,+Maharashtra+413305/@17.4776098,75.2994298,616m/data=!3m1!1e3!4m6!3m5!1s0x3bc6a063c76d6e3b:0x6e8c7795b2d6306b!8m2!3d17.4775118!4d75.2985785!16s%2Fg%2F1hhvxpky8"><img
-                        style="width: 89%; height: 15%; margin-top: 10%; margin-left: 4%;" src="images/map.jpg" alt="">
+                        style="width: 8%; height: 15%; margin-top: 10%; margin-left: 4%;" src="images/map.jpg" alt="">
                 </a>
 
             </div>
-
             <div>
                 <div class="outercontainer" style="display: flex;">
 
@@ -335,7 +327,7 @@
                 </div>
                 <hr style="height: 2px; margin-left: 1.5%; margin-right: 1.5%;">
 
-                <div class="services p-3" id="services" style="background-color:	#FFBD33" ;>
+                <div class="services p-3" id="services" ;>
 
                     <p
                         style="background-color: rgb(25, 24, 24); color: white; font-weight: 700;margin-left: 1.5%;margin-right: 1%; font-size: 17px;">
@@ -367,13 +359,14 @@
             </div>
         </div>
         <hr>
-        <div class="complaint" style=" margin-left: 50px; height: 34%;">
+        <div class="complaint " style=" margin-left: 50px; height: 34%; ">
 
-            <div class="secondcon" style="width: 34%; height: 45%; margin-right: 0.5%;">
+            <div class="secondcon p-3"
+                style="width: 34%; height: 45%; margin-right: 0.5%; box-shadow:2px 2px 5px black; border-radius:19px;">
 
                 <h5 style="text-align: end; margin-right: 9%;">If you have any query please fill below form !</h5>
 
-                <form action="query.php" method="post" class="m-2 bg-body-secondary border w-100 p-4 mx-auto ">
+                <form action="query.php" method="post" class="m-2 bg-body-primary border w-100 p-4 mx-auto">
                     <div class="mb-1 fw-bold ">
                         <label for="exampleFormControlInput1" class="form-label">Enter the heading</label>
                         <input type="text" class="form-control" name="heading" id="exampleFormControlInput1"

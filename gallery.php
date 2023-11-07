@@ -60,10 +60,6 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <style>
-    body {
-        background-color: #139aa9;
-    }
-
     .js-js-hidden {
         display: none;
     }
@@ -73,6 +69,8 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 
         float: left;
         margin-left: 11.5%;
+        border: 1px solid black;
+        box-shadow: 1px 1px 5px black;
 
 
 
@@ -150,16 +148,15 @@ if ($_SERVER['REQUEST_METHOD'] == "POST") {
 <body>
 
 
-    <div style="background-color: whitesmoke; border: 2px solid black;">
-        <p style="text-align: center; font-size: 44px; font-weight: bolder;
-     margin-bottom: -1.7% ;">See the photos of village</p>
+    <div
+        style="background-color:#4ab5aa; margin:3px;border:1px solid black; padding: 10px; box-shadow: 2px 2px 7px #4ab5aa;">
+        <p style="text-align: center; font-size: 44px; font-weight: bold; margin-bottom: -1.7%;">See the photos of the
+            village</p>
 
-        <div style="text-align:end;margin-right: 4%;">
-            <button type="button" class="btn btn-primary button-glow border-dark fw-bolder mb-2"
-                onclick="makeVisible()">Add photos from your Device</button>
+        <div style="text-align: end; margin-right: 4%;">
+            <button type="button" class="btn btn-primary button-glow border-dark fw-bold mb-2"
+                onclick="makeVisible()">Add photos from your device</button>
         </div>
-
-
     </div>
 
 
